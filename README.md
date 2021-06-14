@@ -1,10 +1,10 @@
-Libreria Hedwig
+# Libreria Hedwig
 
 Un sitio web donde podés conseguir los últimos estrenos, con entrega a domicilio cómoda y desde tu casa.
 
 Publico objetivo: Para todas las edades, a aquel que tiene el habito de la lectura y para los que quieran dar comienzo a ella. Son bienvenidos en Hedwig!
 
-Páginas Referentes: 
+## Páginas Referentes: 
 
 -cúspide.com
 
@@ -16,7 +16,7 @@ Páginas Referentes:
 
 -planetadelibros.com.ar
 
-Grupo: 
+## Grupo: 
 
 -Maria Azul Ríos, 26 años. Me gusta cocinar, ir al cine y ver series.
 
@@ -28,5 +28,5 @@ Grupo:
 
 -Alex Racciatti, 20 años. Soy hincha de Chaca, juego a la compu y me gustan los autos.
 
-Tablero de trabajo:
+## Tablero de trabajo
 https://trello.com/b/zJ2ELByb/proyecto-libreria
