@@ -1,0 +1,23 @@
+{
+  "name": "proyecto-integrador",
+  "version": "1.0.0",
+  "description": "Un sitio web donde podés conseguir los últimos estrenos, con entrega a domicilio cómoda y desde tu casa.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlanRacciatti/Grupo4-DH.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlanRacciatti/Grupo4-DH/issues"
+  },
+  "homepage": "https://github.com/AlanRacciatti/Grupo4-DH#readme",
+  "devDependencies": {
+    "express": "^4.17.1"
+  }
+}
