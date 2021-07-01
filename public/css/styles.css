@@ -1,0 +1,293 @@
+/* General */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fin general */
+
+/* Header (Alan) */
+
+.main-header {
+  background-color: #222026;
+  width: 100%;
+  height: 150px;
+}
+
+/* Seccion 1 del header, incluye carrito, menú y logo en mobile y tablet, y logo, barra de búsqueda y usuario en desktop */
+
+.header-logo-section {
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+}
+
+.container-hamburguer-menu {
+  align-self: center;
+}
+
+#hamburguer-menu {
+  color: #5a8da9;
+  font-size: 1.5em;
+  margin: 10px;
+}
+
+#logo-hedwig-header {
+  padding-top: 20px;
+  width: 100px;
+  align-self: center;
+}
+
+.container-logo {
+  align-self: center;
+  margin: 10px;
+}
+
+.container-cart-mobile {
+  align-self: center;
+}
+
+.container-cart-tablet {
+  display: none;
+}
+
+#header-amount-products-mobile-desktop {
+  position: relative;
+  top: 10px;
+  right: 3px;
+  color: #ffffff;
+  border: solid #ffffff 1px;
+  background-color: #d48938;
+  border-radius: 50%;
+  padding: 3px;
+  font-size: 2em;
+  text-align: center;
+  transform: scale(0.3, 0.3);
+  z-index: 2;
+}
+
+#cart-header {
+  position: relative;
+  bottom: 30px;
+  color: #5a8da9;
+  font-size: 1.5em;
+  margin: 10px;
+  z-index: 1;
+}
+
+#cart-header:hover {
+  color: #d48938;
+}
+
+.header-search-bar-tablet-mobile {
+  position: relative;
+  top: 20px;
+  margin: 0 10px;
+}
+
+form.search-bar-tablet-mobile [type='text'],
+form.search-bar-desktop [type='text'] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.search-bar-tablet-mobile button,
+form.search-bar-desktop button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #5a8da9;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.search-bar-tablet-mobile button:hover,
+form.search-bar-desktop button:hover {
+  background: #d48938;
+}
+
+.header-search-bar-desktop {
+  display: none;
+}
+
+.header-user-logo {
+  align-self: center;
+  margin: 10px;
+  display: none;
+}
+
+.header-search-bar-desktop {
+  align-self: center;
+  margin: 10px;
+  width: 80%;
+}
+
+.header-navbar-desktop {
+  display: none;
+}
+
+/* Fin de la sección 1 del header, también hay estilos para el header en las medias de 768 y 1280 */
+
+/* Fin del header (Alan) */
+
+/* Media queries */
+
+@media (min-width: 768px) {
+
+    /* Header (Alan) */
+
+  .container-cart-mobile {
+    display: none;
+  }
+
+  .container-hamburguer-menu {
+    width: 116px;
+  }
+
+  .container-cart-tablet {
+    display: flex;
+    align-self: center;
+    margin: 10px;
+    width: 116px;
+  }
+
+  .fa-search {
+    color: #ffffff;
+  }
+
+  .link-cart-tablet {
+    text-decoration: none;
+    padding: 0 10px;
+    border-left: 1px solid #5a8da9;
+  }
+
+  .link-cart-tablet span,
+  i {
+    color: #5a8da9;
+  }
+
+  .total {
+    color: #5a8da9;
+    padding: 0 10px;
+  }
+
+  /* Fin del header (Alan) */
+
+}
+
+@media (min-width: 1280px) {
+
+    /* Header (Alan) */
+
+  .container-cart-tablet {
+    display: none;
+  }
+
+  .container-hamburguer-menu {
+    display: none;
+  }
+
+  .header-search-bar-tablet-mobile {
+    display: none;
+  }
+
+  .header-search-bar-desktop {
+    display: block;
+  }
+
+  .header-user-logo {
+    display: block;
+  }
+
+  .header-navbar-desktop {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header-navbar-desktop a {
+    text-decoration: none;
+    color: #5a8da9;
+    margin: 10px;
+  }
+
+  .header-navbar-desktop a:hover {
+    color: #d48938;
+  }
+
+  .header-navbar-desktop i:hover {
+    color: #d48938;
+  }
+
+  .main-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .header-logo-section {
+    justify-content: space-evenly;
+  }
+
+  .header-user-logo a {
+    text-decoration: none;
+  }
+
+  .header-user-logo a:hover i {
+    color: #d48938;
+  }
+
+  .anchor-categories:hover {
+      color: #d48938;
+  }
+
+  .anchor-categories:hover i {
+      color: #d48938;
+  }
+
+  .container-header-navbar-desktop {
+      margin-left: 40px;
+  }
+
+  .container-header-cart {
+      display: flex;
+      justify-content: space-between;
+      margin-right: 40px;
+  }
+
+  .container-header-cart div span {
+      color: #5a8da9;
+      margin: 10px;
+  }
+
+  .header-amount-products:hover {
+      color: #d48938;
+  }
+
+  .anchor-cart-products:hover span {
+      color: #d48938;
+  }
+
+  .anchor-cart-products:hover i {
+      color: #d48938;
+  }
+
+  .total-cart {
+    border-right: #5a8da9 solid 1px;
+  }
+
+  /* Fin del header (Alan) */
+
+}
+
+
+
+/* Fin medias */

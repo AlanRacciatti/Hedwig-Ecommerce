@@ -6,16 +6,113 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi carrito</title>
+    <title>Hedwig</title>
+
+    <script src="https://kit.fontawesome.com/8bd2ba961f.js" crossorigin="anonymous"></script>   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/styles.css">
-    
+
 </head>
 
 <body>
 
+    <header class="main-header">
 
+        <section class="header-logo-section">
+
+            <div class="container-hamburguer-menu">
+
+                <a href="#"><i class="fas fa-bars" id="hamburguer-menu"></i></a>
+
+            </div>
+
+            <div class="container-logo">
+                
+                <a href="#"><img id="logo-hedwig-header" src="/img/LOGO.png" alt="Logo Hedwig"></a>
+
+            </div>
+
+            <div class="container-cart-mobile">
+
+                <div id="header-amount-products-mobile-desktop">3</div>
+                <a href="#"><i class="fas fa-shopping-cart" id="cart-header"></i></a>
+
+            </div>
+            
+            <div class="container-cart-tablet">
+
+                <span class="total">$4000</span>
+                <a class="link-cart-tablet" href="#">
+
+                    <span>3</span>
+                    <i class="fas fa-shopping-cart"></i>
+
+                </a>
+
+            </div>
+
+            <div class="header-search-bar-desktop">
+
+                <form class="search-bar-desktop">
+
+                    <input type="text" placeholder="Buscar libros, autores, géneros..." name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
     
+                </form>
+
+            </div>
+
+            <div class="header-user-logo">
+
+                <a href="#"><i class="fas fa-user"></i> <i class="fas fa-caret-down"></i></a>
+
+            </div>
+
+        </section>
+
+        <section class="header-search-bar-tablet-mobile">
+
+            <form class="search-bar-tablet-mobile">
+
+                <input type="text" placeholder="Buscar libros, autores, géneros..." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+
+            </form>
+
+        </section>
+
+        <section class="header-navbar-desktop">
+
+            <div class="container-header-navbar-desktop">
+
+                <a href="#" class="anchor-categories">Categoría <i class="fas fa-caret-down"></i></a>
+                <a href="#">Best sellers</a>
+                <a href="#">Novedades</a>
+                <a href="#">Ofertas</a>
+
+            </div>
+
+            <div class="container-header-cart">
+
+                <div class="total-cart">
+
+                    <span>$4000</span>
+
+                </div>
+
+                <div>
+
+                    <a href="#" class="anchor-cart-products"><span class="header-amount-products">3 <i class="fas fa-shopping-cart"></i></span></a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </header>
+
 </body>
 
 </html>
