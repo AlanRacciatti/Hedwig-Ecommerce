@@ -263,10 +263,18 @@ form.search-bar-desktop button:hover {
 
   .footer-navbar-item {
     width: 25%;
-    flex-grow: 1;
     border-top: none;
-    margin: 10px;
-    align-self:flex-start;
+    padding: 10px;
+    align-self:stretch;
+  }
+
+  .border-right {
+    border-right: #5a8da9 1px solid;
+  }
+
+  .border-left-and-right {
+    border-right: #5a8da9 1px solid;
+    border-left: #5a8da9 1px solid;
   }
 
   /* Fin del footer */
