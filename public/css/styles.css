@@ -475,3 +475,94 @@ form.search-bar-desktop button:hover {
 .libros-sugeridos{
   margin: 2%;
 }
+
+/* Inicio Main Home (alex)*/
+
+main {
+  background-color: #ebebeb;
+}
+
+.container {
+display: flex;
+flex-flow: row wrap;
+padding: 25px;
+}
+
+.main-title-home {
+
+display: block;
+width: 100%;
+text-align: center;
+background-color: #212026;
+color: #d48938;
+}
+
+.card {
+margin: 10px auto;
+width: 12rem;
+background-color: #212026;
+transition: box-shadow 450ms;
+}
+
+.card:hover {
+box-shadow: 3px 3px 6px 3px #5a8da9;
+}
+
+.card-img-top {
+  height: 230px;
+  width: 190px;
+}
+
+.card-body {
+text-align: center;
+color: #ffffff
+;
+}
+
+.card-title {
+  color: #d48a38;
+  font-size: 3em;
+}
+
+.precio-home {
+color: #39b54a;
+font-size: 2em;
+}
+
+#contenedor-generos {
+  display: flex;
+}
+
+#titulo-generos {
+  display: block;
+  margin: auto;
+  border: 2px solid #5a8da9;
+  text-align: center;
+  width: 100%;
+  background-color: #212026;
+  color: #5a8da9;
+}
+
+.fila-generos {
+display: flex;
+flex-flow: row wrap;
+width: 100%;
+margin: auto;
+}
+
+.col {
+display: flex;
+flex-flow: row wrap;
+border: 2px solid #5a8da9;
+align-content: center;
+text-align: center;
+justify-content: center;
+text-decoration: none;
+margin: 10px 4px 4px 4px;
+background-color: #212026;
+transition: background-color 450ms;
+}
+
+.col:hover {
+background-color: #d48a38;
+}
