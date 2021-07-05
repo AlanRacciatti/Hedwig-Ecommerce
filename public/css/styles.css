@@ -635,3 +635,215 @@ transition: background-color 450ms;
 .col:hover {
 background-color: #d48a38;
 }
+
+
+
+
+/*Login, Lucia*/
+
+.form-title {
+  color: #212026;
+  font-size: 1.7em;
+  text-align: center;
+  font-style: normal;
+  font-weight: bold;
+  
+}
+
+ .login2{
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+  padding:30px;
+  background-color: #d48438 ;
+  border-radius: 15px;
+  height: 30%;
+  width: 50%;
+  max-width: 50%;
+  margin: auto;
+  margin-top:20px;
+  margin-bottom: 20px;
+  font-size: 15px;
+   
+
+
+ }
+
+.buttonlogin{
+ 
+  background-color: #212026;
+			color: #638da9;
+			border:0;
+			border-radius: 15px;
+			display: block;
+			margin: 10px auto; 
+			padding: 15px 20px;
+			width: 100%;
+			font-size: 13px;
+			font-weight: bold;
+			cursor: pointer;
+			opacity: 1;
+			visibility: visible;
+      font-style: italic;
+			
+		
+}
+.singup{
+  background-color: #638da9;
+  color: black;
+ border:0;
+  border-radius: 15px;
+  display: block;
+ margin:20px auto;
+  padding: 10px;
+  width: 100%;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0.6;
+  visibility: visible;
+  font-style: italic;
+  text-decoration: none;
+   
+}
+
+
+
+a.buttonx{
+
+  margin-right: 20px;
+  text-decoration: none;
+  color: #212026;
+  text-align: center;
+  padding-left: 20px;
+  font-size: 15px;
+
+}
+.buttonsingup{
+  display: block;
+  margin-right: 20px;
+  text-align: center;
+  justify-items: center;
+  font-size: 15px;
+
+}
+
+.preg-singup{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  
+
+}
+
+.passwordlogin{
+  padding:10px;
+  
+}
+
+.preg-olvi{
+padding-right: 40px;
+padding-top: 20px;
+font-size: 15px;
+}
+
+
+#password{
+  border-radius: 10px;
+  text-align: justify;
+  background-color: #f6f8f8;
+  padding: 8px;
+  position: relative;
+  font-size: 15px;
+}
+
+
+.emaillogin{
+  padding:10px;
+} 
+#email{
+  border-radius: 10px;
+  text-align: justify;
+  background-color: #f6f8f8;
+  padding: 8px;
+  position: relative;
+  font-size: 15px;
+}
+
+.invalid-feedback {
+  display: none;
+  width: 100%;
+  margin-top: .25rem;
+  font-size: 80%;
+  color: #c00;
+}
+ #name{
+  border-radius: 10px;
+  text-align: justify;
+  background-color: #f6f8f8;
+  padding: 8px;
+  position: relative;
+  font-size: 15px;
+ }
+
+
+/*fin login*/
+
+/*Register, Lucia*/
+.form-singup{
+  padding:15px;
+}
+
+.singup1{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ padding: 20px;
+ background-color: #d48438 ;
+ border-radius: 15px;
+ width: 40%;
+ max-width: 50%;
+ margin: auto;
+ height: 40%;
+}
+.nombrelogin{
+  padding:10px;
+  font-size: 15px;
+}
+
+label {
+  display: block;
+  font: 1rem 'Fira Sans', sans-serif;
+  margin: .4rem 0;
+}
+
+h5{
+  padding:5px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.fechanacimiento{
+    
+    border-radius: 10px;
+    text-align: justify;
+    background-color: #f6f8f8;
+    padding: 10px;
+    position: center;
+    border: 1px solid black ;
+    max-width: 100%;   
+    margin: 10px;
+    width: 50%;
+    color:#808080;
+
+    
+  }
+
+  #start{
+    color:#808080;
+  }
+/*fin register*/
