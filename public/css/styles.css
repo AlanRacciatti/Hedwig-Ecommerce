@@ -740,8 +740,8 @@ background-color: #d48a38;
 
 .buttonlogin{
  
-  background-color: #212026;
-			color: #638da9;
+  background-color: #638da9;
+			color: #ededed;
 			border:0;
 			border-radius: 15px;
 			display: block;
@@ -754,12 +754,16 @@ background-color: #d48a38;
 			opacity: 1;
 			visibility: visible;
       font-style: italic;
-			
+			transition: box-shadow 450ms;
 		
 }
+.buttonlogin:hover{
+  background-color:  #212026;
+  
+}
 .singup{
-  background-color: #638da9;
-  color: black;
+  background-color: #212026;
+  color: #ededed;
  border:0;
   border-radius: 15px;
   display: block;
@@ -769,11 +773,14 @@ background-color: #d48a38;
   font-size: 13px;
   font-weight: bold;
   cursor: pointer;
-  opacity: 0.6;
   visibility: visible;
   font-style: italic;
   text-decoration: none;
    
+}
+.singup:hover{
+  background-color:  #638da9;
+  color: #212026;
 }
 
 
@@ -782,10 +789,10 @@ a.buttonx{
 
   margin-right: 20px;
   text-decoration: none;
-  color: #212026;
+  color: #ededed;
   text-align: center;
   padding-left: 20px;
-  font-size: 15px;
+  font-size: 14px;
 
 }
 .buttonsingup{
@@ -812,7 +819,7 @@ a.buttonx{
 
 .preg-olvi{
 padding-right: 40px;
-padding-top: 20px;
+padding-top: 30px;
 font-size: 15px;
 }
 
@@ -897,7 +904,7 @@ h5{
 .fechanacimiento{
     
     border-radius: 10px;
-    text-align: justify;
+    text-align: center;
     background-color: #f6f8f8;
     padding: 10px;
     position: center;
