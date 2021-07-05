@@ -700,8 +700,11 @@ margin: auto;
 background-color: #d48a38;
 }
 
+.img-fluid {
+  padding-top: 10px;
+}
 
-
+/* Fin del home (alex)
 
 /*Login, Lucia*/
 
