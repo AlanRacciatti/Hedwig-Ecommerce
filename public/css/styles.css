@@ -620,16 +620,17 @@ margin: auto;
 }
 
 .col {
-display: flex;
-flex-flow: row wrap;
-border: 2px solid #5a8da9;
-align-content: center;
-text-align: center;
-justify-content: center;
-text-decoration: none;
-margin: 10px 4px 4px 4px;
-background-color: #212026;
-transition: background-color 450ms;
+  display: flex;
+  flex-flow: row wrap;
+  border: 2px solid #5a8da9;
+  align-content: flex-end;
+  text-align: center;
+  justify-content: center;
+  text-decoration: none;
+  margin: 10px 4px 4px 4px;
+  background-color: #212026;
+  padding-bottom: 10px;
+  transition: background-color 450ms;
 }
 
 .col:hover {
