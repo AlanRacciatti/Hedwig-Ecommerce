@@ -21,9 +21,21 @@
 
         <section class="header-logo-section">
 
-            <div class="container-hamburguer-menu">
+            <div class="btn-group container-hamburguer-menu">
 
-                <a href="#"><i class="fas fa-bars" id="hamburguer-menu"></i></a>
+                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i id="hamburguer-menu" class="fas fa-bars"></i></button>
+
+                <ul class="dropdown-menu">
+
+                    <li><a class="dropdown-item" href="#">Categorías</a></li>
+                    <li><a class="dropdown-item" href="#">Best sellers</a></li>
+                    <li><a class="dropdown-item" href="#">Novedades</a></li>
+                    <li><a class="dropdown-item" href="#">Ofertas</a></li>
+                    <li><a class="dropdown-item" href="#">Configuración</a></li>
+                    <hr class="dropdown-divider">
+                    <li><a class="dropdown-item sign-out" href="#">Cerrar sesión</a></li>
+
+                </ul>
 
             </div>
 
@@ -63,11 +75,23 @@
 
             </div>
 
-            <div class="header-user-logo">
+            <div class="btn-group header-user-logo">
 
-                <a href="#"><i class="fas fa-user"></i> <i class="fas fa-caret-down"></i></a>
+                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user"></i></button>
+
+                <ul class="dropdown-menu">
+
+                    <li><a class="dropdown-item" href="#">Mi carrito</a></li>
+                    <li><a class="dropdown-item" href="#">Historial</a></li>
+                    <li><a class="dropdown-item" href="#">Configuración</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item sign-out" href="#">Cerrar sesión</a></li>
+
+                </ul>
 
             </div>
+
+        </section>
 
         </section>
 
@@ -82,11 +106,82 @@
 
         </section>
 
-        <section class="header-navbar-desktop">
+        <section class="header-navbar-desktop dropdown">
 
             <div class="container-header-navbar-desktop">
 
-                <a href="#" class="anchor-categories">Categoría <i class="fas fa-caret-down"></i></a>
+                <a href="#" class="anchor-categories btn dropdown-toggle" role="button" id="dropdown-categories" data-bs-toggle="dropdown" aria-expanded="false">Categorías</a>
+
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+
+                    <li>
+
+                        <ul class="dropdown-menu-categories">
+
+                            <li class="dropdown-item">
+
+                                <b class="category-title">Populares</b>
+                                <hr class="dropdown-divider">
+                                <ul>
+                                    <li class="dropdown-item"><a href="#"> Acción </a></li>
+                                    <li class="dropdown-item"><a href="#"> Aventura </a></li>
+                                    <li class="dropdown-item"><a href="#"> Ciencia ficción </a></li>
+                                    <li class="dropdown-item"><a href="#"> Fantasía </a></li>
+                                    <li class="dropdown-item"><a href="#"> Terror </a></li>
+                                </ul>
+
+                            </li>
+                            
+                            <li class="dropdown-item">
+
+                                <b class="category-title">Más géneros</b>
+                                <hr class="dropdown-divider">
+                                <ul>
+                                    <li class="dropdown-item"><a href="#"> Ciencia y geografía </a></li>
+                                    <li class="dropdown-item"><a href="#"> Desarrollo personal </a></li>
+                                    <li class="dropdown-item"><a href="#"> Negocios y finanzas </a></li>
+                                    <li class="dropdown-item"><a href="#"> Psicología </a></li>
+                                    <li class="dropdown-item"><a href="#"> Religión </a></li>
+                                    <li class="dropdown-item"><a href="#"> Salud </a></li>
+                                    <li class="dropdown-item"><a href="#"> Tecnología </a></li>
+                                    <li class="dropdown-item"><a href="#"> Ver todos los géneros... </a></li>
+                                </ul>
+
+                            </li>
+
+                            <li class="dropdown-item">
+
+                                <b class="category-title">Autores</b>
+                                <hr class="dropdown-divider">
+                                <ul>
+                                    <li class="dropdown-item"><a href="#"> Agatha Christie </a></li>
+                                    <li class="dropdown-item"><a href="#"> Edgar Allan Poe </a></li>
+                                    <li class="dropdown-item"><a href="#"> Franz Kafka </a></li>
+                                    <li class="dropdown-item"><a href="#"> J.K. Rowling </a></li>
+                                    <li class="dropdown-item"><a href="#"> Stephen King </a></li>
+                                </ul>
+
+                            </li>
+                            
+                            <li class="dropdown-item">
+
+                                <b class="category-title">Sagas</b>
+                                <hr class="dropdown-divider">
+                                <ul>
+                                    <li class="dropdown-item"><a href="#"> Harry Potter </a></li>
+                                    <li class="dropdown-item"><a href="#"> Maze runner </a></li>
+                                    <li class="dropdown-item"><a href="#"> Game of Thrones </a></li>
+                                    <li class="dropdown-item"><a href="#"> Star wars </a></li>
+                                </ul>
+
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+                </ul>
+
                 <a href="#">Best sellers</a>
                 <a href="#">Novedades</a>
                 <a href="#">Ofertas</a>
@@ -214,7 +309,7 @@
 
 
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        
     </main>
 
 <!--Fin del main-->
@@ -317,6 +412,8 @@
         </section>
 
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>
 

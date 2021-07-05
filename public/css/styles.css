@@ -28,6 +28,10 @@
   align-self: center;
 }
 
+#check-hamburguer-menu {
+  display: none;
+}
+
 #hamburguer-menu {
   color: #5a8da9;
   font-size: 1.5em;
@@ -36,8 +40,9 @@
 
 #logo-hedwig-header {
   padding-top: 20px;
-  width: 100px;
+  width: 80px;
   align-self: center;
+  margin-bottom: 10px;
 }
 
 .container-logo {
@@ -51,6 +56,18 @@
 
 .container-cart-tablet {
   display: none;
+}
+
+.container-hamburguer-menu button.btn.dropdown-toggle::after {
+  display: none;
+}
+
+.container-hamburguer-menu button.btn.dropdown-toggle {
+  padding: 0;
+}
+
+.sign-out {
+  color: #E91D26;
 }
 
 #header-amount-products-mobile-desktop {
@@ -133,6 +150,26 @@ form.search-bar-desktop button:hover {
 
 .header-navbar-desktop {
   display: none;
+}
+
+#check-user {
+  display: none;
+}
+
+label[for='check-user'] {
+  cursor: pointer;
+}
+
+.btn-group button i, .dropdown-toggle {
+  color: #5a8da9;
+}
+
+.dropdown-toggle:hover {
+  color:#5a8da9;
+}
+
+#check-user:checked + label i {
+  color: #d48938;
 }
 
 /* Fin de la sección 1 del header, también hay estilos para el header en las medias de 768 y 1280 */
@@ -291,6 +328,11 @@ form.search-bar-desktop button:hover {
     display: none;
   }
 
+  #hamburguer-menu {
+    position: relative;
+    right: 20%
+  }
+
   .container-hamburguer-menu {
     width: 116px;
   }
@@ -431,6 +473,7 @@ form.search-bar-desktop button:hover {
     display: flex;
     justify-content: space-between;
     margin-right: 40px;
+    align-items: center;
   }
 
   .container-header-cart div span {
@@ -454,7 +497,28 @@ form.search-bar-desktop button:hover {
     border-right: #5a8da9 solid 1px;
   }
 
+  .dropdown-menu-categories {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+
+  .category-title {
+    display: block;
+    text-align: center;
+  }
+
+  .dropdown-menu-categories ul {
+    padding: 0;
+  }
+
   /* Fin del header (Alan) */
+
+  /* Footer */
+
+  #logo-hedwig-header {
+    margin-bottom: 0;
+  }
 }
 
 /* Fin medias */
@@ -515,7 +579,6 @@ form.search-bar-desktop button:hover {
   border: solid 20px #5a8da9
 
 }
-
 
 .caracteristicas{
   margin-top: 15%;
