@@ -527,7 +527,7 @@ background-color: #d48a38;
   align-items: center;
   padding-top:20px;
   padding-bottom: 20px;
-  background-color: #d48438 ;
+  background-color: rgb(235, 147, 63); 
   border-radius: 15px;
   height: 30%;
   width: 40%;
@@ -560,6 +560,7 @@ background-color: #d48a38;
 	visibility: visible;
   font-style: italic;
 	transition: box-shadow 450ms;
+  max-width: 100%;
 		
 }
 .buttonlogin:hover{
@@ -581,6 +582,7 @@ background-color: #d48a38;
   visibility: visible;
   font-style: italic;
   text-decoration: none;
+  max-width: 100%;
    
 }
 .singup:hover{
@@ -598,6 +600,7 @@ a.buttonx{
   text-align: center;
   padding-left: 20px;
   font-size: 14px;
+  max-width: 100%;
 
 }
 .buttonsingup{
@@ -606,6 +609,7 @@ a.buttonx{
   text-align: center;
   justify-items: center;
   font-size: 15px;
+  max-width: 100%;
 
 }
 
@@ -613,12 +617,14 @@ a.buttonx{
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  max-width: 100%;
   
 
 }
 
 .passwordlogin{
   padding:10px;
+  max-width: 100%;
   
 }
 
@@ -626,6 +632,7 @@ a.buttonx{
  padding-right: 40px;
  padding-top: 30px;
  font-size: 15px;
+ max-width: 100%;
 }
 
 
@@ -636,11 +643,14 @@ a.buttonx{
   padding: 8px;
   position: relative;
   font-size: 15px;
+  max-width: 100%;
 }
 
 
 .emaillogin{
   padding:10px;
+  
+  max-width: 100%;
 } 
 #email{
   border-radius: 10px;
@@ -649,6 +659,7 @@ a.buttonx{
   padding: 8px;
   position: relative;
   font-size: 15px;
+  max-width: 100%;
 }
 
 .invalid-feedback {
@@ -665,6 +676,7 @@ a.buttonx{
   padding: 8px;
   position: relative;
   font-size: 15px;
+  max-width: 100%;
  }
 
 
@@ -673,6 +685,7 @@ a.buttonx{
 /*Register, Lucia*/
 .form-singup{
   padding:15px;
+  max-width: 100%;
 }
 
 .singup1{
@@ -681,28 +694,32 @@ a.buttonx{
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background-color: #d48438 ;
+  background-color: rgb(235, 147, 63); 
   border-radius: 15px;
-  width: 30%;
-  max-width: 1000px;
+  width: 40%;
   margin: auto;
-  height: 40%;
+  height: 50%;
+  max-width: 100%;
+  
 }
 .nombrelogin{
   padding:10px;
   font-size: 15px;
+  max-width: 100%;
 }
 
 label {
   display: block;
   font: 1rem 'Fira Sans', sans-serif;
   margin: .3rem 0;
+  max-width: 100%;
 }
 
 h5{
   padding:5px;
   text-align: center;
   font-size: 14px;
+  max-width: 100%;
 }
 
 .fechanacimiento{
@@ -717,10 +734,14 @@ h5{
     margin: 10px;
     width: 50%;
     color:#808080;
+    max-width: 100%;
 
     
   }
+  .fecha-nacimiento{
+    max-width: 100%;
 
+  }
   #start{
     color:#808080;
     max-width: 100%;
