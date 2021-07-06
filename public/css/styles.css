@@ -602,13 +602,10 @@ background-color: #d48a38;
   background-color: rgb(235, 147, 63); 
   border-radius: 15px;
   height: 30%;
-  width: 40%;
-  max-width: 100%;
-  margin: 300px;
-  margin-top:20px;
-  margin-bottom: 20px;
+  width: 90%;
+  max-width: 500px;
+  margin: 15px auto auto auto;
   font-size: 15px;
-   
  }
 
 .buttonlogin{
