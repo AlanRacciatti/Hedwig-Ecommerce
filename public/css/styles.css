@@ -584,6 +584,10 @@ background-color: #d48a38;
 
 /*Login, Lucia*/
 
+.login {
+  padding: 10px 0;
+}
+
 .form-title {
   color: #212026;
   font-size: 1.7em;
@@ -604,7 +608,7 @@ background-color: #d48a38;
   height: 30%;
   width: 90%;
   max-width: 500px;
-  margin: 15px auto auto auto;
+  margin: auto;
   font-size: 15px;
  }
 
@@ -863,9 +867,8 @@ h5{
   }
 
   /* Fin del header (Alan) */
- /* Detalle*/
- 
 
+ /* Detalle*/
 
 .detalle-del-producto{
   align-items: center;
