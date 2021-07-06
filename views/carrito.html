@@ -19,6 +19,8 @@
 
     <header class="main-header">
 
+        <div class="max-width">
+
         <section class="header-logo-section">
 
             <div class="btn-group container-hamburguer-menu">
@@ -212,38 +214,48 @@
 
         </section>
 
+        </div>
+
     </header>
 
     <main>
+
+        <div class="max-width">
+
         <div class = "titulo-entrada-carrito">
-            <h2>Mi carrito</h2>
-            <div>
-                <i class="fas fa-shopping-cart"></i> <span>Tienes una cantidad de 3 articulos con un total de $4000 en tu carrito</span>
+            <p><strong> Tu carrito </strong></p>
+
+            <hr class="dropdown-divider">
+
+            <div class="container-entrada-carrito">
+                <i class="fas fa-shopping-cart"></i> 
+                <span>Tienes una cantidad de 3 articulos con un total de <b> $4000 </b> en tu carrito</span>
             </div>
-            <br>
-            <p>Detalles de tu carrito</p>
+
+            <hr class="dropdown-divider">
+
+            
         </div>    
-        <ul>
+        <ul class="lista-articulos">
             <li class = "elemento-carrito">
+
                 <div class = "container-info-1">
+
                     <div>
                     <img class = "libro-guion-carrito" src = "/img/Portada-libro.jpg">
                     </div>
+
                     <div class = "info-producto">  
-                        <div>
-                            <span class = "carrito-titulo-libro">Titulo</span>  
-                        </div>
-                        <div>
+                            <h3 class = "carrito-titulo-libro">Titulo</h3>  
                             <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                            <div><span>
-                                Categoria
-                            </span></div>
-                        </div>
+                            <p class="precio-home">$Precio</p>
+                            <p>Categoria</p>
+                            <p>Autor</p>
                     </div>
+
                 </div>        
                 <div class = "container-info-2">
                     <div class = "carrito-cantidad-productos">
-                        <label for = "cantidad-productos">Cantidad</label>
                         <select class="form-select" aria-label="cantidad-productos">
                             <option selected>1</option>
                             <option value="2">2</option>
@@ -253,51 +265,10 @@
                             <option value="6">6</option>
                             <option value="7">7</option>
                             <option value="8">8</option>
-                          </select>
+                        </select>
                     </div>
                     <div>
-                        <span>$1400</span>
-                    </div>
-                    <div>
-                        <button class = "btn btn-danger" >Eliminar</button>
-                    </div>
-
-                    
-                </div>
-            </li>
-            <li class = "elemento-carrito">
-                <div class = "container-info-1">
-                    <div>
-                    <img class = "libro-guion-carrito" src = "/img/Portada-libro.jpg">
-                    </div>
-                    <div class = "info-producto">  
-                        <div>
-                            <span class = "carrito-titulo-libro">Titulo</span>  
-                        </div>
-                        <div>
-                            <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                            <div><span>
-                                Categoria
-                            </span></div>
-                        </div>
-                    </div>
-                </div>        
-                <div class = "container-info-2">
-                    <div class = "carrito-cantidad-productos">
-                        <label for = "cantidad-productos">Cantidad</label>
-                        <select class="form-select" aria-label="cantidad-productos">
-                            <option selected>1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                          </select>
-                    </div>
-                    <div>
-                        <span>$1400</span>
+                        <span class="precio-home">$1400</span>
                     </div>
                     <div>
                         <button class = "btn btn-danger" >Eliminar</button>
@@ -307,25 +278,24 @@
                 </div>
             </li>
             <li class = "elemento-carrito">
+
                 <div class = "container-info-1">
+
                     <div>
                     <img class = "libro-guion-carrito" src = "/img/Portada-libro.jpg">
                     </div>
+
                     <div class = "info-producto">  
-                        <div>
-                            <span class = "carrito-titulo-libro">Titulo</span>  
-                        </div>
-                        <div>
+                            <h3 class = "carrito-titulo-libro">Titulo</h3>  
                             <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                            <div><span>
-                                Categoria
-                            </span></div>
-                        </div>
+                            <p class="precio-home">$Precio</p>
+                            <p>Categoria</p>
+                            <p>Autor</p>
                     </div>
+
                 </div>        
                 <div class = "container-info-2">
                     <div class = "carrito-cantidad-productos">
-                        <label for = "cantidad-productos">Cantidad</label>
                         <select class="form-select" aria-label="cantidad-productos">
                             <option selected>1</option>
                             <option value="2">2</option>
@@ -335,10 +305,10 @@
                             <option value="6">6</option>
                             <option value="7">7</option>
                             <option value="8">8</option>
-                          </select>
+                        </select>
                     </div>
                     <div>
-                        <span>$1400</span>
+                        <span class="precio-home">$1400</span>
                     </div>
                     <div>
                         <button class = "btn btn-danger" >Eliminar</button>
@@ -347,7 +317,51 @@
                     
                 </div>
             </li>
+            <li class = "elemento-carrito">
+
+                <div class = "container-info-1">
+
+                    <div>
+                    <img class = "libro-guion-carrito" src = "/img/Portada-libro.jpg">
+                    </div>
+
+                    <div class = "info-producto">  
+                            <h3 class = "carrito-titulo-libro">Titulo</h3>  
+                            <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                            <p class="precio-home">$Precio</p>
+                            <p>Categoria</p>
+                            <p>Autor</p>
+                    </div>
+
+                </div>        
+                <div class = "container-info-2">
+                    <div class = "carrito-cantidad-productos">
+                        <select class="form-select" aria-label="cantidad-productos">
+                            <option selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                    </div>
+                    <div>
+                        <span class="precio-home">$1400</span>
+                    </div>
+                    <div>
+                        <button class = "btn btn-danger" >Eliminar</button>
+                    </div>
+
+                    
+                </div>
+            </li>
+            
         </ul>
+
+        <hr class="dropdown-divider cart-dropdown">
+
         <div class = "carrito-compra">
             <img class = "logo-carrito" src = "/img/LOGO.png">
             <div>
@@ -356,6 +370,10 @@
                 <button class = "btn btn-info">Comprar </button>
             </div>
         </div>
+
+        <hr class="dropdown-divider cart-dropdown">
+
+
         <section>
             <h4 class= 'libros-interesados'>Libros que tal vez te interesen</h4>
             <p class= 'ubicacion-libros'> 
@@ -367,6 +385,9 @@
         </p>
     
         </section>
+
+        </div>
+
     </main>
 
     <footer class="main-footer">
@@ -402,6 +423,8 @@
             </div>
             
         </section>
+
+        <div class="max-width">
 
         <section class="footer-navbar">
 
@@ -465,6 +488,8 @@
             </ul>
 
         </section>
+
+        </div>
 
     </footer>
 
