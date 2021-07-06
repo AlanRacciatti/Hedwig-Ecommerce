@@ -394,14 +394,18 @@ label[for='check-user'] {
   padding-top: 2%;
 }
 
+.estrellitas{
+  color: orange
+}
+
 .boton-compra{
-  margin-top: 5%;
-  margin-left: 60%;
-  text-align: left;
+  margin-top: 30px;
+ 
+  text-align: center;
   background-color:#d48938;
   border: solid 20px #d48938;
   border-radius: 15px;
-  color: white
+  color: white;
 }
 
 .titulo-libro{
@@ -421,7 +425,6 @@ label[for='check-user'] {
 }
 
 
-
 .boton-compra:hover{
   background-color: #5a8da9;
   border: solid 20px #5a8da9
@@ -429,10 +432,10 @@ label[for='check-user'] {
 }
 
 .caracteristicas{
-  margin-top: 15%;
   margin: 2%;
   display: block;
-  padding:20px;
+  padding: 25px;
+  padding-left: 35px;
   color: #5a8da9;
   background-color: white;
   box-shadow: 0px 0px 5px rgb(100, 100, 100);
@@ -465,9 +468,7 @@ label[for='check-user'] {
 
 }
 
-.boton-compra{
-  margin: 10px
-}
+
 
 
 
@@ -876,6 +877,7 @@ h5{
   margin: 2%;
   padding-left: 15px;
   display:flex;
+  text-align: left;
 }
 
 
