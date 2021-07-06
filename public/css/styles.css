@@ -532,7 +532,7 @@ background-color: #d48a38;
   height: 30%;
   width: 40%;
   max-width: 100%;
-  margin: auto;
+  margin: 300px;
   margin-top:20px;
   margin-bottom: 20px;
   font-size: 15px;
@@ -696,7 +696,7 @@ a.buttonx{
 label {
   display: block;
   font: 1rem 'Fira Sans', sans-serif;
-  margin: .4rem 0;
+  margin: .3rem 0;
 }
 
 h5{
@@ -723,6 +723,7 @@ h5{
 
   #start{
     color:#808080;
+    max-width: 100%;
   }
 /*fin register*/
 
