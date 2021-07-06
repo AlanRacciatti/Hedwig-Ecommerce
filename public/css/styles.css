@@ -452,6 +452,7 @@ label[for='check-user'] {
   text-align: center;
   box-sizing: border-box;
   padding-bottom: 5%;
+  margin: 0px;
 }
 .libros-sugeridos{
   margin: 2%;
