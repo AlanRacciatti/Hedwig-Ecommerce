@@ -334,13 +334,14 @@ label[for='check-user'] {
   padding-top: 2%;
 }
 
-.detalle-del-producto{
-  align-items: center;
-  background-color: white;
-  box-shadow: 0px 0px 5px rgb(100, 100, 100);
-  margin: 2%;
-  padding-left: 15px;
-  display:flex;
+.boton-compra{
+  margin-top: 5%;
+  margin-left: 60%;
+  text-align: left;
+  background-color:#d48938;
+  border: solid 20px #d48938;
+  border-radius: 15px;
+  color: white
 }
 
 .titulo-libro{
@@ -359,15 +360,7 @@ label[for='check-user'] {
   padding: 2%;
 }
 
-.boton-compra{
-  margin-top: 5%;
-  margin-left: 70%;
-  text-align: left;
-  background-color:#d48938;
-  border: solid 20px #d48938;
-  border-radius: 15px;
-  color: white
-}
+
 
 .boton-compra:hover{
   background-color: #5a8da9;
@@ -400,6 +393,23 @@ label[for='check-user'] {
 .libros-sugeridos{
   margin: 2%;
 }
+
+.detalle-del-producto{
+  background-color: white;
+  box-shadow: 0px 0px 5px rgb(100, 100, 100);
+  margin: 2%;
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+
+}
+
+.boton-compra{
+  margin: 10px
+}
+
+
 
 /* Inicio Main Home (alex)*/
 
@@ -757,6 +767,19 @@ h5{
   }
 
   /* Fin del header (Alan) */
+ /* Detalle*/
+ 
+
+
+.detalle-del-producto{
+  align-items: center;
+  background-color: white;
+  box-shadow: 0px 0px 5px rgb(100, 100, 100);
+  margin: 2%;
+  padding-left: 15px;
+  display:flex;
+}
+
 
   /* Inicio carrito */
 
@@ -785,6 +808,8 @@ h5{
   }
 
   /* Fin del footer */
+
+  
 
 }
 
