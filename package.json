@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/AlanRacciatti/Grupo4-DH#readme",
   "devDependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
   },
   "engines": {
     "node": "8.9.3"
