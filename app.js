@@ -7,7 +7,7 @@ const path = require('path');
 
 app.use("/", productsRoutes);
 
-app.use("/users", usersRoutes);
+app.use("/", usersRoutes);
 
 app.use(express.static(path.join(__dirname, './public')));
 

@@ -1,14 +1,14 @@
 const controladorProductos = {
     index: (req, res) => {
-        res.render("/products/index");
+        res.render("./products/index");
     },
 
     detalles: (req, res) => {
-        res.render("detalles");
+        res.render("./products/detalles");
     },
 
     carrito: (req, res) => {
-        res.render("carrito");
+        res.render("./products/carrito");
     }
 }
 
