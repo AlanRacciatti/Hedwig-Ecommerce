@@ -4,7 +4,7 @@
 
 <head>
 
-    <title>Carrito</title>
+    <title>Agregar producto</title>
 
     <!-- Head -->
     <%- include("../partials/head") %>
@@ -21,10 +21,99 @@
     <!-- Fin del header -->
 
 <main>
+<h1>Agregar Producto</h1>
+<form action="/agregarProducto" method="POST">
+    <fieldset>
+
+<div class="fotos-productos">
+
+<div class="foto">
+    <label><ion-icon  name = "camera-outline"> </ion-icon> </label>
+    <input type="file" name="agregaproducto" acept="image/jpg,image/jpeg,image/png,image/webp">
+</div>
+<div class="foto">
+    <label><ion-icon  name = "camera-outline"> </ion-icon> </label>
+    <input type="file" name="agregaproducto" acept="image/jpg,image/jpeg,image/png,image/webp">
+</div>
+<div class="foto">
+    <label><ion-icon  name = "camera-outline"> </ion-icon> </label>
+    <input type="file" name="agregaproducto" acept="image/jpg,image/jpeg,image/png,image/webp">
+</div>
+<div class="foto">
+    <label for= "agregaproducto"><ion-icon  name = "camera-outline"> </ion-icon> </label>
+    <input type="file" id="agregaproducto" acept="image/jpg,image/jpeg,image/png,image/webp">
+</div>
+</div>
+
+<div class="caracteristicas-producto">
+    <div class="nombre-producto">
+        <label for="name">Nombre del producto</label>
+        <input type="text" name= "name" id= "name" autofocus= 1 placeholder="Nombre" required> 
+    </div>
+    <div class="genero-producto">
+       Categoria del producto 
+        <select name="genero-producto">
+            <option value="1">Terror</option>
+            <option value="2">Ciencia ficcion</option>
+            <option value="3">Fantasia</option>
+            <option value="4">Policiales</option>
+          </select>
+    </div>
+    <div class="descripcion-producto">
+        <label>Descripcion del producto</label>
+        <textarea name="texto" rows="4" cols="40" placeholder="Escribi  tu descripcion"></textarea>
+    </div>
+
+</div>
+</fieldset>
+
+<fieldset> 
+<div class="precio-producto">
+    <div class="precio-original">
+        Precio:
+        <input type="number" name="numero" step="any" placeholder="$" required>
+    </div>
+    <div class="precio-oferta">
+        Precio Oferta (opcional):
+        <input type="number" name="numero" step="any" placeholder="$">
+    </div>
+    <div class="stock-producto">
+        Stock (opcional):
+        <input type="number" name="numero" step="1" placeholder="∞">
+    </div>
+</div>
+</fieldset>
+
+<fieldset> 
+    <div class="dimension-producto">
+        <h3>Dimensiones y peso</h3>
+        <h5>Las dimensiones y el peso son importantes para que se pueda calcular el costo del envíon Debes ingresar las dimensiones del paquete o caja del producto (individualmente).</h5>
+        <div class="alto-producto">
+            <label for="alto">Alto</label>
+            <input id="alto" type="number" name="numero" step="1" placeholder="10"> "cm"
+        </div>
+        <div class="ancho-producto">
+            <label for="ancho">Ancho</label>
+            <input id="ancho" type="number" name="numero" step="1" placeholder="10"> "cm"
+        </div>
+        <div class="peso-producto">
+            <label  for="peso">Peso</label>
+            <input id="peso" type="number" name="numero" step="1" placeholder="0.5"> "kg"
+        </div>
+    </div>
+</fieldset>
+
+
+
+</form>
 
 </main>
 
- <!-- Footer -->
+<script  type = "module"  src = "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"> </script> 
+
+<script  nomodule  src = "https: // unpkg .com / ionicons @ 5.5.2 / dist / ionicons / ionicons.js "> </script>
+ 
+<!-- Footer -->
 
  <%- include("../partials/footer") %>
 

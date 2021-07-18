@@ -9,4 +9,8 @@ router.get("/detalles", productsController.detalles);
 
 router.get("/carrito", productsController.carrito);
 
+router.get("/agregarProducto", productsController.agregarProducto);
+
+router.get("/editarProducto", productsController.editarProducto);
+
 module.exports = router;
