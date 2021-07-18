@@ -544,7 +544,7 @@ background-color: #d48a38;
   height: 30%;
   width: 40%;
   max-width: 100%;
-  margin: 300px;
+  margin: auto;
   margin-top:20px;
   margin-bottom: 20px;
   font-size: 15px;
@@ -569,6 +569,7 @@ background-color: #d48a38;
   font-style: italic;
 	transition: box-shadow 450ms;
   max-width: 100%;
+
 		
 }
 .buttonlogin:hover{
