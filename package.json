@@ -4,7 +4,8 @@
   "description": "Un sitio web donde podés conseguir los últimos estrenos, con entrega a domicilio cómoda y desde tu casa.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,13 @@
   },
   "homepage": "https://github.com/AlanRacciatti/Grupo4-DH#readme",
   "devDependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
+  },
+  "engines": {
+    "node": "8.9.3"
+  },
+  "dependencies": {
+    "ejs": "^3.1.6"
   }
 }

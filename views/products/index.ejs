@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    
+    <title>Hedwig</title>
+
+    <!-- Head -->
+    <%- include("../partials/head") %>
+    <!-- Fin del head -->
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <%- include('../partials/header') %>
+    
+    <!-- Fin del header -->
+
+    <!--Inicio del main-->
+
+    <main>
+        <!--Carrousel-->
+
+        <section id="carouselExampleIndicators" class="container-md carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="4000">
+                <img src="/img/banner-stephen-king.jpg" class="d-block w-100" alt="stephen-king-despues">
+              </div>
+              <div class="carousel-item" data-bs-interval="4000">
+                <img src="/img/banner-harry-potter.jpg" class="d-block w-100" alt="harry-potter-collection">
+              </div>
+              <div class="carousel-item" data-bs-interval="4000">
+                <img src="/img/banner-facundo-manes.jpg" class="d-block w-100" alt="facundo-manes-ser-humano">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </section>
+
+        <!--Fin carrousel-->
+        <!--Catalogo-->
+
+        <section class="container">
+            <div class="main-title-home">
+                <h1>Nuestro catálogo</h1>
+            </div>
+            <a href="/detalles" class="card">
+                <img src="/img/Portada-libro.jpg" class="card-img-top" alt="portada-libro">
+                <h5 class="card-title contenido-carta-articulo titulo-articulo-home">Título</h5>
+                <p class="card-text contenido-carta-articulo precio-home">$precio</p>
+                <p class="card-text contenido-carta-articulo valoracion-home">Valoración: <div class="valoracion-estrellas-home"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></div>  </p> 
+            </a>
+            <a href="/detalles" class="card">
+                <img src="/img/Portada-libro.jpg" class="card-img-top" alt="portada-libro">
+                <h5 class="card-title contenido-carta-articulo titulo-articulo-home">Título</h5>
+                <p class="card-text contenido-carta-articulo precio-home">$precio</p>
+                <p class="card-text contenido-carta-articulo valoracion-home">Valoración: <div class="valoracion-estrellas-home"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></div>  </p> 
+            </a>
+            <a href="/detalles" class="card">
+                <img src="/img/Portada-libro.jpg" class="card-img-top" alt="portada-libro">
+                <h5 class="card-title contenido-carta-articulo titulo-articulo-home">Título</h5>
+                <p class="card-text contenido-carta-articulo precio-home">$precio</p>
+                <p class="card-text contenido-carta-articulo valoracion-home">Valoración: <div class="valoracion-estrellas-home"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></div>  </p> 
+            </a>
+            <a href="/detalles" class="card">
+                <img src="/img/Portada-libro.jpg" class="card-img-top" alt="portada-libro">
+                <h5 class="card-title contenido-carta-articulo titulo-articulo-home">Título</h5>
+                <p class="card-text contenido-carta-articulo precio-home">$precio</p>
+                <p class="card-text contenido-carta-articulo valoracion-home">Valoración: <div class="valoracion-estrellas-home"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></div>  </p> 
+            </a>
+        </section>
+
+        <!--Fin catálogo-->
+        <!--Sección géneros-->
+
+        <section class="container" id="contenedor-generos">
+            <div class="main-title-home">
+                <h2 id="titulo-generos">Descubrí por género</h2>
+            </div>
+            <div class="row fila-generos">
+                <a href="#" class="col">
+                    <img src="/img/terror-logo.jpg" class="img-fluid" alt="terror-isotipo">
+                </a>
+                <a href="#" class="col">
+                    <img src="/img/ciencia-ficcion.jpg" class="img-fluid" alt="ciencia-ficcion-isotipo">
+                </a>
+                <a href="#" class="col">
+                    <img src="/img/fantasia-logo.jpg" class="img-fluid" alt="fantasia-isotipo">
+                </a>
+                <a href="#" class="col">
+                    <img src="/img/policiales-logo.jpg" class="img-fluid" alt="policiales-isotipo">
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+<!--Fin del main-->
+
+<!-- Footer -->
+
+<%- include("../partials/footer") %>
+
+<!-- Fin del footer -->
+
+</body>
+
+</html>

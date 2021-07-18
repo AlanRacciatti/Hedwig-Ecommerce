@@ -30,3 +30,6 @@ Publico objetivo: Para todas las edades, a aquel que tiene el habito de la lectu
 
 ## Tablero de trabajo
 https://trello.com/b/zJ2ELByb/proyecto-libreria
+
+## Link a la página en Heroku
+https://libreria-hedwig.herokuapp.com/

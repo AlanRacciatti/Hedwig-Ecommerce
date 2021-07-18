@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <title>Registrarse</title>
+
+    <!-- Head -->
+    <%- include("../partials/head") %>
+    <!-- Fin del head -->
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <%- include('../partials/header') %>
+    
+    <!-- Fin del header -->
+
+<main>
+
+    <section class= "form-singup">
+       
+
+        <form action= "/register" method="POST">
+        
+            
+         <div class= "singup1">
+            <h2 class="form-title" id="signup">Registrate</h2>
+            <h4>Es rapido y facil!</h4>
+        
+        <div class="emaillogin">
+            <label for="email"></label>
+            <input type="email" name= "email" id= "email" autofocus= 1 placeholder="&#x1F4E7 Correo electronico" aria-required="true" aria-describedat="form-email.error" data-missing-error="El campo es requerido." required>
+            <div class="invalid-feedback" id="form-email-error"></div>
+        </div>
+        
+        <div class="nombrelogin">
+            <label for="name"></label>
+            <input type="text" name= "name" id= "name" autofocus= 1 placeholder="&#x1F464 Nombre y Apellido" required> 
+        </div>
+
+        <div class="fechanacimiento">
+            <label for="start" class="fecha-nacimiento">Fecha de nacimiento:</label>
+
+            <input type="date" id="start" name="trip-start"
+       value="2021-07-06"
+       min="1900-01-01" max="2023-12-31">
+        </div>
+ 
+        <div class="passwordlogin">
+        
+            <label for="name"></label>
+            <input type="password" name= "password" id= "password" autofocus= 1 placeholder=" &#x1F511 Contraseña" required>
+        </div>
+        <div class="passwordlogin">
+        
+            <label for="name"></label>
+            <input type="password" name= "password" id= "password" autofocus= 1 placeholder=" &#x1F511 Repetir contraseña" required>
+        </div>
+         <br>
+        
+         <div>
+            <button type="submit" class="buttonlogin">Crear mi cuenta</button>
+        
+        </div> 
+        
+        <h5>Al registrarte aceptas nuestras condiciones, politicas de datos y politica cookis.</h5>
+        </div>
+        
+        
+        
+        
+        </form>
+        
+             </section>
+
+</main>
+    
+<!-- Footer -->
+
+<%- include("../partials/footer") %>
+
+<!-- Fin del footer -->
+
+</body>
+
+</html>

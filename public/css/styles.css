@@ -7,6 +7,16 @@
   font-family: helvetica;
 }
 
+body {
+  padding-top: 150px;
+}
+
+.max-width {
+  max-width: 1450px;
+  margin: auto;
+  width: 100%;
+}
+
 /* Fin general */
 
 /* Header (Alan) */
@@ -15,6 +25,11 @@
   background-color: #222026;
   width: 100%;
   height: 150px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
 }
 
 /* Seccion 1 del header, incluye carrito, menú y logo en mobile y tablet, y logo, barra de búsqueda y usuario en desktop */
@@ -179,19 +194,62 @@ label[for='check-user'] {
 
  /* Main-carrito */
 
+ 
+ /* Porque bootstrap les pone margin-bottom */
+ 
+ .info-producto p {
+   margin-bottom: 0;
+ }
+ 
+ .info-producto h3 {
+   margin-bottom: 0;
+ }
+ 
+ /* Terminados de sacar los margin-bottom */
+
  .libro-guion-carrito{
-  width: 150px;
+  margin-left: 10px;
+  width: 130px;
+  height: 160px;
 }
 .elemento-carrito{
   list-style: none;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   padding: 15px 0;
-  border-bottom: solid 1px #5a8da9;
 }
 
 .titulo-entrada-carrito{
-  margin-left: 30px;
+  padding: 30px 30px 0 30px;
+}
+
+.lista-articulos .fa-star {
+  color:#FED221;
+  font-size: 12px;
+}
+
+.titulo-entrada-carrito .dropdown-divider, .cart-dropdown {
+  color: #5a8da9;
+}
+
+.container-entrada-carrito {
+  display: flex;
+  align-items: center;
+}
+
+.container-entrada-carrito i {
+  padding: 10px;
+  color:#5a8da9;
+}
+
+
+.container-entrada-carrito span {
+  font-size: 13px;
+}
+
+.container-entrada-carrito span b {
+  color:#d48a38;
 }
 
 .carrito-titulo-libro{
@@ -204,10 +262,19 @@ label[for='check-user'] {
 
 .container-info-2{
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  padding-top: 10px;
 }
+
+.lista-articulos {
+  padding: 0 2rem;
+}
+
+.carrito-cantidad-productos .form-control {
+  width: 40px;
+}
+
 .carrito-compra{
   display: flex;
   justify-content: space-evenly;
@@ -232,9 +299,6 @@ label[for='check-user'] {
 } 
 
 .info-producto{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
   margin-left: 10px;
 
 }
@@ -314,6 +378,10 @@ label[for='check-user'] {
   border-top: #5a8da9 1px solid
 }
 
+.main-footer {
+  background-color: #222026;
+}
+
 .section-navbar {
   padding: 0;
   text-align: center;
@@ -335,14 +403,18 @@ label[for='check-user'] {
   padding-top: 2%;
 }
 
+.estrellitas{
+  color: orange
+}
+
 .boton-compra{
-  margin-top: 5%;
-  margin-left: 60%;
-  text-align: left;
+  margin-top: 30px;
+ 
+  text-align: center;
   background-color:#d48938;
   border: solid 20px #d48938;
   border-radius: 15px;
-  color: white
+  color: white;
 }
 
 .titulo-libro{
@@ -362,7 +434,6 @@ label[for='check-user'] {
 }
 
 
-
 .boton-compra:hover{
   background-color: #5a8da9;
   border: solid 20px #5a8da9
@@ -370,10 +441,10 @@ label[for='check-user'] {
 }
 
 .caracteristicas{
-  margin-top: 15%;
   margin: 2%;
   display: block;
-  padding:20px;
+  padding: 25px;
+  padding-left: 35px;
   color: #5a8da9;
   background-color: white;
   box-shadow: 0px 0px 5px rgb(100, 100, 100);
@@ -390,6 +461,7 @@ label[for='check-user'] {
   text-align: center;
   box-sizing: border-box;
   padding-bottom: 5%;
+  margin: 0px;
 }
 .libros-sugeridos{
   margin: 2%;
@@ -406,9 +478,7 @@ label[for='check-user'] {
 
 }
 
-.boton-compra{
-  margin: 10px
-}
+
 
 
 
@@ -524,6 +594,10 @@ background-color: #d48a38;
 
 /*Login, Lucia*/
 
+.login {
+  padding: 10px 0;
+}
+
 .form-title {
   color: #212026;
   font-size: 1.7em;
@@ -548,7 +622,6 @@ background-color: #d48a38;
   margin-top:20px;
   margin-bottom: 20px;
   font-size: 15px;
-   
  }
 
 .buttonlogin{
@@ -780,6 +853,7 @@ h5{
     align-self: center;
     margin: 10px;
     width: 116px;
+    align-items: center;
   }
 
   .fa-search {
@@ -787,6 +861,8 @@ h5{
   }
 
   .link-cart-tablet {
+    display: flex;
+    align-items: center;
     text-decoration: none;
     padding: 0 10px;
     border-left: 1px solid #5a8da9;
@@ -795,6 +871,7 @@ h5{
   .link-cart-tablet span,
   .link-cart-tablet i {
     color: #5a8da9;
+    margin: 2px;
   }
 
   .total {
@@ -803,9 +880,8 @@ h5{
   }
 
   /* Fin del header (Alan) */
- /* Detalle*/
- 
 
+ /* Detalle*/
 
 .detalle-del-producto{
   align-items: center;
@@ -814,10 +890,20 @@ h5{
   margin: 2%;
   padding-left: 15px;
   display:flex;
+  text-align: left;
 }
 
 
   /* Inicio carrito */
+
+  .elemento-carrito {
+    flex-direction: row;
+  }
+
+  .container-info-2 {
+    flex-direction: column;
+    padding-right: 10px;
+  }
 
   /* Fin carrito*/
 
