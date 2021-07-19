@@ -34,32 +34,29 @@
         
         <div class="emaillogin">
             <label for="email"> </label>
-            <input type="email" name= "email" id= "email" autofocus= 1 placeholder= "@ Correo electronico"  aria-required="true" aria-describedat="form-email.error" data-missing-error="El campo es requerido." required>
+            <input class="input-login" type="email" name= "email" id= "email" autofocus= 1 placeholder= "@ Correo electronico"  aria-required="true" aria-describedat="form-email.error" data-missing-error="El campo es requerido." required>
             <div class="invalid-feedback" id="form-email-error"></div>
         </div>
         
         <div class="nombrelogin">
             <label for="name"></label>
-            <input type="text" name= "name" id= "name" autofocus= 1 placeholder=" Nombre y Apellido" required> 
+            <input class="input-login"  type="text" name= "name" id= "name" autofocus= 1 placeholder=" Nombre y Apellido" required> 
         </div>
 
         <div class="fechanacimiento">
-            <label for="start" class="fecha-nacimiento">Fecha de nacimiento:</label>
-
-            <input type="date" id="start" name="trip-start"
-       value="2021-07-06"
-       min="1900-01-01" max="2023-12-31">
+            <label for="start" class="fecha-nacimiento" class="input-login"  >Fecha de nacimiento:</label>
+            <input class="input-login" type="date" id="start" name="trip-start" value="2021-07-06" min="1900-01-01" max="2023-12-31">
         </div>
  
         <div class="passwordlogin">
         
-            <label for="name"></label>
-            <input type="password" name= "password" id= "password" autofocus= 1 placeholder="Contraseña" required>
+            <label for="password"></label>
+            <input class="input-login" type="password" name= "password" id= "password" autofocus= 1 placeholder="Contraseña" required>
         </div>
         <div class="passwordlogin">
         
-            <label for="name"></label>
-            <input type="password" name= "password" id= "password" autofocus= 1 placeholder="Repetir contraseña" required>
+            <label for="password"></label>
+            <input class="input-login"  type="password" name= "password" id= "password" autofocus= 1 placeholder="Repetir contraseña" required>
         </div>
          <br>
         

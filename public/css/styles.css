@@ -770,7 +770,7 @@ a.buttonx{
   color: #c00;
 }
  #name{
-  border-radius: 10px;
+  border-radius: 5px;
   text-align: justify;
   background-color: #f6f8f8;
   padding: 8px;
@@ -779,7 +779,9 @@ a.buttonx{
   max-width: 100%;
  }
 
-
+.input-login{
+  border: 2px solid blanchedalmond;
+}
 /*fin login*/
 
 /*Register, Lucia*/
@@ -839,7 +841,6 @@ h5{
     background-color: #f6f8f8;
     padding: 10px;
     position: center;
-    border: 1px solid black ;
     max-width: 100%;   
     margin: 10px;
     width: 50%;
@@ -854,6 +855,7 @@ h5{
   #start{
     color:#808080;
     max-width: 100%;
+    border: 2px solid blanchedalmond;
   }
 
   ::placeholder{
