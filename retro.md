@@ -14,3 +14,23 @@
 ## Cosas para no hacer más:
 
 -No dejar cosas para el último día.
+
+
+# Reunión retrospectiva Sprint 3- (18/07/21)
+
+## Cosas para seguir haciendo: 
+
+-Estar al día con los requerimientos de los sprints
+-Comunicarse entre los miembros del grupo a la hora de trabajar
+
+## Cosas para mejorar:
+
+-Mejorar la estética del sitio
+-Dar mayor importancia a las secciones del sitio (novedades, ofertas, etc.)
+-Tener reuniones con más frecuencia
+-Fomentar la participación activa de los miembros del grupo
+
+## Cosas para no hacer más:
+
+-No dejar cosas para el último día. (otra vez)
+-Perder la comunicación con el grupo.
