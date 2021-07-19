@@ -4,7 +4,7 @@
 
 <head>
 
-    <title>Agregar producto</title>
+    <title>Hedwig</title>
 
     <!-- Head -->
     <%- include("../partials/head") %>
@@ -20,104 +20,103 @@
     
     <!-- Fin del header -->
 
-<main>
-<h1>Agregar Producto</h1>
-<form action="/agregarProducto" method="POST">
-    <fieldset>
+    <main class = 'main-detalles'>
 
-<div class="fotos-productos">
+        <h2 class="admin-heading"> Agregar producto </h2>
 
-<div class="foto">
-    <label><ion-icon  name = "camera-outline"> </ion-icon> </label>
-    <input type="file" name="agregaproducto" acept="image/jpg,image/jpeg,image/png,image/webp">
-</div>
-<div class="foto">
-    <label><ion-icon  name = "camera-outline"> </ion-icon> </label>
-    <input type="file" name="agregaproducto" acept="image/jpg,image/jpeg,image/png,image/webp">
-</div>
-<div class="foto">
-    <label><ion-icon  name = "camera-outline"> </ion-icon> </label>
-    <input type="file" name="agregaproducto" acept="image/jpg,image/jpeg,image/png,image/webp">
-</div>
-<div class="foto">
-    <label for= "agregaproducto"><ion-icon  name = "camera-outline"> </ion-icon> </label>
-    <input type="file" id="agregaproducto" acept="image/jpg,image/jpeg,image/png,image/webp">
-</div>
-</div>
-
-<div class="caracteristicas-producto">
-    <div class="nombre-producto">
-        <label for="name">Nombre del producto</label>
-        <input type="text" name= "name" id= "name" autofocus= 1 placeholder="Nombre" required> 
-    </div>
-    <div class="genero-producto">
-       Genero del libro 
-        <select name="genero-producto">
-            <option value="1">Terror</option>
-            <option value="2">Ciencia ficcion</option>
-            <option value="3">Fantasia</option>
-            <option value="4">Policiales</option>
-          </select>
-    </div>
-    <div class="descripcion-producto">
-        <label>Descripcion del producto</label>
-        <textarea name="texto" rows="4" cols="40" placeholder="Escribi  tu descripcion"></textarea>
-    </div>
-
-</div>
-</fieldset>
-
-<fieldset> 
-<div class="precio-producto">
-    <div class="precio-original">
-        Precio:
-        <input type="number" name="numero" step="any" placeholder="$" required>
-    </div>
-    <div class="precio-oferta">
-        Precio Oferta (opcional):
-        <input type="number" name="numero" step="any" placeholder="$">
-    </div>
-    <div class="stock-producto">
-        Stock (opcional):
-        <input type="number" name="numero" step="1" placeholder="∞">
-    </div>
-</div>
-</fieldset>
-
-<fieldset> 
-    <div class="dimension-producto">
-        <h3>Dimensiones y peso</h3>
-        <h5>Las dimensiones y el peso son importantes para que se pueda calcular el costo del envíon Debes ingresar las dimensiones del paquete o caja del producto (individualmente).</h5>
-        <div class="alto-producto">
-            <label for="alto">Alto</label>
-            <input id="alto" type="number" name="numero" step="1" placeholder="10"> "cm"
-        </div>
-        <div class="ancho-producto">
-            <label for="ancho">Ancho</label>
-            <input id="ancho" type="number" name="numero" step="1" placeholder="10"> "cm"
-        </div>
-        <div class="peso-producto">
-            <label  for="peso">Peso</label>
-            <input id="peso" type="number" name="numero" step="1" placeholder="0.5"> "kg"
-        </div>
-    </div>
-</fieldset>
+        <p class='ruta-de-producto'>
+            <span>
+            <a href = "/"> Home > </a><a href = "/">  Sección > </a> <a href = "/">  Género </a>
+            </span>
+            <span>
+            <a href="/editarProducto"><button class="btn boton-compra edit-product" id="small-btn">Editar producto <i class="far fa-edit"></i></button> </a>
+            </span>
+        </p>
 
 
+        
+        <form action="detalles" class="detalle-del-producto" id="form-edit-product">
 
-</form>
+            <div class="container2-edit-product">
 
-</main>
+                <section class="edit-image-section">
 
-<script  type = "module"  src = "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"> </script> 
+                <div class="container-edit-image">
+                    <label for="image-edit-placeholder" class="edit-input-style"> Elegí la imagen para el producto <i class="fas fa-camera edit-camera-icon edit-input-style"></i></label>
+                    
+                    <input type="file" id="image-edit-placeholder" multiple>
+                </div>
+                <div class="edit-precio">
+                    <input class="edit-input-style" type="text" placeholder="Precio">
+                    <br>
+                    <input class="edit-input-style" type="text" placeholder="Oferta (opcional)">
+                </div>
 
-<script  nomodule  src = "https: // unpkg .com / ionicons @ 5.5.2 / dist / ionicons / ionicons.js "> </script>
- 
-<!-- Footer -->
+                </section>
+                
+                <section class= 'fragmento-libro edit-description-section'> 
+                <input class="edit-input-style edit-titulo-libro" type="text" placeholder="Título" />
+                <div>
+                    <label for="edit-valoracion">Valoración:</label>
+                    <select class="edit-input-style" name="genero-producto" class="edit-valoracion-estrellitas" id="edit-valoracion">
+                            <option value="1">1</option>
+                            <option value="1.5">1.5</option>
+                            <option value="2">2</option>
+                            <option value="2.5">2.5</option>
+                            <option value="3">3</option>
+                            <option value="3.5">3.5</option>
+                            <option value="4">4</option>
+                            <option value="4.5">4.5</option>
+                            <option value="5">5</option>
+                    </select>
+                </div>
 
- <%- include("../partials/footer") %>
+                <textarea name="descripcion" class="edit-input-style" cols="90" rows="10" placeholder="Descripcion del producto"></textarea>
 
- <!-- Fin del footer -->
+                </section>
+
+            </div>
+
+            <div class="container3-edit-product">
+            
+                <section class= 'caracteristicas edit-caracteristicas'>
+                    <h4> <b> Características </b></h4>
+                    <ul>
+                        <li><input class="edit-input-style" type="text" placeholder=" Género"></li>
+                        <li><input class="edit-input-style" type="text" placeholder=" Autor"></li>
+                        <li><input class="edit-input-style" type="text" placeholder=" Cantidad de paginas"></li>
+                        <li><input class="edit-input-style" type="text" placeholder=" Editorial"></li>
+                        <li><input class="edit-input-style" type="text" placeholder=" Dimensiones"></li>
+                        <li><input class="edit-input-style" type="text" placeholder=" Peso"></li>
+                        <li><input class="edit-input-style" type="text" placeholder=" Stock"></li>
+                        
+                    </ul>
+                    
+                </section>
+
+            </div>
+
+            <div class="input-prepend">
+                <input type="submit" class='boton-compra' value="Crear producto" id="edit-submit-btn"></input> 
+            </div>
+
+            <br>
+
+            <div>
+                <input type="reset" class='btn edit-btn-reset' value="Restablecer" id="edit-submit-btn"></input> 
+                <a href="/"><button class='btn btn-danger' id="edit-submit-btn">Cancelar</button></a>    
+            </div>
+
+        </form>
+
+
+    </main>
+
+    <!-- Footer -->
+
+    <%- include("../partials/footer") %>
+
+    <!-- Fin del footer -->
 
 </body>
 

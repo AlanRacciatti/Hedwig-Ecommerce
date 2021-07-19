@@ -4,7 +4,7 @@
 
 <head>
 
-    <title>Editar producto</title>
+    <title>Hedwig</title>
 
     <!-- Head -->
     <%- include("../partials/head") %>
@@ -20,15 +20,98 @@
     
     <!-- Fin del header -->
 
-<main>
+    <main class = 'main-detalles'>
 
-</main>
+        <h2 class="admin-heading"> Editar producto </h2>
 
- <!-- Footer -->
+        <p class='ruta-de-producto'>
+            <span>
+            <a href = "/"> Home > </a><a href = "/">  Sección > </a> <a href = "/">  Género </a>
+            </span>
+            <span>
+            <a href="/editarProducto"><button class="btn boton-compra edit-product" id="small-btn">Editar producto <i class="far fa-edit"></i></button> </a>
+            </span>
+        </p>
 
- <%- include("../partials/footer") %>
 
- <!-- Fin del footer -->
+        
+        <form action="detalles" class="detalle-del-producto" id="form-edit-product">
+
+            <div class="container2-edit-product">
+
+                <section class="edit-image-section">
+
+                <div class="container-edit-image">
+                    <label for="image-edit-placeholder" class="edit-input-style"> Elegí la imagen para el producto <i class="fas fa-camera edit-camera-icon edit-input-style"></i></label>
+                    
+                    <input type="file" id="image-edit-placeholder" multiple>
+                </div>
+                <div class="edit-precio">
+                    <input class="edit-input-style" type="text" placeholder="Precio">
+                </div>
+
+                </section>
+                
+                <section class= 'fragmento-libro edit-description-section'> 
+                <input class="edit-input-style edit-titulo-libro" type="text" placeholder="Título" />
+                <div>
+                    <label for="edit-valoracion">Valoración:</label>
+                    <select class="edit-input-style" name="genero-producto" class="edit-valoracion-estrellitas" id="edit-valoracion">
+                            <option value="1">1</option>
+                            <option value="1.5">1.5</option>
+                            <option value="2">2</option>
+                            <option value="2.5">2.5</option>
+                            <option value="3">3</option>
+                            <option value="3.5">3.5</option>
+                            <option value="4">4</option>
+                            <option value="4.5">4.5</option>
+                            <option value="5">5</option>
+                    </select>
+                </div>
+
+                <textarea name="descripcion" class="edit-input-style" cols="90" rows="10" placeholder="Descripcion del producto"></textarea>
+
+                </section>
+
+            </div>
+
+            <div class="container3-edit-product">
+            
+                <section class= 'caracteristicas edit-caracteristicas'>
+                    <h4> <b> Características </b></h4>
+                    <ul>
+                        <li><input class="edit-input-style" type="text" placeholder=" Género"></li>
+                        <li><input class="edit-input-style" type="text" placeholder=" Autor"></li>
+                        <li><input class="edit-input-style" type="text" placeholder=" Cantidad de paginas"></li>
+                        <li><input class="edit-input-style" type="text" placeholder=" Editorial"></li>
+                        
+                    </ul>
+                    
+                </section>
+
+            </div>
+
+            <div class="input-prepend">
+                <input type="submit" class='boton-compra' value="Guardar edición" id="edit-submit-btn"></input> 
+            </div>
+
+            <br>
+
+            <div>
+                <input type="reset" class='btn edit-btn-reset' value="Restablecer" id="edit-submit-btn"></input> 
+                <a href="/"><button class='btn btn-danger' id="edit-submit-btn">Cancelar</button></a>    
+            </div>
+            
+        </form>
+
+
+    </main>
+
+    <!-- Footer -->
+
+    <%- include("../partials/footer") %>
+
+    <!-- Fin del footer -->
 
 </body>
 
