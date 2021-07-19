@@ -4,7 +4,7 @@
 
 <head>
 
-    <title>Hedwig</title>
+    <title>Editar producto</title>
 
     <!-- Head -->
     <%- include("../partials/head") %>
@@ -22,7 +22,9 @@
 
     <main class = 'main-detalles'>
 
-        <h2 class="admin-heading"> Editar producto </h2>
+        <div class="max-width">
+
+        <h2 class="admin-heading"> Agregar producto </h2>
 
         <p class='ruta-de-producto'>
             <span>
@@ -47,14 +49,16 @@
                     <input type="file" id="image-edit-placeholder" multiple>
                 </div>
                 <div class="edit-precio">
-                    <input class="edit-input-style" type="text" placeholder="Precio">
+                    <input class="edit-input-style edit-info-product1" type="text" placeholder="Precio">
+                    <br>
+                    <input class="edit-input-style edit-info-product1" type="text" placeholder="Oferta (opcional)">
                 </div>
 
                 </section>
                 
                 <section class= 'fragmento-libro edit-description-section'> 
-                <input class="edit-input-style edit-titulo-libro" type="text" placeholder="Título" />
-                <div>
+                <input class="edit-input-style edit-titulo-libro edit-info-product1" type="text" placeholder="Título" />
+                <div class="edit-valoracion">
                     <label for="edit-valoracion">Valoración:</label>
                     <select class="edit-input-style" name="genero-producto" class="edit-valoracion-estrellitas" id="edit-valoracion">
                             <option value="1">1</option>
@@ -92,7 +96,7 @@
             </div>
 
             <div class="input-prepend">
-                <input type="submit" class='boton-compra' value="Guardar edición" id="edit-submit-btn"></input> 
+                <input type="submit" class='boton-compra' value="Guardar cambios" id="edit-submit-btn"></input> 
             </div>
 
             <br>
@@ -101,9 +105,10 @@
                 <input type="reset" class='btn edit-btn-reset' value="Restablecer" id="edit-submit-btn"></input> 
                 <a href="/"><button class='btn btn-danger' id="edit-submit-btn">Cancelar</button></a>    
             </div>
-            
+
         </form>
 
+        </div>  
 
     </main>
 
