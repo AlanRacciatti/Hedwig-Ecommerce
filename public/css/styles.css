@@ -602,265 +602,173 @@ background-color: #d48a38;
 /* Fin del home (alex)
 
 /*Login, Lucia*/
-
-.login {
-  padding: 10px 0;
+body{
+	margin:0px;
+	color:#6a6f8c;
+	background:#c8c8c8;
+	font:600 16px/18px 'Open Sans',sans-serif;
 }
-
-.form-title {
-  color: #212026;
-  font-size: 1.7em;
+.cookies{
+  text-decoration-style: none;
   text-align: center;
-  font-style: normal;
-  font-weight: bold;
-  
-}
- .login2{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top:20px;
-  padding-bottom: 20px;
-  border-radius: 15px;
-  height: 30%;
-  width: 40%;
-  max-width: 100%;
-  margin: auto;
-  margin-top:20px;
-  margin-bottom: 20px;
-  font-size: 15px;
-  border-radius: 10px;
-  background: #24303c;
-  margin: auto;
-  margin-top: 20px;
-  font-family: 'calibri';
-  color: white;
-  border: 3px solid #5a8da9;
- }
- .login2:hover{
-  box-shadow: 5px 0px 10px 5px #808080;
- }
-
-.buttonlogin{
- 
-  background-color: #638da9;
-	color: #ededed;
-	border:0;
-	border-radius: 15px;
-	display: block;
-	margin: 10px auto; 
-	padding: 15px 20px;
-	width: 100%;
-	font-size: 13px;
-	font-weight: bold;
-	cursor: pointer;
-	opacity: 1;
-	visibility: visible;
-  font-style: italic;
-	transition: box-shadow 450ms;
-  max-width: 100%;
-
-		
-}
-.buttonlogin:hover{
-  background-color:  #212026;
-  
-}
-.singup{
-  background-color: #212026;
-  color: #ededed;
-  border:0;
-  border-radius: 15px;
-  display: block;
-  margin:20px auto;
-  padding: 10px;
-  width: 100%;
-  font-size: 13px;
-  font-weight: bold;
-  cursor: pointer;
-  visibility: visible;
-  font-style: italic;
-  text-decoration: none;
-  max-width: 100%;
-   
-}
-.singup:hover{
-  background-color:  #638da9;
-  color: #212026;
-}
-
-
-
-a.buttonx{
-
-  margin-right: 20px;
-  text-decoration: none;
-  color: #ededed;
-  text-align: center;
-  padding-left: 20px;
+  font-weight:inherit;
   font-size: 14px;
-  max-width: 100%;
-
 }
-.buttonsingup{
-  display: block;
-  margin-right: 20px;
-  text-align: center;
-  justify-items: center;
-  font-size: 15px;
-  max-width: 100%;
+*,:after,:before{box-sizing:border-box}
+.clearfix:after,.clearfix:before{content:'';display:table}
+.clearfix:after{clear:both;display:block}
+a{color:inherit;text-decoration:none}
 
-}
-
-.preg-singup{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  max-width: 100%;
-  
-
-}
-
-.passwordlogin{
-  padding:10px;
-  max-width: 100%;
+.login-wrap{
+	width:100%;
+  margin: auto;
+	max-width:525px;
+	min-height:670px;
+  justify-content: center;
+	position:relative;
+	background:url("/img/libros.jpg");
+	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
   
 }
-
-.preg-olvi{
- padding-right: 40px;
- padding-top: 30px;
- font-size: 15px;
- max-width: 100%;
+.login-html{
+  justify-content: center;
+	width:100%;
+	height:100%;
+	position:absolute;
+	padding:90px 70px 50px 70px;
+	background:rgba(33, 39, 56, 0.9);
+}
+.login-html .sign-in-htm,
+.login-html .sign-up-htm{
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	position:absolute;
+	transform:rotateY(180deg);
+	backface-visibility:hidden;
+	transition:all .4s linear;
+}
+.login-html .sign-in,
+.login-html .sign-up,
+.login-form .group .check{
+	display:none;
+}
+.login-html .tab,
+.login-form .group .label,
+.login-form .group .button{
+	text-transform:uppercase;
+}
+.login-html .tab{
+	font-size:22px;
+	margin-right:15px;
+	padding-bottom:5px;
+	margin:0 15px 10px 0;
+	display:inline-block;
+	border-bottom:2px solid transparent;
+}
+.login-html .sign-in:checked + .tab,
+.login-html .sign-up:checked + .tab{
+	color:#fff;
+	border-color:#1161ee;
+}
+.login-form{
+	min-height:345px;
+	position:relative;
+	perspective:1000px;
+	transform-style:preserve-3d;
+  justify-content: center;
+}
+.login-form .group{
+	margin-bottom:15px;
+}
+.login-form .group .label,
+.login-form .group .input,
+.login-form .group .button{
+	width:100%;
+	color:#fff;
+	display:block;
+}
+.login-form .group .input,
+.login-form .group .button{
+	border:none;
+	padding:15px 20px;
+	border-radius:25px;
+	background:rgba(255,255,255,.1);
+}
+.login-form .group input[data-type="password"]{
+	text-security:circle;
+	-webkit-text-security:circle;
+}
+.login-form .group .label{
+	color:#aaa;
+	font-size:12px;
+}
+.login-form .group .button{
+	background:#1161ee;
+}
+.login-form .group .button:hover{
+  background: chocolate;
+}
+.login-form .group label .icon{
+	width:15px;
+	height:15px;
+	border-radius:2px;
+	position:relative;
+	display:inline-block;
+	background:rgba(255,255,255,.1);
+}
+.login-form .group label .icon:before,
+.login-form .group label .icon:after{
+	content:'';
+	width:10px;
+	height:2px;
+	background:#fff;
+	position:absolute;
+	transition:all .2s ease-in-out 0s;
+}
+.login-form .group label .icon:before{
+	left:3px;
+	width:5px;
+	bottom:6px;
+	transform:scale(0) rotate(0);
+}
+.login-form .group label .icon:after{
+	top:6px;
+	right:0;
+	transform:scale(0) rotate(0);
+}
+.login-form .group .check:checked + label{
+	color:#fff;
+}
+.login-form .group .check:checked + label .icon{
+	background:#1161ee;
+}
+.login-form .group .check:checked + label .icon:before{
+	transform:scale(1) rotate(45deg);
+}
+.login-form .group .check:checked + label .icon:after{
+	transform:scale(1) rotate(-45deg);
+}
+.login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm{
+	transform:rotate(0);
+}
+.login-html .sign-up:checked + .tab + .login-form .sign-up-htm{
+	transform:rotate(0);
 }
 
-
-#password{
-  border-radius: 10px;
-  text-align: justify;
-  background-color: #f6f8f8;
-  padding: 8px;
-  position: relative;
-  font-size: 15px;
-  max-width: 100%;
+.hr{
+	height:2px;
+	margin:60px 0 50px 0;
+	background:rgba(255,255,255,.2);
 }
-
-
-.emaillogin{
-  padding:10px;
-  
-  max-width: 100%;
-} 
-#email{
-  border-radius: 10px;
-  text-align: justify;
-  background-color: #f6f8f8;
-  padding: 8px;
-  position: relative;
-  font-size: 15px;
-  max-width: 100%;
-}
-
-.invalid-feedback {
-  display: none;
-  width: 100%;
-  margin-top: .25rem;
-  font-size: 80%;
-  color: #c00;
-}
- #name{
-  border-radius: 5px;
-  text-align: justify;
-  background-color: #f6f8f8;
-  padding: 8px;
-  position: relative;
-  font-size: 15px;
-  max-width: 100%;
- }
-
-.input-login{
-  border: 2px solid blanchedalmond;
+.foot-lnk{
+	text-align:center;
 }
 /*fin login*/
 
 /*Register, Lucia*/
-.form-singup{
-  max-width: 100%;
-  padding: 15px;
 
-}
-
-.singup1{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  width: 90%;
-  margin: auto;
-  height: 50%;
-  max-width: 500px;
-  background: #24303c;
-  padding: 30px;
-  margin: auto;
-  margin-top: 20px;
-  font-family: 'calibri';
-  color: white;
-  border: 3px solid #5a8da9;
-}
-.singup1:hover{
-    box-shadow: 5px 0px 10px 5px #808080;
-}
-.form-title{
-  color:#d48938;
-}
-.nombrelogin{
-  padding:10px;
-  font-size: 15px;
-  max-width: 100%;
-}
-
-label {
-  display: block;
-  font: 1rem 'Fira Sans', sans-serif;
-  margin: .3rem 0;
-  max-width: 100%;
-}
-
-h5{
-  padding:5px;
-  text-align: center;
-  font-size: 14px;
-  max-width: 100%;
-}
-
-.fechanacimiento{
-    border-radius: 10px;
-    text-align: center;
-    background-color: #f6f8f8;
-    padding: 10px;
-    position: center;
-    max-width: 100%;   
-    margin: 10px;
-    width: 50%;
-    color:#808080;
-    max-width: 100%;
-
-  }
-  .fecha-nacimiento{
-    max-width: 100%;
-
-  }
-  #start{
-    color:#808080;
-    max-width: 100%;
-    border: 2px solid blanchedalmond;
-  }
-
-  ::placeholder{
-    color:#999999;
-  }
 /*fin register*/
 
 /* Administrador */

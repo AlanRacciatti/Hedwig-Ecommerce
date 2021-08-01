@@ -21,60 +21,74 @@
     <!-- Fin del header -->
 
 <main>
+    <br>
+    <div class="login-wrap">
+        <div class="login-html">
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Registrate</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Inicia Sesion</label>
+            <div class="login-form">
+                <div class="sign-in-htm">
+                   
+                    <h5 class="foot-lnk" class="cookies">¡Es rapido y facil!</h5>
+                    <div class="group">
+                        <label class="label" for="email"> </label>
+                        <input class="input" type="email" name= "email" id= "email" autofocus= 1 placeholder= "@ Correo electronico"  aria-required="true" aria-describedat="form-email.error" data-missing-error="El campo es requerido." required>
+                    </div>
+                    
+                <div class="group">
+                         <label class="label" for="name"></label>
+                         <input class="input"  type="text" name= "name" id= "name" autofocus= 1 placeholder=" Nombre y Apellido" required> 
+                     </div>
 
-    <section class= "form-singup">
-       
+                     <div class="group" class="fechanacimiento">
+                        <label for="start" class="fecha-nacimiento" class="input"  >Fecha de nacimiento:</label>
+                        <input class="input" type="date" id="start" name="trip-start" value="2021-07-06" min="1900-01-01" max="2023-12-31">
+                    </div>
 
-        <form action= "/register" method="POST">
-        
-            
-         <div class= "singup1">
-            <h2 class="form-title" id="signup">REGISTRATE</h2>
-            <h4>Es rapido y facil!</h4>
-        
-        <div class="emaillogin">
-            <label for="email"> </label>
-            <input class="input-login" type="email" name= "email" id= "email" autofocus= 1 placeholder= "@ Correo electronico"  aria-required="true" aria-describedat="form-email.error" data-missing-error="El campo es requerido." required>
-            <div class="invalid-feedback" id="form-email-error"></div>
-        </div>
-        
-        <div class="nombrelogin">
-            <label for="name"></label>
-            <input class="input-login"  type="text" name= "name" id= "name" autofocus= 1 placeholder=" Nombre y Apellido" required> 
-        </div>
+                <div class="group">
+                    <label for="password" class="label"></label>
+                    <input class="input" type="password" name= "password" id= "password" autofocus= 1 placeholder="Contraseña" required>
+                    </div>
 
-        <div class="fechanacimiento">
-            <label for="start" class="fecha-nacimiento" class="input-login"  >Fecha de nacimiento:</label>
-            <input class="input-login" type="date" id="start" name="trip-start" value="2021-07-06" min="1900-01-01" max="2023-12-31">
-        </div>
- 
-        <div class="passwordlogin">
-        
-            <label for="password"></label>
-            <input class="input-login" type="password" name= "password" id= "password" autofocus= 1 placeholder="Contraseña" required>
-        </div>
-        <div class="passwordlogin">
-        
-            <label for="password"></label>
-            <input class="input-login"  type="password" name= "password" id= "password" autofocus= 1 placeholder="Repetir contraseña" required>
-        </div>
-         <br>
-        
-         <div>
-            <button type="submit" class="buttonlogin">Crear mi cuenta</button>
-        
-        </div> 
-        
-        <h5>Al registrarte aceptas nuestras condiciones, politicas de datos y politica cookies.</h5>
-        </div>
-        
-        
-        
-        
-        </form>
-        
-             </section>
+                <div class="group">
 
+                        <label for="password" class="label"></label>
+                        <input class="input"  type="password" name= "password" id= "password" autofocus= 1 placeholder="Repetir contraseña" required>
+                    </div>
+                 
+                <div class="group">
+                        <input type="submit" class="button" value="Crear cuenta">
+                    </div>
+                    <h5 class="cookies">Al registrarte aceptas nuestras condiciones, politicas de datos y politica cookies.</h5>
+                
+                </div>
+
+                <div class="sign-up-htm">
+                    <div class="group">
+                        <label for="email" class="label"></label>
+                        <input  class="input" type="email" name= "email" id= "email" autofocus= 1 placeholder="@ Correo electronico" required aria-required="true" aria-describedat="form-email.error">
+                    </div>
+                    <div class="group">
+                        <label  for="password" class="label"></label>
+                        <input class="input" type="password" name="password" id="password" autofocus= 1 placeholder="Contraseña" >
+                    </div>
+                    <div class="group">
+                        <input id="check" type="checkbox" class="check" checked>
+                        <label for="check"><span class="icon"></span>Guardar inicio de sesion</label>
+                    </div>
+                    <div class="group">
+                        <input type="submit" class="button" value="Iniciar sesion">
+                    </div>
+                    <div class="hr"></div>
+                    <div class="foot-lnk">
+                        <a href="#forgot">¿Olvidaste la contraseña?</a>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
 </main>
     
 <!-- Footer -->
