@@ -5,9 +5,14 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
-app.use("/", productsRoutes);
+const methodOverride =  require('method-override');
+app.use(express.json());
+app.use(express.urlencoded({ extended:false }));
+app.use(methodOverride("_method"));
 
-app.use("/", usersRoutes);
+app.use("/products", productsRoutes);
+
+app.use("/users", usersRoutes);
 
 app.use(express.static(path.join(__dirname, './public')));
 
