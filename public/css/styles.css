@@ -397,6 +397,10 @@ label[for='check-user'] {
 
 }
 
+.imagen-detalles{
+  padding: 10px;
+}
+
 .ruta-de-producto{
   display: flex;
   align-items: center;
@@ -1152,4 +1156,13 @@ label[for="edit-valoracion"] {
 
 
 /* Fin medias */
+}
+
+
+/* Carrusel*/
+
+.libros-carrusel{
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top:20px;
 }
