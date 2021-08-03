@@ -1,5 +1,6 @@
 const productsRoutes = require("./src/routes/productsRoutes");
 const usersRoutes = require("./src/routes/usersRouters");
+const mainRoutes = require("./src/routes/mainRoutes");
 
 const express = require('express');
 const app = express();
@@ -10,9 +11,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended:false }));
 app.use(methodOverride("_method"));
 
+
 app.use("/products", productsRoutes);
 
 app.use("/users", usersRoutes);
+
+app.use("/", mainRoutes);
 
 app.use(express.static(path.join(__dirname, './public')));
 
