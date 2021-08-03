@@ -21,7 +21,7 @@ const configuracionImagen = multer.diskStorage({
 
 const uploadFile = multer({ storage: configuracionImagen });
 
-router.get("/", productsController.index);
+router.get("/", productsController.products);
 
 router.get("/detalles", productsController.detalles);
 

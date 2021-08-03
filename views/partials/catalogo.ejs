@@ -1,0 +1,13 @@
+<section class="container">
+    <div class="main-title-home">
+        <h1>Catálogo</h1>
+    </div>
+    <% for (let product of products) { %> 
+    <a href="/products/detalles/<%= product.id %> " class="card">
+        <img src="/img/products/<%= product.image %> " class="card-img-top" alt="portada-libro">
+        <h5 class="card-title contenido-carta-articulo titulo-articulo-home"><%= product.title %> </h5>
+        <p class="card-text contenido-carta-articulo precio-home">$<%= product.price %> </p>
+        <p class="card-text contenido-carta-articulo valoracion-home">Valoración: <%= product.rating %>  <i class="fas fa-star"></i>  </p> 
+    </a>
+    <% } %> 
+</section>
