@@ -401,6 +401,20 @@ label[for='check-user'] {
   padding: 10px;
 }
 
+.header-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edit-delete {
+  display: flex;
+}
+
+.edit-delete a {
+  margin: 0 10px;
+}
+
 .ruta-de-producto{
   display: flex;
   align-items: center;
@@ -408,6 +422,7 @@ label[for='check-user'] {
   padding: 10px;
   padding-top: 1%;
   margin: 0 4.5%;
+  width: 100%;
 }
 
 .ruta-de-producto a {

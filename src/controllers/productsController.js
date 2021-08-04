@@ -108,7 +108,29 @@ const controladorProductos = {
         }
 
         res.render('./products/detalles',{productoDetalle: productoEncontrado});
-    }
+    },
+
+    destroy: (req, res) => {
+
+		let id = req.params.id;
+		let ProductoEncontrado;
+
+		let Nproducts = products.filter(function(e){
+			return id!=e.id;
+		})
+
+		for (let producto of products){
+			if (producto.id == id){
+			    ProductoEncontrado=producto;
+			}
+		}
+
+		fs.unlinkSync(path.join(__dirname, '../../public/img/products/', ProductoEncontrado.image));
+
+		fs.writeFileSync(productsFilePath, JSON.stringify(Nproducts,null,' '));
+
+		res.redirect('/');
+	}
 }
 
 module.exports = controladorProductos;
