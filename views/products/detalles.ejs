@@ -25,10 +25,10 @@
 
         <p class='ruta-de-producto'>
             <span>
-            <a href = "/"> Home > </a><a href = "/">  Sección > </a> <a href = "/">  Género </a>
+            <a href = "/"> Home > </a><a href = "/">  Sección > </a> <a href = "/">  <%= productoDetalle.gender %> </a>
             </span>
             <span>
-            <a href="/products/editarProducto"><button class="btn boton-compra" id="small-btn">Editar producto <i class="far fa-edit"></i></button> </a>
+            <a href="/products/edit/<%= productoDetalle.id %> "><button class="btn boton-compra" id="small-btn">Editar producto <i class="far fa-edit"></i></button> </a>
             </span>
         </p>
 
@@ -36,22 +36,15 @@
         <section class= 'detalle-del-producto'>
 
         <section>
-       <div class= 'imagen-detalles'> <img src = /img/1984.jpg width= "250px" > </img></div>
-        <div> <h2 class= 'precio'> $1500</h2> </div>
+       <div class= 'imagen-detalles'> <img src = /img/products/<%= productoDetalle.image %> width= "250px" > </img></div>
+        <div> <h2 class= 'precio'> $<%= productoDetalle.price %></h2> </div>
 
         </section>
         
-        <section class= 'fragmento-libro'> <h2 class= titulo-libro>Titulo del Libro</h2>
+        <section class= 'fragmento-libro'> <h2 class= titulo-libro><%= productoDetalle.title %></h2>
            <div class= 'estrellitas'> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
 
-         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit massa semper felis scelerisque molestie. 
-            Donec eget mauris orci. Donec pellentesque dui non turpis cursus, at feugiat enim aliquam. Suspendisse potenti. 
-            Integer in maximus nisi. Curabitur vel aliquam est. Nullam non enim libero. Integer quis arcu nec mauris semper vehicula. 
-            Morbi eget neque risus. Praesent malesuada aliquet augue in fermentum. 
-            Aliquam convallis augue dignissim nulla tincidunt ultrices. Fusce eget mi eleifend, sollicitudin neque quis, convallis magna. 
-            Vivamus suscipit egestas neque sit amet viverra. Aliquam ut libero est. In faucibus ullamcorper eros eu elementum. 
-            In ipsum odio, aliquet ac ante ac, sodales tempus est. Mauris ipsum est, commodo in viverra et, finibus vel quam.
-            Duis vitae semper neque. <a href = " "> Continuar leyendo...</a>
+            <p><%= productoDetalle.description %> </p>
 
         <div> <a href="/products/carrito"><button class= 'boton-compra'> Agregar a carrito <i class="fas fa-shopping-cart"></i></button></a></div>
 
@@ -62,10 +55,10 @@
         <section class= 'caracteristicas'>
             <h4> <b> Características </b></h4>
             <ul>
-                <li>Género</li>
-                <li>Autor</li>
-                <li>Cantidad de paginas</li>
-                <li>Editorial</li>
+                <li><span>Genero: <%= productoDetalle.gender %></span></li>
+                <li><span>Autor: <%= productoDetalle.author %></span></li>
+                <li><span>Cantidad de páginas: <%= productoDetalle.pagsLength %></span></li>
+                <li><span>Editorial: <%= productoDetalle.editorial %></span></li>
 
             </ul>
 

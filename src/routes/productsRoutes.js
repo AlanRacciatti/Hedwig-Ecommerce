@@ -33,4 +33,6 @@ router.post("/create", uploadFile.single("image"), productsController.store)
 router.get("/edit/:id", productsController.edit);
 router.put("/edit/:id", productsController.update);
 
+router.get("/detalles/:id", productsController.detalles);
+
 module.exports = router;

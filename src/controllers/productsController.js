@@ -95,7 +95,20 @@ const controladorProductos = {
 		fs.writeFileSync(productsFilePath, JSON.stringify(products,null,' '));
 
 		res.redirect('/');
-	}
+	},
+
+    detalles: (req, res) => {
+        let {id} = req.params;
+        let productoEncontrado;
+
+        for (let p of products) {
+            if (p.id == id){
+                productoEncontrado = p;
+            }
+        }
+
+        res.render('./products/detalles',{productoDetalle: productoEncontrado});
+    }
 }
 
 module.exports = controladorProductos;
