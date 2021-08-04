@@ -57,9 +57,45 @@ const controladorProductos = {
         res.redirect("/")
     },
 
-    editarProducto: (req,res) => {
-        res.render("./products/editarProducto");
-    }
+    edit: (req, res) => {
+        let {id} = req.params;
+        let productoEncontrado;
+
+        for (let p of products) {
+            if (p.id == id){
+                productoEncontrado = p;
+            }
+        }
+
+        res.render('./products/edit',{productoaEditar: productoEncontrado});
+    },
+
+    update: (req, res) => {
+		
+		let id = req.params.id;
+
+		for (let s of products){
+			if (id==s.id){
+                s.title = req.body.title;
+                s.description = req.body.description;
+                s.price = req.body.price;
+                s.offer = req.body.offer;
+                s.valoration = req.body.valoration;
+                s.gender = req.body.gender;
+                s.author = req.body.author;
+                s.pagsLength = req.body.pagsLength;
+                s.editorial = req.body.editorial;
+				break;
+			}
+		}
+
+
+        console.log(`Updated product with id ${id}`);
+
+		fs.writeFileSync(productsFilePath, JSON.stringify(products,null,' '));
+
+		res.redirect('/');
+	}
 }
 
 module.exports = controladorProductos;

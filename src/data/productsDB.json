@@ -1,16 +1,17 @@
 [
  {
   "id": 1,
-  "title": "nvjkdfnvkdn",
-  "description": "kvlknlvkdflv",
-  "price": "400",
-  "offer": "60",
+  "title": "Titulo simpatico",
+  "description": "Una descrpción simpática y buena onda",
+  "price": "400 ",
+  "offer": "60 ",
   "rating": "1",
-  "gender": "sdjcdkvmd",
-  "author": "mckldv",
+  "gender": "Policial",
+  "author": "Borges",
   "image": "16280323912341984.jpg",
-  "pagsLength": "300",
-  "editorial": "jnvjkvndfk"
+  "pagsLength": "350",
+  "editorial": "Salamandra",
+  "valoration": "5"
  },
  {
   "id": 2,
@@ -24,5 +25,31 @@
   "image": "1628034425810Captura.PNG",
   "pagsLength": "asdasd",
   "editorial": "asdsd"
+ },
+ {
+  "id": 3,
+  "title": "Harry Potter",
+  "description": "Libro simpático y buena onda",
+  "price": "1500",
+  "offer": "20",
+  "rating": "5",
+  "gender": "Ciencia ficción",
+  "author": "J.K. Rowling",
+  "image": "1628115579417919WJsLPqUL.jpg",
+  "pagsLength": "200",
+  "editorial": "Salamandra"
+ },
+ {
+  "id": 4,
+  "title": "El señor de los anillos",
+  "description": "Copadísimo",
+  "price": "1600",
+  "offer": "3",
+  "rating": "5",
+  "gender": "Ciencia ficción",
+  "author": "J.R.R Tolkien",
+  "image": "1628115705795cover.jpg",
+  "pagsLength": "350",
+  "editorial": "ePub"
  }
 ]

@@ -24,43 +24,37 @@
 
         <div class="max-width">
 
-        <h2 class="admin-heading"> EDITAR PRODUCTO </h2>
+        <h2 class="admin-heading"> Editando <%= productoaEditar.title %>  </h2>
 
         <p class='ruta-de-producto'>
             <span>
-            <a href = "/"> Home > </a><a href = "/">  Sección > </a> <a href = "/">  Género </a>
-            </span>
-            <span>
-            <a href="/products/editarProducto"><button class="btn boton-compra edit-product" id="small-btn">Editar producto<i class="far fa-edit"></i></button> </a>
+            <a href = "/"> Home > </a><a href = "/">  Sección > </a> <a href = "/">  <%= productoaEditar.gender %>  </a>
             </span>
         </p>
 
-
-        
-        <form action="detalles" class="detalle-del-producto" id="form-edit-product">
+        <form action="/products/edit/<%=productoaEditar.id%>?_method=PUT" method="POST" class="detalle-del-producto" id="form-edit-product">
 
             <div class="container2-edit-product">
 
                 <section class="edit-image-section">
 
                     <div class="container-edit-image">
-                        <label for="image-edit-placeholder" class="edit-input-foto"> Elegí la imagen para el producto <i class="fas fa-camera edit-camera-icon edit-input-foto"></i></label>
+                        <label for="image-edit-placeholder" class="edit-input-foto"> No se puede editar la imagen del producto <i class="fas fa-camera edit-camera-icon edit-input-foto"></i></label>
                         
-                        <input type="file" id="image-edit-placeholder" multiple>
                     </div>
                 <div class="edit-precio">
-                    <input class="edit-input-style edit-info-product1" type="text" placeholder="Precio">
+                    <input name="price" class="edit-input-style edit-info-product1" value="<%= productoaEditar.price %> " type="text" placeholder="Precio">
                     <br>
-                    <input class="edit-input-style edit-info-product1" type="text" placeholder="Oferta (opcional)">
+                    <input name="offer" class="edit-input-style edit-info-product1" value="<%= productoaEditar.offer %> " type="text" placeholder="Oferta (opcional)">
                 </div>
 
                 </section>
                 
                 <section class= 'fragmento-libro edit-description-section'> 
-                <input class="edit-input-style edit-titulo-libro edit-info-product1" type="text" placeholder="Título" />
+                <input name="title" class="edit-input-style edit-titulo-libro edit-info-product1" value="<%= productoaEditar.title %>" type="text" placeholder="Título" />
                 <div class="edit-valoracion">
                     <label for="edit-valoracion">Valoración:</label>
-                    <select class="edit-input-style" name="genero-producto" class="edit-valoracion-estrellitas" id="edit-valoracion">
+                    <select class="edit-input-style" name="valoration" class="edit-valoracion-estrellitas" id="edit-valoracion">
                             <option value="1">1</option>
                             <option value="1.5">1.5</option>
                             <option value="2">2</option>
@@ -73,7 +67,7 @@
                     </select>
                 </div>
 
-                <textarea name="descripcion" class="edit-input-style" cols="90" rows="10" placeholder="Descripcion del producto"></textarea>
+                <textarea name="description" class="edit-input-style" cols="90" rows="10" placeholder="Descripcion del producto"><%= productoaEditar.description %> </textarea>
 
                 </section>
 
@@ -84,10 +78,10 @@
                 <section class= 'caracteristicas edit-caracteristicas'>
                     <h4> <b> Características </b></h4>
                     <ul>
-                        <li><input class="edit-input-style" type="text" placeholder=" Género"></li>
-                        <li><input class="edit-input-style" type="text" placeholder=" Autor"></li>
-                        <li><input class="edit-input-style" type="text" placeholder=" Cantidad de paginas"></li>
-                        <li><input class="edit-input-style" type="text" placeholder=" Editorial"></li>
+                        <li><input name="gender" class="edit-input-style" value="<%= productoaEditar.gender %>" type="text" placeholder=" Género"></li>
+                        <li><input name="author" class="edit-input-style" value="<%= productoaEditar.author %>" type="text" placeholder=" Autor"></li>
+                        <li><input name="pagsLength" class="edit-input-style" value="<%= productoaEditar.pagsLength %>" type="text" placeholder=" Cantidad de paginas"></li>
+                        <li><input name="editorial" class="edit-input-style" value="<%= productoaEditar.editorial %>" type="text" placeholder=" Editorial"></li>
                         
                     </ul>
                     
