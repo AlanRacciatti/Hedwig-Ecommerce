@@ -30,7 +30,7 @@
             </span>
             <div class="edit-delete">
             <a href="/products/edit/<%= productoDetalle.id %> "><button class="btn boton-compra" id="small-btn">Editar producto <i class="far fa-edit"></i></button> </a>
-            <form action="/products/<%=productoDetalle.id%>?_method=DELETE" method="POST" onsubmit="return confirm('Esta seguro que desea eliminarlo?');"> 
+            <form action="/products/delete/<%=productoDetalle.id%>?_method=DELETE" method="POST" onsubmit="return confirm('Esta seguro que desea eliminarlo?');"> 
                 <button type="submit" class="btn btn-danger">Eliminar <i class="far fa-trash-alt"></i></button>
             </form>
             </div>
