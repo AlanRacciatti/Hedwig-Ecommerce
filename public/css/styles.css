@@ -1139,6 +1139,7 @@ label[for="edit-valoracion"] {
   .header-navbar-desktop {
     display: flex;
     justify-content: space-between;
+    margin: 0 20px;
   }
 
   .header-navbar-desktop a {
@@ -1187,7 +1188,6 @@ label[for="edit-valoracion"] {
   }
 
   .container-header-navbar-desktop {
-    margin-left: 40px;
     font-size: 20px;
     align-items: center;
     
@@ -1196,7 +1196,6 @@ label[for="edit-valoracion"] {
   .container-header-cart {
     display: flex;
     justify-content: space-between;
-    margin-right: 40px;
     align-items: center;
   }
 
