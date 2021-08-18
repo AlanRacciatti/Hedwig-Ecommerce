@@ -1,0 +1,21 @@
+<div class= 'estrellitas'>
+
+    <% let rating = productoDetalle.rating
+
+    for (let i = 0; i < 5; i++) { %>
+
+        <% if (rating >= 1) { %>
+            <i class="fas fa-star"></i>
+        <% rating-- }
+
+        else if (rating > 0) { %>
+            <i class="fas fa-star-half-alt"></i>
+        <% rating-- }
+
+        else { %>
+            <i class="far fa-star"></i>
+        <% rating-- }
+        
+    } %>
+
+</div>

@@ -47,7 +47,8 @@
         </section>
         
         <section class= 'fragmento-libro'> <h2 class= titulo-libro><%= productoDetalle.title %></h2>
-           <div class= 'estrellitas'> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
+
+            <%- include("../partials/rating") %>
 
             <p><%= productoDetalle.description %> </p>
 
