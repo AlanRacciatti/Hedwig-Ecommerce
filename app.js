@@ -5,6 +5,7 @@ const mainRoutes = require("./src/routes/mainRoutes");
 const express = require('express');
 const app = express();
 const path = require('path');
+const session = require("express-session");
 
 const methodOverride =  require('method-override');
 app.use(express.json());
