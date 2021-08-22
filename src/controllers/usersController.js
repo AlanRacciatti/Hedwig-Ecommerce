@@ -20,13 +20,14 @@ const controladorUsers = {
         let passwordHasheada = bcrypt.hashSync(req.body.password, 10);
 
         for (let u of users){
-            if (idNuevo < p.id){
-                idNuevo = p.id
+            if (idNuevo < u.id){
+                idNuevo = u.id
             }
         }
 
         idNuevo++
 
+        console.log(req.file)
         let nombreImagen = req.file.filename
 
         let usuarioNuevo = {

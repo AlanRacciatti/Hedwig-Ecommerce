@@ -24,7 +24,7 @@
     <br>
     <div class="login-wrap">
 
-        <form action= "/users/register" method="POST">
+        <form action= "/users/register" method="POST" enctype="multipart/form-data">
 
         <div class="login-html">
             <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Registrate</label>
@@ -40,16 +40,16 @@
                     
                 <div class="group">
                          <label class="label" for="name"></label>
-                         <input class="input"  type="text" name= "user-name" id= "name" autofocus= 1 placeholder=" Nombre y Apellido" required> 
+                         <input class="input"  type="text" name= "userName" id= "name" autofocus= 1 placeholder=" Nombre y Apellido" required> 
                      </div>
                      <div class="group">
                 
-                        Foto de perfil:<input class="input" type="file" name="imagen1" />
+                        Foto de perfil:<input class="input" type="file" name="image" />
                         </div>
 
                      <div class="group" class="fechanacimiento">
                         <label for="start" class="fecha-nacimiento" class="input"  >Fecha de nacimiento:</label>
-                        <input class="input" type="date" id="start" name="fecha-nacimiento" value="2021-07-06" min="1900-01-01" max="2023-12-31">
+                        <input class="input" type="date" id="start" name="fechaNacimiento" value="2021-07-06" min="1900-01-01" max="2023-12-31">
                     </div>
 
                 <div class="group">

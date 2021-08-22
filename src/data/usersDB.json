@@ -1,10 +1,22 @@
 [
-    {
-        "mail": "",
-        "userName": "",
-        "userLastName": "",
-        "fDeNac": "",
-        "password": "",
-        "confirmPassword": ""
-    }
+ {
+  "id": 1,
+  "mail": "alanracciatti1220@gmail.com",
+  "password": "$2b$10$ZqItjGcUbUoiPMaByWaLtOGuoFiLVtdYN.vpjmVnsrSD/7NsZmLlG"
+ },
+ {
+  "id": 2,
+  "userName": "asjdklj",
+  "mail": "asdasd@asd",
+  "password": "$2b$10$2jm483hMZ2Ou7zuzrNzG3ewd7idbQvG.c9NW2YGenmbpACqSy8DzW",
+  "fechaNacimiento": "2021-07-06"
+ },
+ {
+  "id": 3,
+  "userName": "asdasd",
+  "mail": "alanracciatti1220@gmail.comasd",
+  "password": "$2b$10$UX6pP7BstILV5sAnqasK1.sYQlicX6h9gyOxlcpWRHoAzTk24fQ8K",
+  "image": "1629667844155CapturaVicky.PNG",
+  "fechaNacimiento": "2021-07-06"
+ }
 ]
