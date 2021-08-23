@@ -465,7 +465,8 @@ label[for='check-user'] {
 }
 
 .estrellitas{
-  color: orange
+  color: orange;
+  
 }
 
 .boton-compra{
@@ -581,6 +582,45 @@ align-items: center;
 padding-top: 10px;
 }
 
+.offer-percent{
+  color: green;
+  font-size: 1.3em;
+  margin: 0px
+ 
+  
+}
+.precio-original{
+  font-size: 1.5em;
+  padding-right: 10px;
+  color:slategray;
+  margin: 0px
+}
+
+
+.precio-tarjeta{
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  margin: 0px
+  
+}
+
+.enviosGratis{
+    color: green;
+    font-size: 1.1em;
+    margin: 0px;
+    padding-bottom: 20px ;
+}
+
+.enviosGratisDetalles{
+  color: green;
+  font-size: 1.1em;
+  padding-bottom: 10px ;
+}
+
+
 .card:hover {
 box-shadow: 3px 3px 6px 3px #5a8da9;
 }
@@ -606,7 +646,7 @@ box-shadow: 3px 3px 6px 3px #5a8da9;
 color: black;
 font-size: 1.5em;
 font-weight: bold;
-padding:5px;
+;
 }
 
 .valoracion-home {
@@ -1046,6 +1086,10 @@ label[for="edit-valoracion"] {
   text-align: left;
 }
 
+.enviosGratisDetalles{
+  padding-left: 75px;
+
+}
 
   /* Inicio carrito */
 

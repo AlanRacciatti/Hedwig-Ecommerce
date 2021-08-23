@@ -4,9 +4,8 @@
     </div>
     <% for (let product of products) { %> 
     <a href="/products/detalles/<%= product.id %> " class="card">
-        <img src="/img/products/<%= product.image %> " class="card-img-top" alt="portada-libro">
+        <img src="/img/products/<%= product.image %> " class="card-img-top" alt="portada-libro"> 
         <h5 class="card-title contenido-carta-articulo titulo-articulo-home"><%= product.title %> </h5>
-        <p class="card-text contenido-carta-articulo precio-home">$<%= product.price %> </p>
         <div class= 'estrellitas'>
 
             <% let rating = product.rating
@@ -28,6 +27,29 @@
             } %>
         
         </div>
+       
+            <% let oferta = 100 - product.offer; %>
+            <% for(let p of products) { %>
+            <% if (product.offer) { %>
+                    <div class = "precio-tarjeta">
+                        <p class=" precio-original"><s>$<%= product.price %> </s> </p> 
+                        
+                        <p class= "offer-percent"> %<%= product.offer %></p>
+                    </div>
+                    <h3><b>$ <%= (product.price * oferta) / 100 %> </b></h3>
+                    
+            <%  break }
+                
+            else { %>
+                <h3><b> $<%= product.price %> </b></h3>
+                <% } break %>
+
+            <% } %>
+      
+        <div class = "enviosGratis"> <i class="fas fa-truck"></i> Envio gratis </div>
+        
+       
+
     </a>
     <% } %> 
 </section>
