@@ -1048,6 +1048,26 @@ label[for="edit-valoracion"] {
 
 /* Fin administrador */
 
+/* Inicio error page */
+
+.error-container{
+  width: 70%;
+  display: flex;
+  flex-flow: column wrap;
+  text-align: center;
+  margin: auto;
+  max-width: 600px;
+}
+
+.error-heading{
+  margin: 0;
+  margin-top: 13px;
+  text-align: center;
+  background-color: #5a8da9;
+}
+
+/*Fin Error page */
+
 /* Media queries */
 
 @media (min-width: 768px) {
@@ -1170,10 +1190,6 @@ label[for="edit-valoracion"] {
   }
 
   /* Fin del footer */
-
-  
-
-}
 
 @media (min-width: 1280px) {
 
@@ -1330,3 +1346,4 @@ label[for="edit-valoracion"] {
 
 /* Fin de Carrusel*/
 
+}

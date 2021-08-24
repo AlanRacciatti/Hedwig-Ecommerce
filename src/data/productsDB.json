@@ -55,15 +55,16 @@
  {
   "id": 5,
   "title": "Sherlock Holmes",
-  "description": "Las aventuras de Sherlock Holmes es una colección de una docena de historias, escritas por Arthur Conan Doyle, y la primera fue publicada el 14 de octubre de 1892. Contiene los primeros cuentos con el detective privado Sherlock Holmes, que fueron publicadas en doce números mensuales de The Strand Magazine de julio de 1891 a junio de 1892.",
-  "price": "2000",
-  "offer": "10",
+  "description": "Las aventuras de Sherlock Holmes es una colección de una docena de historias, escritas por Arthur Conan Doyle, y la primera fue publicada el 14 de octubre de 1892. Contiene los primeros cuentos con el detective privado Sherlock Holmes, que fueron publicadas en doce números mensuales de The Strand Magazine de julio de 1891 a junio de 1892. ",
+  "price": "2000 ",
+  "offer": "",
   "rating": "5",
   "gender": "Misterio",
   "author": "Arthur Conan Doyle",
   "image": "1628461268311Las-aventuras-de-SherlockHolmes.jpg",
   "pagsLength": "400",
-  "editorial": "Alma"
+  "editorial": "Alma",
+  "valoration": "1"
  },
  {
   "id": 6,

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Error 404- Pagina no encontrada</title>
+    <!-- Head -->
+    <%- include("./partials/head") %>
+    <!-- Fin del head -->
+</head>
+<body>
+    <!-- Header -->
+
+    <%- include('./partials/header') %>
+    
+    <!-- Fin del header -->
+    <main>
+
+        <div class="error-container">
+            <h1 class="error-heading">Ey! Parece que no pudimos encontrar lo que buscabas...</h1>
+            <p>Desde el equipo de Hedwig, lamentamos no haber podido ayudar. Sin embargo, te invitamos a que sigas explorando nuestro<a href="/"> catálogo</a> o visites alguno de los siguientes enlaces:</p>
+            <a href="/products/carrito">Repasá que hay en tu carrito</a>
+            <a href="/users/login">Iniciá Sesión!</a>
+            <p>¿Todavía no te creaste una cuenta Hedwig?<a href="/users/register"> Registrate!</a></p>
+        </div>
+
+    </main>
+    
+    
+    <!-- Footer -->
+
+	<%- include("./partials/footer") %>
+
+	<!-- Fin del footer -->
+</body>
+</html>
