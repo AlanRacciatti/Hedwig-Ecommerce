@@ -42,7 +42,25 @@
 
         <section>
        <div class= 'imagen-detalles'> <img src = /img/products/<%= productoDetalle.image %> width= "250px" > </img></div>
-        <div> <h2 class= 'precio'> $<%= productoDetalle.price %></h2> </div>
+        <div> 
+            
+            
+            <h2 class= 'precio'> <% let oferta = 100 - productoDetalle.offer; %>
+                <% if (productoDetalle.offer) { %>
+                        <div class = "precio-tarjeta-detalle">
+                            <p class=" precio-original-detalle"><s>$<%= productoDetalle.price %> </s> </p> 
+                            
+                            <p class= "offer-percent-detalle"> <%= productoDetalle.offer %>% OFF</p>
+                        </div>
+                        <h3 class="product-price-detalle"><b>$<%= (productoDetalle.price * oferta) / 100 %> </b></h3>
+                        
+                <%  }
+                    
+                else { %>
+                    <h3><b> $<%= productoDetalle.price %> </b></h3>
+                    <% } %>
+    
+        </div>
         <div class = "enviosGratisDetalles"> <i class="fas fa-truck"></i> Envio gratis </div>
     
 

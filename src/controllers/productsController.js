@@ -15,12 +15,6 @@ const controladorProductos = {
         res.render("./products/products", {products: products});
     },
 
-
-
-    detalles: (req, res) => {
-        res.render("./products/detalles");
-    },
-
     carrito: (req, res) => {
         res.render("./products/carrito");
     },

@@ -607,6 +607,24 @@ padding-top: 10px;
   
 }
 
+/* Precio en Detalle del Producto*/
+.precio-tarjeta-detalle{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.precio-original-detalle{
+  color: gray;
+}
+
+.offer-percent-detalle{
+  color: green;
+}
+
+.product-price-detalle {
+  text-align: center;
+}
 .enviosGratis{
     color: green;
     font-size: 1.1em;
@@ -619,6 +637,7 @@ padding-top: 10px;
   font-size: 1.1em;
   padding-bottom: 10px ;
 }
+
 
 
 .card:hover {
