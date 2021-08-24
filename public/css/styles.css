@@ -539,6 +539,30 @@ label[for='check-user'] {
 
 }
 
+/* Precio en Detalle del Producto*/
+.precio-tarjeta-detalle{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.precio-original-detalle{
+  color: gray;
+}
+
+.product-price-detalle {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 0;
+  margin-right: 20px;
+
+}
+.offer-percent-detalle{
+  color: green;
+  margin: 0;
+  font-size: 1.3rem;
+}
 
 /* Fin detalles */
 
@@ -607,24 +631,6 @@ padding-top: 10px;
   
 }
 
-/* Precio en Detalle del Producto*/
-.precio-tarjeta-detalle{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-}
-
-.precio-original-detalle{
-  color: gray;
-}
-
-.offer-percent-detalle{
-  color: green;
-}
-
-.product-price-detalle {
-  text-align: center;
-}
 .enviosGratis{
     color: green;
     font-size: 1.1em;

@@ -47,12 +47,13 @@
             
             <h2 class= 'precio'> <% let oferta = 100 - productoDetalle.offer; %>
                 <% if (productoDetalle.offer) { %>
-                        <div class = "precio-tarjeta-detalle">
-                            <p class=" precio-original-detalle"><s>$<%= productoDetalle.price %> </s> </p> 
+                    <p class=" precio-original-detalle"><s>$<%= productoDetalle.price %> </s> </p>
+                    <div class = "precio-tarjeta-detalle">
+                        <h3 class="product-price-detalle"><b>$<%= (productoDetalle.price * oferta) / 100 %> </b></h3>     
                             
-                            <p class= "offer-percent-detalle"> <%= productoDetalle.offer %>% OFF</p>
-                        </div>
-                        <h3 class="product-price-detalle"><b>$<%= (productoDetalle.price * oferta) / 100 %> </b></h3>
+                        <p class= "offer-percent-detalle"><%= productoDetalle.offer %>% OFF</p>
+                    </div>
+                        
                         
                 <%  }
                     
