@@ -367,7 +367,7 @@ label[for='check-user'] {
 }
 
 .logo {
-  margin: 10px;
+  margin: 0px 10px 10px 10px;
 }
 
 
@@ -1055,16 +1055,36 @@ label[for="edit-valoracion"] {
   display: flex;
   flex-flow: column wrap;
   text-align: center;
+  justify-items: center;
   margin: auto;
   max-width: 600px;
+  align-items: center;
+  padding: 3%;
 }
 
 .error-heading{
   margin: 0;
   margin-top: 13px;
   text-align: center;
-  background-color: #5a8da9;
+  font-weight: bold;
+
 }
+ 
+.error-logo{
+  display: flex;
+  padding: 40px;
+
+}
+.boton-error{
+  background-color: #d48a38;
+  border: solid 25px #d48a38;
+  border-radius: 40px;
+  margin: 20px;
+  color: white;
+  font-size: 20px;
+  margin-top: 30px;
+}
+
 
 /*Fin Error page */
 
