@@ -9,7 +9,25 @@ const controladorUsers = {
     login: (req, res) => {
         res.render("./users/login");
     },
+    loginAccount: (req,res) => {
+        let emailRecibido = req.body.email 
+        let passwordRecibida = req.body.password
+        let usuarioEncontrado 
+        users.forEach(element => {
+            if (element.mail== emailRecibido){
+                usuarioEncontrado = element
+            }
+        });
+        let passwordCorrecta = bcrypt.compareSync(passwordRecibida,usuarioEncontrado.password)
+        if (passwordCorrecta) {
+            res.send ("cuenta correcta")
+        } else {
+            res.send ("cuenta incorrecta")
+        }
 
+        //res.redirect("/")
+        res.send (passwordCorrecta)
+    },
     register: (req, res) => {
         res.render("./users/register");
     },

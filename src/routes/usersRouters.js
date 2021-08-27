@@ -23,5 +23,6 @@ router.get("/register", controladorUsers.register);
 router.post("/register", uploadFile.single("image") ,controladorUsers.createAccount);
 
 router.get("/login", controladorUsers.login);
+router.post('/login', controladorUsers.loginAccount)
 
 module.exports = router;

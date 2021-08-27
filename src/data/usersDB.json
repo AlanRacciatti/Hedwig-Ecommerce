@@ -18,5 +18,13 @@
   "password": "$2b$10$UX6pP7BstILV5sAnqasK1.sYQlicX6h9gyOxlcpWRHoAzTk24fQ8K",
   "image": "1629667844155CapturaVicky.PNG",
   "fechaNacimiento": "2021-07-06"
+ },
+ {
+  "id": 4,
+  "userName": "Maria",
+  "mail": "mazulrios@gmail.com",
+  "password": "$2a$10$kwS1jPWonVuvsTXqp.1Vn.j74qWS5jffnArAkwDubvAI7fD8TaB16",
+  "image": "1630103804934Logo-error.png",
+  "fechaNacimiento": "2021-06-18"
  }
 ]
