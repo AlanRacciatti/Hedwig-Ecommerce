@@ -11,17 +11,26 @@ const controladorUsers = {
         res.render("./users/login");
     },
     loginAccount: (req,res) => {
+
         let emailRecibido = req.body.email 
         let passwordRecibida = req.body.password
-        let usuarioEncontrado 
         req.session.recordarUsuario = Boolean(req.body.recordarUsuario)
+
+        let usuarioEncontrado 
+
         users.forEach(element => {
             if (element.mail== emailRecibido){
                 usuarioEncontrado = element
             }
         });
-        let passwordCorrecta = bcrypt.compareSync(passwordRecibida,usuarioEncontrado.password)   
-        res.send(req.session.recordarUsuario);
+
+        let passwordCorrecta = bcrypt.compareSync(passwordRecibida,usuarioEncontrado.password)  
+
+        if (!passwordCorrecta) {
+            res.send("Credenciales inválidas")
+        } else {
+            res.redirect('/')
+        }
     },
     register: (req, res) => {
         res.render("./users/register");
