@@ -2,7 +2,8 @@ const fs = require("fs");
 const path = require("path");
 const usersFilePath = path.join(__dirname, '../data/usersDB.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
+const { Recoverable } = require("repl");
 
 const controladorUsers = {
 
@@ -13,20 +14,14 @@ const controladorUsers = {
         let emailRecibido = req.body.email 
         let passwordRecibida = req.body.password
         let usuarioEncontrado 
+        req.session.recordarUsuario = Boolean(req.body.recordarUsuario)
         users.forEach(element => {
             if (element.mail== emailRecibido){
                 usuarioEncontrado = element
             }
         });
-        let passwordCorrecta = bcrypt.compareSync(passwordRecibida,usuarioEncontrado.password)
-        if (passwordCorrecta) {
-            res.send ("cuenta correcta")
-        } else {
-            res.send ("cuenta incorrecta")
-        }
-
-        //res.redirect("/")
-        res.send (passwordCorrecta)
+        let passwordCorrecta = bcrypt.compareSync(passwordRecibida,usuarioEncontrado.password)   
+        res.send(req.session.recordarUsuario);
     },
     register: (req, res) => {
         res.render("./users/register");

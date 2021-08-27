@@ -11,6 +11,7 @@ const methodOverride =  require('method-override');
 app.use(express.json());
 app.use(express.urlencoded({ extended:false }));
 app.use(methodOverride("_method"));
+app.use(session({ secret:"Secreto loco jiju" }))
 
 
 app.use("/products", productsRoutes);
