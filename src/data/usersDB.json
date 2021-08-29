@@ -26,5 +26,21 @@
   "password": "$2a$10$kwS1jPWonVuvsTXqp.1Vn.j74qWS5jffnArAkwDubvAI7fD8TaB16",
   "image": "1630103804934Logo-error.png",
   "fechaNacimiento": "2021-06-18"
+ },
+ {
+  "id": 5,
+  "userName": "asdas",
+  "mail": "alanracciatti69@gmail.com",
+  "password": "$2a$10$FvHb/e.je0gK75Azl2FJDu8RL.uvX58iTBRiX60V46DKD6JQIMuqy",
+  "image": "1630272586550Captura.PNG",
+  "fechaNacimiento": "2021-07-09"
+ },
+ {
+  "id": 6,
+  "userName": "asdasd",
+  "mail": "asdasd@asd",
+  "password": "$2a$10$JCZIb83Sfw.2.pf5txc5dexlq/MR5BQDnrVHX3V.8DqUJD3W/cc3e",
+  "image": "1630273474749Captur34a.PNG",
+  "fechaNacimiento": "2021-07-06"
  }
 ]

@@ -7,7 +7,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const controladorProductos = {
     index: (req, res) => {
         const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        res.render("./products/index", {products: products});
+        res.render("./products/index", {data: {products: products, session:req.session}});
     },
 
     products: (req, res) => {
@@ -16,11 +16,11 @@ const controladorProductos = {
     },
 
     carrito: (req, res) => {
-        res.render("./products/carrito");
+        res.render("./products/carrito", {data: {session:req.session}});
     },
 
     agregarProducto: (req,res) => {
-        res.render("./products/create");
+        res.render("./products/create", {data: {session:req.session}});
     },
 
     store: (req,res) => {
@@ -61,7 +61,7 @@ const controladorProductos = {
             }
         }
 
-        res.render('./products/edit',{productoaEditar: productoEncontrado});
+        res.render('./products/edit',{data: {productoaEditar: productoEncontrado, session: req.session}});
     },
 
     update: (req, res) => {
@@ -101,7 +101,7 @@ const controladorProductos = {
             }
         }
 
-        res.render('./products/detalles',{productoDetalle: productoEncontrado});
+        res.render('./products/detalles',{data: {productoDetalle: productoEncontrado, session: req.session}});
     },
 
     destroy: (req, res) => {

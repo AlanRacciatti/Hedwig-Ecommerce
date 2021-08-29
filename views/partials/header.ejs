@@ -9,19 +9,24 @@
             <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i id="hamburguer-menu" class="fas fa-bars"></i></button>
 
             <ul class="dropdown-menu">
+                <% if(!data.session.usuarioLogueado){ %> 
                 <li><a class="dropdown-item" href="/users/login" class ="btn-open-login">Iniciar sesión</a></li> 
                 <li><a class="dropdown-item" href="/users/register">Registrarse</a></li>
                 <hr class="dropdown-divider">
+                <% } %> 
                 <li><a class="dropdown-item" href="/productos/generos">Categorías</a></li>
                 <li><a class="dropdown-item" href="/productos/best-sellers">Best sellers</a></li>
                 <li><a class="dropdown-item" href="/productos/novedades">Novedades</a></li>
                 <li><a class="dropdown-item" href="/productos/ofertas">Ofertas</a></li>
                 <hr class="dropdown-divider">
+                <% if(data.session.usuarioLogueado){ %>
+                <li><a class="dropdown-item" href="#">Historial</a></li>
                 <li><a class="dropdown-item" href="#">Configuración</a></li>
                 <hr class="dropdown-divider">
                 <li><a class="dropdown-item" href="/products/create">Nuevo producto</a></li>
                 <hr class="dropdown-divider">
                 <li><a class="dropdown-item sign-out" href="/sign-out">Cerrar sesión</a></li>
+                <% } %>
 
             </ul>
 
@@ -64,19 +69,22 @@
         </div>
 
         <div class="btn-group header-user-logo">
-
+ 
+            <% if(!data.session.usuarioLogueado) { %> 
+            <div class="container-not-logged-in">
+                <a href="/users/login"><button class="btn btn-primary button-width"> Iniciar sesión </button></a>
+                <a href="/users/register"><button class="btn btn-danger"> Registrarse </button></a>
+            </div>
+            <% } else { %> 
             <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user"></i></button>
+            <% } %> 
 
             <ul class="dropdown-menu">
 
-                <li><a class="dropdown-item" href="/products/carrito">Mi carrito</a></li>
                 <li><a class="dropdown-item" href="/users/historial">Historial</a></li>
                 <li><a class="dropdown-item" href="/users/configuracion">Configuración</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="/products/create">Nuevo producto</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="/users/login">Iniciar Sesión</a></li>
-                <li><a class="dropdown-item" href="/users/register">Registrarse</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item sign-out" href="/sign-out">Cerrar sesión</a></li>
 

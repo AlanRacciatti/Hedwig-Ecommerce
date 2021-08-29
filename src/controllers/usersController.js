@@ -8,32 +8,32 @@ const { Recoverable } = require("repl");
 const controladorUsers = {
 
     login: (req, res) => {
-        res.render("./users/login");
+        res.render("./users/login", {data: {session: req.session}});
     },
     loginAccount: (req,res) => {
 
         let emailRecibido = req.body.email 
         let passwordRecibida = req.body.password
-        req.session.recordarUsuario = Boolean(req.body.recordarUsuario)
-
+        
         let usuarioEncontrado 
-
+        
         users.forEach(element => {
             if (element.mail== emailRecibido){
                 usuarioEncontrado = element
             }
         });
-
+        
         let passwordCorrecta = bcrypt.compareSync(passwordRecibida,usuarioEncontrado.password)  
-
+        
         if (!passwordCorrecta) {
             res.send("Credenciales inválidas")
         } else {
+            req.session.usuarioLogueado = true
             res.redirect('/')
         }
     },
     register: (req, res) => {
-        res.render("./users/register");
+        res.render("./users/register", {data: {session: req.session}});
     },
 
     createAccount: (req, res) => {
@@ -63,7 +63,7 @@ const controladorUsers = {
 
         users.push(usuarioNuevo)
         fs.writeFileSync(usersFilePath,JSON.stringify(users,null," "))
-        res.redirect("/")
+        res.send("<h1>Tu cuenta ha sido creada!</h1><a href='/users/login'>Iniciar sesión</a>")
 
     }
 
