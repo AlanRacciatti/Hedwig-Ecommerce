@@ -3,7 +3,6 @@ const path = require("path");
 const usersFilePath = path.join(__dirname, '../data/usersDB.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const bcrypt = require('bcryptjs');
-const { Recoverable } = require("repl");
 
 const controladorUsers = {
 
@@ -14,6 +13,7 @@ const controladorUsers = {
 
         let emailRecibido = req.body.email 
         let passwordRecibida = req.body.password
+        let recordarUsuario = req.body.recordarUsuario
         
         let usuarioEncontrado 
         
@@ -28,6 +28,11 @@ const controladorUsers = {
         if (!passwordCorrecta) {
             res.send("Credenciales inválidas")
         } else {
+
+            if (Boolean(recordarUsuario)) {
+                req.session.cookie.maxAge = 1000 * 60 * 60 * 24 //Esto equivale a un día en milisegundos
+            }
+
             req.session.usuarioLogueado = true
             res.redirect('/')
         }
