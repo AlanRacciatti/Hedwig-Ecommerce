@@ -165,7 +165,9 @@ form.search-bar-desktop button:hover {
 }
 
 .button-width {
-  width: 120px;
+  width: 220px;
+  background-color:#5a8da9;
+  color: #fff
 }
 
 .header-user-logo .btn {

@@ -42,5 +42,13 @@
   "password": "$2a$10$JCZIb83Sfw.2.pf5txc5dexlq/MR5BQDnrVHX3V.8DqUJD3W/cc3e",
   "image": "1630273474749Captur34a.PNG",
   "fechaNacimiento": "2021-07-06"
+ },
+ {
+  "id": 7,
+  "userName": "Chinn",
+  "mail": "alanracciatti@hotmail.com",
+  "password": "$2a$10$9w5/aPpCK4mTFNDe4Z2y1eDhWGkm0tChqvpSdUpJZFANWogZ6tuI.",
+  "image": "1630314897743descarga.png",
+  "fechaNacimiento": "2017-01-06"
  }
 ]

@@ -39,7 +39,7 @@
                             <input class="input" type="password" name="password" id="password" autofocus= 1 placeholder="Contraseña" >
                         </div>
                         <div class="group">
-                            <input id="check" type="checkbox" name = "recordarUsuario" class="check" checked>
+                            <input id="check" type="checkbox" name = "recordarUsuario" class="check">
                             <label for="check"><span class="icon"></span>Guardar inicio de sesion</label>
                         </div>
                         <div class="group">
@@ -52,43 +52,46 @@
                         </div>
                     </div>
                 </form>
-                <form>
+                <form action="/users/register" method="POST" enctype="multipart/form-data">
                     <div class="sign-up-htm">
-                        <h5 class="foot-lnk" class="cookies">¡Es rapido y facil!</h5>
-                        <div class="group">
-                            <label class="label" for="email"> </label>
-                            <input class="input" type="email" name= "email" id= "email" autofocus= 1 placeholder= "@ Correo electronico"  aria-required="true" aria-describedat="form-email.error" data-missing-error="El campo es requerido." required>
-                        </div>
-                        
+                    <h5 class="foot-lnk" class="cookies">¡Es rapido y facil!</h5>
+                    
                     <div class="group">
-                             <label class="label" for="name"></label>
-                             <input class="input"  type="text" name= "name" id= "name" autofocus= 1 placeholder=" Nombre y Apellido" required> 
-                         </div>
-
-                         <div class="group" class="fechanacimiento">
-                            <label for="start" class="fecha-nacimiento" class="input"  >Fecha de nacimiento:</label>
-                            <input class="input" type="date" id="start" name="trip-start" value="2021-07-06" min="1900-01-01" max="2023-12-31">
-                        </div>
-
-                    <div class="group">
-                        <label for="password" class="label"></label>
-                        <input class="input" type="password" name= "password" id= "password" autofocus= 1 placeholder="Contraseña" required>
-                        </div>
-
-                    <div class="group">
-
-                            <label for="password" class="label"></label>
-                            <input class="input"  type="password" name= "password" id= "password" autofocus= 1 placeholder="Repetir contraseña" required>
-                        </div>
-                     
-                    <div class="group">
-                        <button type="submit" class="button">Crear mi cuenta</button>
-                        </div>
-                        <h5 class="cookies">Al registrarte aceptas nuestras condiciones, politicas de datos y politica cookies.</h5>
+                        <label class="label" for="email"> </label>
+                        <input class="input" type="email" name= "email" id= "email" autofocus= 1 placeholder= "@ Correo electronico"  aria-required="true" aria-describedat="form-email.error" data-missing-error="El campo es requerido." required>
                     </div>
                     
+                <div class="group">
+                         <label class="label" for="name"></label>
+                         <input class="input"  type="text" name= "userName" id= "name" autofocus= 1 placeholder=" Nombre y Apellido" required> 
+                     </div>
+                     <div class="group">
+                
+                        Foto de perfil:<input class="input" type="file" name="image" />
+                        </div>
+
+                     <div class="group" class="fechanacimiento">
+                        <label for="start" class="fecha-nacimiento" class="input"  >Fecha de nacimiento:</label>
+                        <input class="input" type="date" id="start" name="fechaNacimiento" value="2021-07-06" min="1900-01-01" max="2023-12-31">
+                    </div>
+
+                <div class="group">
+                    <label for="password" class="label"></label>
+                    <input class="input" type="password" name= "password" id= "password" autofocus= 1 placeholder="Contraseña" required>
+                    </div>
+
+                <div class="group">
+
+                        <label for="password" class="label"></label>
+                        <input class="input"  type="password" name= "confirm-password" id= "password" autofocus= 1 placeholder="Repetir contraseña" required>
+                    </div>
+                 
+                <div class="group">
+                    <button type="submit" class="button">Crear cuenta</button>
+                    </div>
+                    <h6 class="cookies">Al registrarte aceptas nuestras condiciones, politicas de datos y politica cookies.</h6>
+                
                 </div>
-            </div>
             </form>
         </div>
     </main>
