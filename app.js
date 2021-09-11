@@ -19,6 +19,7 @@ app.use("/products", productsRoutes);
 app.use("/users", usersRoutes);
 
 app.use("/", mainRoutes);
+app.get('/', (req, res) => res.render("./users/cuentaCreada", { data: {session: req.session} }))
 
 app.use(express.static(path.join(__dirname, './public')));
 
