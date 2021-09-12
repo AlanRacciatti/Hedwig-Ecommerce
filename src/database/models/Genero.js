@@ -22,9 +22,19 @@ function generosData(sequelize, DataTypes) {
 
     let config = { timestamps: false }
 
-    const users = sequelize.define(alias,cols,config)
+    const genero = sequelize.define(alias,cols,config);
 
-    return users;
+    genero.associate = (modelos) => {
+
+        genero.hasMany(modelos.libros, {
+            as: "genero",
+            foreignKey: "genero_fk"
+        });
+        
+    }
+
+
+    return genero;
     
 }
 

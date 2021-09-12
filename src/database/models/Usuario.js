@@ -41,6 +41,16 @@ function usuariosData (sequelize, DataTypes) {
     let config = { timestamps: false }
     
     const users = sequelize.define(alias,cols,config)
+
+    users.associate = function (modelos) {
+        users.belongsToMany(modelos.libros, {
+            as: "libros",
+            through: "libros_usuario",
+            foreignKey: "usuario_fk",
+            otherKey: "libro_fk",
+            timestamps: false
+        })
+    }
     
     return users;
     

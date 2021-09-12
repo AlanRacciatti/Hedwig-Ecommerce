@@ -1,5 +1,7 @@
 function librosData(sequelize, DataTypes){
+
     let alias = "libros"
+
     let cols = {
 
         id: {
@@ -76,7 +78,34 @@ function librosData(sequelize, DataTypes){
 
     let config = { timestamps: false }
 
-    return sequelize.define(alias,cols,{timestamps:false});
+    const libro = sequelize.define(alias,cols,config);
+
+    libro.associate = (modelos) => {
+
+        libro.belongsTo(modelos.autores, {
+            as: "autores",
+            foreignKey: "autor_fk"
+        });
+        
+        libro.belongsTo(modelos.generos, {
+            as: "genero",
+            foreignKey: "genero_fk"
+        });
+        
+        libro.belongsToMany(modelos.usuarios, {
+
+            as: "usuarios",
+            through: "libros_usuario",
+            foreignKey: "libro_fk",
+            otherKey: "usuario_fk",
+            timestamps: false
+            
+        })
+        
+    }
+
+    return libro;
+
 }
 
 module.exports = librosData;

@@ -20,9 +20,16 @@ function autoresData(sequelize, DataTypes) {
 
     let config = { timestamps: false }
 
-    const users = sequelize.define(alias,cols,config)
+    const autor = sequelize.define(alias,cols,config);
 
-    return users;
+    autor.associate = (modelos) => {
+        autor.hasMany(modelos.libros, {
+            as: "autores",
+            foreignKey: "autor_fk"
+        });
+    }
+
+    return autor;
 
 }
 
