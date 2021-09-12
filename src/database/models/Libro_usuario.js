@@ -1,22 +1,35 @@
 function libros_usuarioData(sequelize, DataTypes) {
-    alias = "libros_usuario";
-    cols = {
-        id: {type: DataTypes.INTEGER,
+    
+    let alias = "libros_usuario";
+    
+    let cols = {
+
+        id: {
+            type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
-            allowNull: false},
-        created_at: {type: DataTypes.DATE,
-            allowNull: false},
-        update_at: {type: DataTypes.DATE},
-        usuario_fk: {type: Datatypes.INTEGER,
-            allowNull: false},
-        libro_fk: {type: Datatypes.INTEGER,
-            allowNull: false},  
+            allowNull: false
+        },
+        created_at: {
+            type: DataTypes.DATE,
+            allowNull: false
+        },
+        update_at: { type: DataTypes.DATE },
+        usuario_fk: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        libro_fk: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },  
     }
 
-const users = sequelize.define(alias,cols)
+    let config = { timestamps: false }
 
-return users;
+    const users = sequelize.define(alias,cols,config)
+
+    return users;
 }
 
 module.exports = libros_usuarioData;

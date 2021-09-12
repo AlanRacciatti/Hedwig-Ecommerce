@@ -45,7 +45,7 @@
   "price": "900 ",
   "offer": "20 ",
   "rating": "3.5",
-  "gender": "Novela",
+  "gender": "Fantasía",
   "author": "Paulo Cohelo",
   "image": "1628460967124El-alquimista.jpg",
   "pagsLength": "200",
@@ -78,19 +78,5 @@
   "image": "1628462162900juego-de-tronoss.jpg",
   "pagsLength": "500",
   "editorial": "HarperCollins"
- },
- {
-  "id": 8,
-  "title": "Arbol: Acacia",
-  "description": "Cuando tienes un terreno y deseas conseguir crear un jardín con plantas de rápido crecimiento que den muy buena sombra, es muy interesante optar por plantar algún árbol de acacia. Si las condiciones son adecuadas, puede crecer a un ritmo de medio metro año, y además no es necesario regarlo muy a menudo pues resiste la sequía.\r\n\r\nSi te gustaría saber más sobre él, te voy a decir cuáles son las características del árbol de acacia para que puedas identificarlo cada vez que vayas a un vivero o visites un jardín. De esta manera, podrás obtener ideas sobre cómo diseñar el tuyo con este precioso árbol. ",
-  "price": "1500 ",
-  "offer": " 15",
-  "rating": "2.5",
-  "gender": "Desarrollo personal",
-  "author": "Arbolería Los Brotes",
-  "image": "1629817279314arbol.jfif",
-  "pagsLength": "25",
-  "editorial": "Germinaciones",
-  "valoration": "1"
  }
 ]

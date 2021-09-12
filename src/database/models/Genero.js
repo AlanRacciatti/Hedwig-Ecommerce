@@ -1,19 +1,31 @@
 function generosData(sequelize, DataTypes) {
-    alias = "generos";
-    cols = {
-        id: {type: DataTypes.INTEGER,
+
+    let alias = "generos";
+
+    let cols = {
+
+        id: {
+            type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true},
-        created_at: {type: DataTypes.DATE,
-            allowNull: false},
-        update_at: {type: DataTypes.DATE},
-        nombre: {type: Datatypes.STRING(500),
-            allowNull: false}   
+            autoIncrement: true
+        },
+        created_at: {
+            type: DataTypes.DATE,
+            allowNull: false
+        },
+        updated_at: { type: DataTypes.DATE },
+        nombre: {
+            type: DataTypes.STRING(500),
+            allowNull: false
+        }   
     }
 
-const users = sequelize.define(alias,cols)
+    let config = { timestamps: false }
 
-return users;
+    const users = sequelize.define(alias,cols,config)
+
+    return users;
+    
 }
 
 module.exports = generosData;
