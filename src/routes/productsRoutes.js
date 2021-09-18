@@ -8,8 +8,6 @@ const uploadFile = require('../middlewares/productsMulter')
 // ** Controller require **
 const productsController = require("./../controllers/productsController");
 
-router.get("/", productsController.products);
-
 router.get("/detalles", productsController.detalles);
 
 router.get("/carrito", productsController.carrito);

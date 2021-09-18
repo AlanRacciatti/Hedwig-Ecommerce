@@ -1,18 +1,14 @@
 const fs = require("fs");
 const path = require("path");
 const productsFilePath = path.join(__dirname, '../data/productsDB.json');
+const db = require('../database/models');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-
 const controladorProductos = {
+
     index: (req, res) => {
         const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         res.render("./products/index", {data: {products: products, session:req.session}});
-    },
-
-    products: (req, res) => {
-        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        res.render("./products/products", {products: products});
     },
 
     carrito: (req, res) => {
