@@ -80,6 +80,13 @@ const controladorUsers = {
         
         res.send("<h1>Tu cuenta ha sido creada!</h1><a href='/users/login'>Iniciar sesión</a>")
 
+    },
+
+    panelUsuarios: (req, res) => {
+        db.usuarios.findAll()
+        .then(usuarios => {
+            res.render("./users/cuentaAdmin", {data: {session: req.session, usuarios: usuarios}});
+        })
     }
 
 }
