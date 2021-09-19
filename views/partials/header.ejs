@@ -24,6 +24,9 @@
                 <hr class="dropdown-divider">
                 <% if (data.session.admin >= 1) { %>
                     <li><a class="dropdown-item" href="/products/create">Nuevo producto</a></li>
+                <% if (data.session.admin == 2) { %>
+                    <li><a class="dropdown-item" href="/users/panel">Panel de usuarios</a></li>
+                <% } %>
                     <hr class="dropdown-divider">
                 <% } %>
                 <li><a class="dropdown-item sign-out" href="/sign-out">Cerrar sesión</a></li>
@@ -86,6 +89,9 @@
                 <li><hr class="dropdown-divider"></li>
                 <% if (data.session.admin >= 1) { %>
                     <li><a class="dropdown-item" href="/products/create">Nuevo producto</a></li>
+                <% if (data.session.admin == 2) { %>
+                    <li><a class="dropdown-item" href="/users/panel">Panel de usuarios</a></li>
+                <% } %>    
                     <li><hr class="dropdown-divider"></li>
                 <% } %>
                 <li><a class="dropdown-item sign-out" href="/sign-out">Cerrar sesión</a></li>
