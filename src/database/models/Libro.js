@@ -63,6 +63,11 @@ function librosData(sequelize, DataTypes){
             type: DataTypes.INTEGER,
             allowNull: false
         },
+
+        eliminado: {
+          type: DataTypes.INTEGER,
+          allowNull: false  
+        },
         
         autor_fk: {
             type: DataTypes.INTEGER,

@@ -3,53 +3,56 @@
         <h1>Catálogo</h1>
     </div>
     <% for (let product of data.products) { %> 
-    <a href="/products/detalles/<%= product.id %> " class="card">
-        <img src="/img/products/<%= product.imagen %> " class="card-img-top" alt="portada-libro"> 
-        <h5 class="card-title contenido-carta-articulo titulo-articulo-home"><%= product.titulo %> </h5>
-        <div class= 'estrellitas'>
-
-            <% let rating = product.valoracion
+    <% if (product.eliminado != 1) { %>
+     
+        <a href="/products/detalles/<%= product.id %> " class="card">
+            <img src="/img/products/<%= product.imagen %> " class="card-img-top" alt="portada-libro"> 
+            <h5 class="card-title contenido-carta-articulo titulo-articulo-home"><%= product.titulo %> </h5>
+            <div class= 'estrellitas'>
+                
+                <% let rating = product.valoracion
         
-            for (let i = 0; i < 5; i++) { %>
-        
-                <% if (rating >= 1) { %>
-                    <i class="fas fa-star"></i>
+        for (let i = 0; i < 5; i++) { %>
+            
+            <% if (rating >= 1) { %>
+                <i class="fas fa-star"></i>
                 <% rating-- }
-        
+                
                 else if (rating > 0) { %>
                     <i class="fas fa-star-half-alt"></i>
-                <% rating-- }
-        
-                else { %>
-                    <i class="far fa-star"></i>
-                <% rating-- }
-                
-            } %>
-        
-        </div>
-       
-            <% let oferta = 100 - product.oferta; %>
-            <% for(let p of data.products) { %>
-            <% if (product.oferta) { %>
-                    <div class = "precio-tarjeta">
-                        <p class=" precio-original"><s>$<%= product.precio %> </s> </p> 
-                        
-                        <p class= "offer-percent"> %<%= product.oferta %></p>
-                    </div>
-                    <h3><b>$ <%= (product.precio * oferta) / 100 %> </b></h3>
+                    <% rating-- }
                     
-            <%  break }
-                
-            else { %>
-                <h3><b> $<%= product.precio %> </b></h3>
-                <% } break %>
-
-            <% } %>
-      
-        <div class = "enviosGratis"> <i class="fas fa-truck"></i> Envio gratis </div>
-        
-       
-
-    </a>
-    <% } %> 
-</section>
+                    else { %>
+                        <i class="far fa-star"></i>
+                        <% rating-- }
+                        
+                    } %>
+                    
+                    </div>
+                    
+                    <% let oferta = 100 - product.oferta; %>
+                    <% for(let p of data.products) { %>
+                        <% if (product.oferta) { %>
+                            <div class = "precio-tarjeta">
+                                <p class=" precio-original"><s>$<%= product.precio %> </s> </p> 
+                                
+                                <p class= "offer-percent"> %<%= product.oferta %></p>
+                                </div>
+                                <h3><b>$ <%= (product.precio * oferta) / 100 %> </b></h3>
+                                
+                                <%  break }
+                                
+                                else { %>
+                                    <h3><b> $<%= product.precio %> </b></h3>
+                                    <% } break %>
+                                    
+                                    <% } %>
+                                    
+                                    <div class = "enviosGratis"> <i class="fas fa-truck"></i> Envio gratis </div>
+                                    
+                                    
+                                    
+                                    </a>
+                                    <% } %>
+                                    <% } %> 
+                                    </section>

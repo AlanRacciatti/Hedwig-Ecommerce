@@ -26,7 +26,7 @@
         <div class="header-details">
         <div class='ruta-de-producto'>
             <span>
-            <a href = "/"> Home > </a><a href = "/">  Sección > </a> <a href = "/">  <%= data.productoDetalle.gender %> </a>
+            <a href = "/"> Home > </a><a href = "/">  Sección > </a> <a href = "/">  <%= data.productoDetalle.genero %> </a>
             </span>
             <div class="edit-delete">
             <a href="/products/edit/<%= data.productoDetalle.id %> "><button class="btn boton-compra" id="small-btn">Editar producto <i class="far fa-edit"></i></button> </a>
@@ -41,24 +41,24 @@
         <section class= 'detalle-del-producto'>
 
         <section>
-       <div class= 'imagen-detalles'> <img src = /img/products/<%= data.productoDetalle.image %> width= "250px" > </img></div>
+       <div class= 'imagen-detalles'> <img src = /img/products/<%= data.productoDetalle.imagen %> width= "250px" > </img></div>
         <div> 
             
             
-            <h2 class= 'precio'> <% let oferta = 100 - data.productoDetalle.offer; %>
-                <% if (data.productoDetalle.offer) { %>
-                    <p class=" precio-original-detalle"><s>$<%= data.productoDetalle.price %> </s> </p>
+            <h2 class= 'precio'> <% let oferta = 100 - data.productoDetalle.oferta; %>
+                <% if (data.productoDetalle.oferta) { %>
+                    <p class=" precio-original-detalle"><s>$<%= data.productoDetalle.precio %> </s> </p>
                     <div class = "precio-tarjeta-detalle">
-                        <h3 class="product-price-detalle"><b>$<%= (data.productoDetalle.price * oferta) / 100 %> </b></h3>     
+                        <h3 class="product-price-detalle"><b>$<%= (data.productoDetalle.precio * oferta) / 100 %> </b></h3>     
                             
-                        <p class= "offer-percent-detalle"><%= data.productoDetalle.offer %>% OFF</p>
+                        <p class= "offer-percent-detalle"><%= data.productoDetalle.oferta %>% OFF</p>
                     </div>
                         
                         
                 <%  }
                     
                 else { %>
-                    <h3><b> $<%= data.productoDetalle.price %> </b></h3>
+                    <h3><b> $<%= data.productoDetalle.precio %> </b></h3>
                     <% } %>
     
         </div>
@@ -67,11 +67,11 @@
 
         </section>
         
-        <section class= 'fragmento-libro'> <h2 class= titulo-libro><%= data.productoDetalle.title %></h2>
+        <section class= 'fragmento-libro'> <h2 class= titulo-libro><%= data.productoDetalle.titulo %></h2>
 
             <%- include("../partials/rating") %>
 
-            <p><%= data.productoDetalle.description %> </p>
+            <p><%= data.productoDetalle.descripcion %> </p>
 
         <div> <a href="/products/carrito"><button class= 'boton-compra'> Agregar a carrito <i class="fas fa-shopping-cart"></i></button></a></div>
         
@@ -83,9 +83,9 @@
         <section class= 'caracteristicas'>
             <h4> <b> Características </b></h4>
             <ul>
-                <li><span>Genero: <%= data.productoDetalle.gender %></span></li>
-                <li><span>Autor: <%= data.productoDetalle.author %></span></li>
-                <li><span>Cantidad de páginas: <%= data.productoDetalle.pagsLength %></span></li>
+                <li><span>Genero: <%= data.productoDetalle.genero %></span></li>
+                <li><span>Autor: <%= data.productoDetalle.autor %></span></li>
+                <li><span>Cantidad de páginas: <%= data.productoDetalle.cantidad_paginas %></span></li>
                 <li><span>Editorial: <%= data.productoDetalle.editorial %></span></li>
 
             </ul>

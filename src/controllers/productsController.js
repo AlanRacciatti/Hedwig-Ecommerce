@@ -1,3 +1,4 @@
+const { resolveAny } = require("dns");
 const fs = require("fs");
 const path = require("path");
 const productsFilePath = path.join(__dirname, '../data/productsDB.json');
@@ -84,15 +85,12 @@ const controladorProductos = {
 
     detalles: (req, res) => {
         let {id} = req.params;
-        let productoEncontrado;
 
-        for (let p of products) {
-            if (p.id == id){
-                productoEncontrado = p;
-            }
-        }
+        db.libros.findByPk(id)
+        .then(libro => {
+            res.render('./products/detalles',{data: {productoDetalle: libro, session: req.session}})
+        })
 
-        res.render('./products/detalles',{data: {productoDetalle: productoEncontrado, session: req.session}});
     },
 
     destroy: (req, res) => {
@@ -100,25 +98,19 @@ const controladorProductos = {
 		let id = req.params.id;
 		let ProductoEncontrado;
 
-
 		for (let producto of products){
 			if (producto.id == id){
 			    ProductoEncontrado=producto;
 			}
 		}
 
+		// fs.unlinkSync(path.join(__dirname, '../../public/img/products/', ProductoEncontrado.image));
 
-		fs.unlinkSync(path.join(__dirname, '../../public/img/products/', ProductoEncontrado.image));
-
-
-        db.usuarios.update( 
-            { 
+        db.libros.update({ 
             eliminado: 1
-            },
-            {
+        },
+        {
             where: { id: id } 
-
-
         })
 
 		res.redirect('/');
