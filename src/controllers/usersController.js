@@ -3,6 +3,7 @@ const path = require("path");
 const usersFilePath = path.join(__dirname, '../data/usersDB.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const bcrypt = require('bcryptjs');
+const db = require('../database/models');
 
 const controladorUsers = {
 
@@ -17,25 +18,31 @@ const controladorUsers = {
         
         let usuarioEncontrado 
         
-        users.forEach(element => {
-            if (element.mail== emailRecibido){
-                usuarioEncontrado = element
-            }
-        });
-        
-        let passwordCorrecta = bcrypt.compareSync(passwordRecibida,usuarioEncontrado.password)  
-        
-        if (!passwordCorrecta) {
-            res.send("Credenciales inválidas")
-        } else {
+        db.usuarios.findAll()
+        .then(usuarios => {
+            usuarios.forEach(usuario => {
+                if (usuario.email == emailRecibido) {
+                    usuarioEncontrado = usuario;
+                }
+            })
 
-            if (Boolean(recordarUsuario)) {
-                req.session.cookie.maxAge = 1000 * 60 * 60 * 24 //Esto equivale a un día en milisegundos
-            }
+            let passwordCorrecta = bcrypt.compareSync(passwordRecibida, usuarioEncontrado.contraseña);
 
-            req.session.usuarioLogueado = true
-            res.redirect('/')
-        }
+            if (!passwordCorrecta) {
+                res.send("Credenciales inválidas")
+            } else {
+    
+                if (Boolean(recordarUsuario)) {
+                    req.session.cookie.maxAge = 1000 * 60 * 60 * 24 //Esto equivale a un día en milisegundos
+                }
+    
+                req.session.usuarioLogueado = true
+                res.redirect('/')
+            }
+            
+        })
+
+
     },
     register: (req, res) => {
         res.render("./users/register", {data: {session: req.session}});
