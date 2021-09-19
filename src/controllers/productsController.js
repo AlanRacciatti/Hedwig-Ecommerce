@@ -100,9 +100,6 @@ const controladorProductos = {
 		let id = req.params.id;
 		let ProductoEncontrado;
 
-		let Nproducts = products.filter(function(e){
-			return id!=e.id;
-		})
 
 		for (let producto of products){
 			if (producto.id == id){
@@ -110,11 +107,22 @@ const controladorProductos = {
 			}
 		}
 
+
 		fs.unlinkSync(path.join(__dirname, '../../public/img/products/', ProductoEncontrado.image));
 
-		fs.writeFileSync(productsFilePath, JSON.stringify(Nproducts,null,' '));
+
+        db.usuarios.update( 
+            { 
+            eliminado: 1
+            },
+            {
+            where: { id: id } 
+
+
+        })
 
 		res.redirect('/');
+
 	}
 }
 
