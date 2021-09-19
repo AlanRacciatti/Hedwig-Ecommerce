@@ -12,35 +12,35 @@ const controladorUsers = {
     },
     loginAccount: (req,res) => {
 
-        // let emailRecibido = req.body.email 
-        // let passwordRecibida = req.body.password
-        // let recordarUsuario = req.body.recordarUsuario
+        let emailRecibido = req.body.email 
+        let passwordRecibida = req.body.password
+        let recordarUsuario = req.body.recordarUsuario
         
-        // let usuarioEncontrado 
+        let usuarioEncontrado 
         
-        // db.usuarios.findAll()
-        // .then(usuarios => {
-        //     usuarios.forEach(usuario => {
-        //         if (usuario.email == emailRecibido) {
-        //             usuarioEncontrado = usuario;
-        //         }
-        //     })
+        db.usuarios.findAll()
+        .then(usuarios => {
+            usuarios.forEach(usuario => {
+                if (usuario.email == emailRecibido) {
+                    usuarioEncontrado = usuario;
+                }
+            })
 
-        //     let passwordCorrecta = bcrypt.compareSync(passwordRecibida, usuarioEncontrado.contraseña);
+            let passwordCorrecta = bcrypt.compareSync(passwordRecibida, usuarioEncontrado.contraseña);
 
-        //     if (!passwordCorrecta) {
-        //         res.send("Credenciales inválidas")
-        //     } else {
+            if (!passwordCorrecta) {
+                res.send("Credenciales inválidas")
+            } else {
     
-        //         if (Boolean(recordarUsuario)) {
-        //             req.session.cookie.maxAge = 1000 * 60 * 60 * 24 //Esto equivale a un día en milisegundos
-        //         }
+                if (Boolean(recordarUsuario)) {
+                    req.session.cookie.maxAge = 1000 * 60 * 60 * 24 //Esto equivale a un día en milisegundos
+                }
     
-        //         req.session.usuarioLogueado = true
-        //         res.redirect('/')
-        //     }
+                req.session.usuarioLogueado = true
+                res.redirect('/')
+            }
 
-        // })
+        })
 
 
     },
