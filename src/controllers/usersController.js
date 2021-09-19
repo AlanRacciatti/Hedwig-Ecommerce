@@ -37,7 +37,13 @@ const controladorUsers = {
                 }
     
                 req.session.usuarioLogueado = true
-                res.redirect('/')
+
+                db.usuarios.findByPk(usuarioEncontrado.id)
+                .then(usuario => {
+                    req.session.admin = usuario.admin
+                    res.redirect('/')
+                })
+
             }
 
         })

@@ -9,8 +9,6 @@ const controladorMain = {
         .then(resultado => {
             res.render("./products/index", {data: {products: resultado, session: req.session}})
         })
-        // const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        // res.render("./products/index", {data: {products: products, session: req.session}});
       
     },
 }
