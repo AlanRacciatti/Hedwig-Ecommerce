@@ -50,31 +50,28 @@ const controladorUsers = {
 
     createAccount: (req, res) => {
 
-        let idNuevo= 0
         let passwordHasheada = bcrypt.hashSync(req.body.password, 10);
 
-        for (let u of users){
-            if (idNuevo < u.id){
-                idNuevo = u.id
-            }
-        }
-
-        idNuevo++
-
-        console.log(req.file)
         let nombreImagen = req.file.filename
-
+        
+        // Hora para los timestamps
+        let horaActual = new Date().toISOString().
+        replace(/T/, ' ').      // replace T with a space
+        replace(/\..+/, '')     // delete the dot and everything after
+        
         let usuarioNuevo = {
-            id: idNuevo,
-            userName: req.body.userName,
-            mail: req.body.email,
-            password: passwordHasheada,
-            image: nombreImagen,
-            fechaNacimiento: req.body.fechaNacimiento,
+            created_at: horaActual,
+            updated_at: horaActual,
+            email: req.body.email,
+            nombre: req.body.userName,
+            imagen: nombreImagen,
+            fecha_nacimiento: req.body.fechaNacimiento,
+            contraseña: passwordHasheada,
+            admin: 0
         }
 
-        users.push(usuarioNuevo)
-        fs.writeFileSync(usersFilePath,JSON.stringify(users,null," "))
+        db.usuarios.create(usuarioNuevo)
+        
         res.send("<h1>Tu cuenta ha sido creada!</h1><a href='/users/login'>Iniciar sesión</a>")
 
     }
