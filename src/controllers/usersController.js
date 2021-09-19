@@ -83,10 +83,27 @@ const controladorUsers = {
     },
 
     panelUsuarios: (req, res) => {
-        db.usuarios.findAll()
-        .then(usuarios => {
-            res.render("./users/cuentaAdmin", {data: {session: req.session, usuarios: usuarios}});
+        if (req.session.admin == 2) {
+            db.usuarios.findAll()
+            .then(usuarios => {
+                res.render("./users/cuentaAdmin", {data: {session: req.session, usuarios: usuarios}});
+            })
+        } else {
+            res.redirect('/users/login')
+        }
+    },
+
+    usuariosAdmin: (req, res) => {
+        
+        let {admin} = req.body
+        let {id} = req.params
+        db.usuarios.update({
+            admin: admin
+        },
+        {
+            where: {id: id}
         })
+        res.redirect('/users/panel')
     }
 
 }

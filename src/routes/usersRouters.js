@@ -13,5 +13,6 @@ router.get("/login", controladorUsers.login);
 router.post('/login', controladorUsers.loginAccount)
 
 router.get("/panel", controladorUsers.panelUsuarios)
+router.put("/panel/:id", controladorUsers.usuariosAdmin)
 
 module.exports = router;
