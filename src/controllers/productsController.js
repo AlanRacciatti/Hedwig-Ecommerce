@@ -6,11 +6,6 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const controladorProductos = {
 
-    index: (req, res) => {
-        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        res.render("./products/index", {data: {products: products, session:req.session}});
-    },
-
     carrito: (req, res) => {
         res.render("./products/carrito", {data: {session:req.session}});
     },
