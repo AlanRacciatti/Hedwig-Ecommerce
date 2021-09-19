@@ -104,7 +104,7 @@ const controladorProductos = {
 			}
 		}
 
-		// fs.unlinkSync(path.join(__dirname, '../../public/img/products/', ProductoEncontrado.image));
+		fs.unlinkSync(path.join(__dirname, '../../public/img/products/', ProductoEncontrado.image));
 
         db.libros.update({ 
             eliminado: 1
