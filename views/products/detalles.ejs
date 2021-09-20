@@ -28,12 +28,14 @@
             <span>
             <a href = "/"> Home > </a><a href = "/">  Sección > </a> <a href = "/">  <%= data.productoDetalle.genero.nombre %> </a>
             </span>
-            <div class="edit-delete">
-            <a href="/products/edit/<%= data.productoDetalle.id %> "><button class="btn boton-compra" id="small-btn">Editar producto <i class="far fa-edit"></i></button> </a>
-            <form action="/products/delete/<%=data.productoDetalle.id%>?_method=DELETE" method="POST" onsubmit="return confirm('Esta seguro que desea eliminarlo?');"> 
-                <button type="submit" class="btn btn-danger">Eliminar <i class="far fa-trash-alt"></i></button>
-            </form>
-            </div>
+            <% if (data.session.admin >= 1) { %>
+                <div class="edit-delete">
+                    <a href="/products/edit/<%= data.productoDetalle.id %> "><button class="btn boton-compra" id="small-btn">Editar producto <i class="far fa-edit"></i></button> </a>
+                    <form action="/products/delete/<%=data.productoDetalle.id%>?_method=DELETE" method="POST" onsubmit="return confirm('Esta seguro que desea eliminarlo?');"> 
+                        <button type="submit" class="btn btn-danger">Eliminar <i class="far fa-trash-alt"></i></button>
+                    </form>
+                </div>
+                <% } %>
         </div>
         </div>
 
