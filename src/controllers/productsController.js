@@ -1,3 +1,4 @@
+const { EDESTADDRREQ } = require("constants");
 const { resolveAny } = require("dns");
 const fs = require("fs");
 const path = require("path");
@@ -75,10 +76,24 @@ const controladorProductos = {
 			}
 		}
 
+        // Hora para los timestamps
+        let horaActual = new Date().toISOString().
+        replace(/T/, ' ').      // replace T with a space
+        replace(/\..+/, '')     // delete the dot and everything after
 
-        console.log(`Updated product with id ${id}`);
-
-		fs.writeFileSync(productsFilePath, JSON.stringify(products,null,' '));
+        db.libros.update({
+            updated_at: horaActual,
+            titulo: req.body.title,
+            valoracion: req.body.rating,
+            precio: req.body.price,
+            oferta: req.body.offer,
+            descripcion: req.body.description,
+            cantidad_paginas: req.body.pagsLength,
+            editorial: req.body.editorial,
+        },
+        {
+            where: {id: id}
+        })
 
 		res.redirect('/');
 	},

@@ -51,34 +51,19 @@
 
 -Nos sentimos satisfechos con nuestra organización durante este sprint
 
-# Reunión retrospectiva Sprint 5- (19/09/21)
-
-## Cosas para seguir haciendo: 
-
--Organizar reuniones frecuentes con el grupo
--Añadir detalles en el sitio que no son obligatorios
-
-## Cosas para mejorar:
-
--Dar mayor importancia a las secciones del sitio (novedades, ofertas, etc.)
--Agregar página de error
-
-## Cosas para no hacer más:
-
--Nos sentimos satisfechos con nuestra organización durante este sprint
-
 # Reunión retrospectiva Sprint 6- (19/09/21)
 
 ## Cosas para seguir haciendo: 
 
 -Organizar reuniones frecuentes con el grupo
--Añadir detalles en el sitio que no son obligatorios
 
 ## Cosas para mejorar:
 
--Dar mayor importancia a las secciones del sitio (novedades, ofertas, etc.)
--Agregar página de error
+-Estetica del panel de usuario
+-Agregar funcionalidades a las paginas que redirigen al ERROR 404
+-Agregarle funcionalidad a la barra de busqueda
+
 
 ## Cosas para no hacer más:
 
--Nos sentimos satisfechos con nuestra organización durante este sprint
+-Dejar cosas para el ultimo dia
