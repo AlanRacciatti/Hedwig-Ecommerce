@@ -24,7 +24,7 @@ function autoresData(sequelize, DataTypes) {
 
     autor.associate = (modelos) => {
         autor.hasMany(modelos.libros, {
-            as: "autores",
+            as: "autor",
             foreignKey: "autor_fk"
         });
     }

@@ -88,7 +88,7 @@ function librosData(sequelize, DataTypes){
     libro.associate = (modelos) => {
 
         libro.belongsTo(modelos.autores, {
-            as: "autores",
+            as: "autor",
             foreignKey: "autor_fk"
         });
         

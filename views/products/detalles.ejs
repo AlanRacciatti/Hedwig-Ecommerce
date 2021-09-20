@@ -26,7 +26,7 @@
         <div class="header-details">
         <div class='ruta-de-producto'>
             <span>
-            <a href = "/"> Home > </a><a href = "/">  Sección > </a> <a href = "/">  <%= data.productoDetalle.genero %> </a>
+            <a href = "/"> Home > </a><a href = "/">  Sección > </a> <a href = "/">  <%= data.productoDetalle.genero.nombre %> </a>
             </span>
             <div class="edit-delete">
             <a href="/products/edit/<%= data.productoDetalle.id %> "><button class="btn boton-compra" id="small-btn">Editar producto <i class="far fa-edit"></i></button> </a>
@@ -83,8 +83,8 @@
         <section class= 'caracteristicas'>
             <h4> <b> Características </b></h4>
             <ul>
-                <li><span>Genero: <%= data.productoDetalle.genero %></span></li>
-                <li><span>Autor: <%= data.productoDetalle.autor %></span></li>
+                <li><span>Genero: <%= data.productoDetalle.genero.nombre %></span></li>
+                <li><span>Autor: <%= data.productoDetalle.autor.nombre %></span></li>
                 <li><span>Cantidad de páginas: <%= data.productoDetalle.cantidad_paginas %></span></li>
                 <li><span>Editorial: <%= data.productoDetalle.editorial %></span></li>
 

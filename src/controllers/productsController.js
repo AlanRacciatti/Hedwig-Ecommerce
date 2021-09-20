@@ -86,7 +86,12 @@ const controladorProductos = {
     detalles: (req, res) => {
         let {id} = req.params;
 
-        db.libros.findByPk(id)
+        db.libros.findByPk(id, {
+            include: [
+                {association: "autor"},
+                {association: "genero"}
+            ]
+        })
         .then(libro => {
             res.render('./products/detalles',{data: {productoDetalle: libro, session: req.session}})
         })

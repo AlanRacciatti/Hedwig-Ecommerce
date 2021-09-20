@@ -50,3 +50,35 @@
 ## Cosas para no hacer más:
 
 -Nos sentimos satisfechos con nuestra organización durante este sprint
+
+# Reunión retrospectiva Sprint 5- (19/09/21)
+
+## Cosas para seguir haciendo: 
+
+-Organizar reuniones frecuentes con el grupo
+-Añadir detalles en el sitio que no son obligatorios
+
+## Cosas para mejorar:
+
+-Dar mayor importancia a las secciones del sitio (novedades, ofertas, etc.)
+-Agregar página de error
+
+## Cosas para no hacer más:
+
+-Nos sentimos satisfechos con nuestra organización durante este sprint
+
+# Reunión retrospectiva Sprint 6- (19/09/21)
+
+## Cosas para seguir haciendo: 
+
+-Organizar reuniones frecuentes con el grupo
+-Añadir detalles en el sitio que no son obligatorios
+
+## Cosas para mejorar:
+
+-Dar mayor importancia a las secciones del sitio (novedades, ofertas, etc.)
+-Agregar página de error
+
+## Cosas para no hacer más:
+
+-Nos sentimos satisfechos con nuestra organización durante este sprint
