@@ -88,7 +88,7 @@ const controladorUsers = {
                 res.render("./users/cuentaAdmin", {data: {session: req.session, usuarios: usuarios}});
             })
         } else {
-            res.redirect('/users/login')
+            res.redirect('./users/login')
         }
     },
 

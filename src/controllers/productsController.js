@@ -1,10 +1,9 @@
-const { EDESTADDRREQ } = require("constants");
-const { resolveAny } = require("dns");
 const fs = require("fs");
 const path = require("path");
-const productsFilePath = path.join(__dirname, '../data/productsDB.json');
 const db = require('../database/models');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+let horaActual = new Date().toISOString().
+replace(/T/, ' ').      // replace T with a space
+replace(/\..+/, '')     // delete the dot and everything after
 
 const controladorProductos = {
 
@@ -13,73 +12,78 @@ const controladorProductos = {
     },
 
     agregarProducto: (req,res) => {
-        res.render("./products/create", {data: {session:req.session}});
+        db.generos.findAll()
+        .then(generos => {
+            db.autores.findAll()
+            .then(autores => {
+                res.render("./products/create", {data: {generos: generos, autores: autores, session:req.session}})
+            })
+        })
     },
 
     store: (req,res) => {
-        let idNuevo= 0
-        for (let p of products){
-            if (idNuevo < p.id){
-                idNuevo = p.id
-            }
-        }
-        idNuevo++
-        let nombreImagen = req.file.filename
-        let productoNuevo = {
-            id: idNuevo,
-            title: req.body.title,
-            description: req.body.description,
-            price: req.body.price,
-            offer: req.body.offer,
-            rating: req.body.rating,
-            gender: req.body.gender,
-            author: req.body.author,
-            image: nombreImagen,
-            pagsLength: req.body.pagsLength,
-            editorial:req.body.editorial,
 
-        }
-        products.push(productoNuevo)
-        fs.writeFileSync(productsFilePath,JSON.stringify(products,null," "))
-        res.redirect("/")
+        db.autores.findOne({ where: {nombre: req.body.author} })
+        .then(autores => {
+            
+            let nombreImagen = req.file.filename
+            let autor = autores.id
+
+            db.generos.findOne({ where: {nombre: req.body.gender} })
+            .then(generos => {
+
+                let genero = generos.id
+                
+                let productoNuevo = {
+                    created_at: horaActual,
+                    updated_at: horaActual,
+                    imagen: nombreImagen,
+                    titulo: req.body.title,
+                    valoracion: req.body.rating,
+                    precio: req.body.price,
+                    oferta: req.body.offer,
+                    descripcion: req.body.description,
+                    cantidad_paginas: req.body.pagsLength,
+                    editorial:req.body.editorial,
+                    stock: req.body.stock,
+                    eliminado: 0,
+                    genero_fk: genero,
+                    autor_fk: autor,
+                }
+        
+                db.libros.create(productoNuevo)
+        
+                res.redirect("/")
+
+            })
+
+        })
+
     },
 
     edit: (req, res) => {
         let {id} = req.params;
-        let productoEncontrado;
+        db.libros.findByPk(id, {include: [
+            {association: "autor"},
+            {association: "genero"}
+        ]})
+        .then(libro => {   
+            db.autores.findAll()
+            .then(autores => {
+                db.generos.findAll()
+                .then(generos => {
+                    res.render('./products/edit', {data: {autores: autores, generos: generos, productoaEditar: libro, session: req.session}})
+                })
+            }) 
+        })
 
-        for (let p of products) {
-            if (p.id == id){
-                productoEncontrado = p;
-            }
-        }
-
-        res.render('./products/edit',{data: {productoaEditar: productoEncontrado, session: req.session}});
     },
 
     update: (req, res) => {
-		
-		let id = req.params.id;
+	    // Hora para los timestamps
+        let { id } = req.params
 
-		for (let s of products){
-			if (id==s.id){
-                s.title = req.body.title;
-                s.description = req.body.description;
-                s.price = req.body.price;
-                s.offer = req.body.offer;
-                s.valoration = req.body.valoration;
-                s.gender = req.body.gender;
-                s.author = req.body.author;
-                s.pagsLength = req.body.pagsLength;
-                s.editorial = req.body.editorial;
-				break;
-			}
-		}
-
-        // Hora para los timestamps
-        let horaActual = new Date().toISOString().
-        replace(/T/, ' ').      // replace T with a space
-        replace(/\..+/, '')     // delete the dot and everything after
+    
 
         db.libros.update({
             updated_at: horaActual,
@@ -116,15 +120,12 @@ const controladorProductos = {
     destroy: (req, res) => {
 
 		let id = req.params.id;
-		let ProductoEncontrado;
 
-		for (let producto of products){
-			if (producto.id == id){
-			    ProductoEncontrado=producto;
-			}
-		}
+        db.libros.findByPk(id)
+        .then(libro => {
+            fs.unlinkSync(path.join(__dirname, '../../public/img/products/', libro.imagen));
+        })
 
-		fs.unlinkSync(path.join(__dirname, '../../public/img/products/', ProductoEncontrado.image));
 
         db.libros.update({ 
             eliminado: 1

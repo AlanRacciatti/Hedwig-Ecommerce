@@ -24,11 +24,11 @@
 
         <div class="max-width">
 
-        <h2 class="admin-heading"> Editando <%= data.productoaEditar.title %>  </h2>
+        <h2 class="admin-heading"> Editando <%= data.productoaEditar.titulo %>  </h2>
 
         <p class='ruta-de-producto'>
             <span>
-            <a href = "/"> Home > </a><a href = "/">  Sección > </a> <a href = "/">  <%= data.productoaEditar.gender %>  </a>
+            <a href = "/"> Home > </a><a href = "/">  Sección > </a> <a href = "/">  <%= data.productoaEditar.genero.nombre %>  </a>
             </span>
         </p>
 
@@ -43,31 +43,27 @@
                         
                     </div>
                 <div class="edit-precio">
-                    <input name="price" class="edit-input-style edit-info-product1" value="<%= data.productoaEditar.price %> " type="text" placeholder="Precio">
+                    <input name="price" class="edit-input-style edit-info-product1" value="<%= data.productoaEditar.precio %> " type="text" placeholder="Precio">
                     <br>
-                    <input name="offer" class="edit-input-style edit-info-product1" value="<%= data.productoaEditar.offer %> " type="text" placeholder="Oferta (opcional)">
+                    <input name="offer" class="edit-input-style edit-info-product1" value="<%= data.productoaEditar.oferta %> " type="text" placeholder="Oferta (opcional)">
                 </div>
 
                 </section>
                 
                 <section class= 'fragmento-libro edit-description-section'> 
-                <input name="title" class="edit-input-style edit-titulo-libro edit-info-product1" value="<%= data.productoaEditar.title %>" type="text" placeholder="Título" />
+                <input name="title" class="edit-input-style edit-titulo-libro edit-info-product1" value="<%= data.productoaEditar.titulo %>" type="text" placeholder="Título" />
                 <div class="edit-valoracion">
                     <label for="edit-valoracion">Valoración:</label>
-                    <select class="edit-input-style" name="valoration" class="edit-valoracion-estrellitas" id="edit-valoracion">
-                            <option value="1">1</option>
-                            <option value="1.5">1.5</option>
-                            <option value="2">2</option>
-                            <option value="2.5">2.5</option>
-                            <option value="3">3</option>
-                            <option value="3.5">3.5</option>
-                            <option value="4">4</option>
-                            <option value="4.5">4.5</option>
-                            <option value="5">5</option>
+                    <select class="edit-input-style" name="rating" class="edit-valoracion-estrellitas" id="edit-valoracion">
+                            <% for( let i = 1; i <= 5; i += 0.5 ) { %>
+                                <option <% if (data.productoaEditar.valoracion == i) { %>
+                                    selected
+                                <% } %> value="<%= i %>"><%= i %> </option>
+                            <% } %>
                     </select>
                 </div>
 
-                <textarea name="description" class="edit-input-style" cols="90" rows="10" placeholder="Descripcion del producto"><%= data.productoaEditar.description %> </textarea>
+                <textarea name="description" class="edit-input-style" cols="90" rows="10" placeholder="Descripcion del producto"><%= data.productoaEditar.descripcion %> </textarea>
 
                 </section>
 
@@ -78,9 +74,21 @@
                 <section class= 'caracteristicas edit-caracteristicas'>
                     <h4> <b> Características </b></h4>
                     <ul>
-                        <li><input name="gender" class="edit-input-style" value="<%= data.productoaEditar.gender %>" type="text" placeholder=" Género"></li>
-                        <li><input name="author" class="edit-input-style" value="<%= data.productoaEditar.author %>" type="text" placeholder=" Autor"></li>
-                        <li><input name="pagsLength" class="edit-input-style" value="<%= data.productoaEditar.pagsLength %>" type="text" placeholder=" Cantidad de paginas"></li>
+                        <li>
+                            <select name="gender" class="edit-input-style" type="text" placeholder=" Género">
+                                <% for( let i = 0; i < data.generos.length; i++ ) { %>
+                                    <option value="<%= data.generos[i].nombre %> "><%= data.generos[i].nombre %> </option>
+                                <% } %>
+                            </select>
+                        </li>
+                        <li>
+                            <select name="author" class="edit-input-style" type="text" placeholder=" Autor">
+                                <% for( let i = 0; i < data.autores.length; i++ ) { %>
+                                    <option value="<%= data.autores[i].nombre %> "><%= data.autores[i].nombre %> </option>
+                                <% } %>
+                            </select>
+                        </li>
+                        <li><input name="pagsLength" class="edit-input-style" value="<%= data.productoaEditar.cantidad_paginas %>" type="text" placeholder=" Cantidad de paginas"></li>
                         <li><input name="editorial" class="edit-input-style" value="<%= data.productoaEditar.editorial %>" type="text" placeholder=" Editorial"></li>
                         
                     </ul>

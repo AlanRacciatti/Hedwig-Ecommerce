@@ -84,8 +84,20 @@
                 <section class= 'caracteristicas edit-caracteristicas'>
                     <h4> <b> Características </b></h4>
                     <ul>
-                        <li><input name="gender" class="edit-input-style" type="text" placeholder=" Género"></li>
-                        <li><input name="author" class="edit-input-style" type="text" placeholder=" Autor"></li>
+                        <li>
+                            <select name="gender" class="edit-input-style" type="text" placeholder=" Género">
+                                <% for( let i = 0; i < data.generos.length; i++ ) { %>
+                                    <option value="<%= data.generos[i].nombre %> "><%= data.generos[i].nombre %> </option>
+                                <% } %>
+                            </select>
+                        </li>
+                        <li>
+                            <select name="author" class="edit-input-style" type="text" placeholder=" Autor">
+                                <% for( let i = 0; i < data.autores.length; i++ ) { %>
+                                    <option value="<%= data.autores[i].nombre %> "><%= data.autores[i].nombre %> </option>
+                                <% } %>
+                            </select>
+                        </li>
                         <li><input name="pagsLength" class="edit-input-style" type="text" placeholder=" Cantidad de paginas"></li>
                         <li><input name="editorial" class="edit-input-style" type="text" placeholder=" Editorial"></li>
                         <li><input name="stock" class="edit-input-style" type="text" placeholder=" Stock"></li>
