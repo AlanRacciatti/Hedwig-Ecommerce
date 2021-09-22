@@ -77,7 +77,7 @@ const controladorUsers = {
 
         db.usuarios.create(usuarioNuevo)
         
-        res.send("<h1>Tu cuenta ha sido creada!</h1><a href='/users/login'>Iniciar sesión</a>")
+        res.redirect('/users/login')
 
     },
 
