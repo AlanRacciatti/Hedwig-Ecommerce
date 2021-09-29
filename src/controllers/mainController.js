@@ -1,6 +1,3 @@
-const fs = require("fs");
-const path = require("path");
-const productsFilePath = path.join(__dirname, '../data/productsDB.json');
 const db = require('../database/models');
 
 const controladorMain = {
