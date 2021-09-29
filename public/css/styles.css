@@ -406,6 +406,7 @@ label[for='check-user'] {
   display: flex;
   flex-direction: column;
   padding: 0;
+  margin-bottom: 0;
   text-align: center;
 }
 

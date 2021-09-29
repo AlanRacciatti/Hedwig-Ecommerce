@@ -10,14 +10,13 @@
 
             <ul class="dropdown-menu">
                 <% if(!data.session.usuarioLogueado){ %> 
-                <li><a class="dropdown-item" href="/users/login" class ="btn-open-login">Iniciar sesión</a></li> 
+                <li><a class="dropdown-item" href="/users/login" class ="btn-open-login">Iniciar sesión / Registrarse</a></li> 
                 <hr class="dropdown-divider">
                 <% } %> 
                 <li><a class="dropdown-item" href="/productos/generos">Categorías</a></li>
                 <li><a class="dropdown-item" href="/productos/best-sellers">Best sellers</a></li>
                 <li><a class="dropdown-item" href="/productos/novedades">Novedades</a></li>
                 <li><a class="dropdown-item" href="/productos/ofertas">Ofertas</a></li>
-                <hr class="dropdown-divider">
                 <% if(data.session.usuarioLogueado){ %>
                 <li><a class="dropdown-item" href="#">Historial</a></li>
                 <li><a class="dropdown-item" href="#">Configuración</a></li>
