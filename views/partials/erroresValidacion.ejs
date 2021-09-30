@@ -1,0 +1,7 @@
+<% if(typeof data.errores != "undefined"){ %> 
+    <ul class="text-center px-0">
+        <% for(let i = 0; i < data.errores.length; i++){ %>
+            <li class="text-center bg-danger w-50 list-unstyled py-2 m-auto"> <%= data.errores[i].msg %>  </li>
+        <% } %> 
+    </ul>
+<% } %> 

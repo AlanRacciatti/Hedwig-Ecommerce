@@ -23,8 +23,9 @@
 
     <main>
         <br>
+        <form action= "/users/login" method="POST">
+           <%- include('../partials/erroresValidacion') %>
         <div class="login-wrap">
-            <form action= "/users/login" method="POST">
             <div class="login-html">
                 <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Inicia Sesion</label>
                 <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Registrate</label>
@@ -32,7 +33,7 @@
                     <div class="sign-in-htm">
                         <div class="group">
                             <label for="email" class="label"></label>
-                            <input  class="input" type="email" name= "email" id= "email" autofocus= 1 placeholder="@ Correo electronico" required aria-required="true" aria-describedat="form-email.error">
+                            <input  class="input" type="email" name= "email" id= "email" autofocus= 1 placeholder="@ Correo electronico" aria-required="true" aria-describedat="form-email.error">
                         </div>
                         <div class="group">
                             <label  for="password" class="label"></label>
@@ -58,12 +59,12 @@
                     
                     <div class="group">
                         <label class="label" for="email"> </label>
-                        <input class="input" type="email" name= "email" id= "email" autofocus= 1 placeholder= "@ Correo electronico"  aria-required="true" aria-describedat="form-email.error" data-missing-error="El campo es requerido." required>
+                        <input class="input" type="email" name= "email" id= "email" autofocus= 1 placeholder= "@ Correo electronico"  aria-required="true" aria-describedat="form-email.error" data-missing-error="El campo es requerido.">
                     </div>
                     
                 <div class="group">
                          <label class="label" for="name"></label>
-                         <input class="input"  type="text" name= "userName" id= "name" autofocus= 1 placeholder=" Nombre y Apellido" required> 
+                         <input class="input"  type="text" name= "userName" id= "name" autofocus= 1 placeholder=" Nombre y Apellido"> 
                      </div>
                      <div class="group">
                 
@@ -77,13 +78,13 @@
 
                 <div class="group">
                     <label for="password" class="label"></label>
-                    <input class="input" type="password" name= "password" id= "password" autofocus= 1 placeholder="Contraseña" required>
+                    <input class="input" type="password" name= "password" id= "password" autofocus= 1 placeholder="Contraseña">
                     </div>
 
                 <div class="group">
 
                         <label for="password" class="label"></label>
-                        <input class="input"  type="password" name= "confirm-password" id= "password" autofocus= 1 placeholder="Repetir contraseña" required>
+                        <input class="input"  type="password" name= "confirm-password" id= "password" autofocus= 1 placeholder="Repetir contraseña">
                     </div>
                  
                 <div class="group">
