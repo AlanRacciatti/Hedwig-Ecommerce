@@ -8,15 +8,18 @@ const uploadFile = require('../middlewares/productsMulter')
 // ** Controller require **
 const productsController = require("./../controllers/productsController");
 
+// **** Validaciones ****
+const validationsCreate = require('../middlewares/validations/validationsCreate');
+
 router.get("/detalles", productsController.detalles);
 
 router.get("/carrito", productsController.carrito);
 
 router.get("/create", productsController.agregarProducto);
-router.post("/create", uploadFile.single("image"), productsController.store)
+router.post("/create", uploadFile.single("image"), validationsCreate, productsController.store)
 
 router.get("/edit/:id", productsController.edit);
-router.put("/edit/:id", productsController.update);
+router.put("/edit/:id", validationsCreate, productsController.update);
 
 router.get("/detalles/:id", productsController.detalles);
 

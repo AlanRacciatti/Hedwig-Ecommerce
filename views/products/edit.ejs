@@ -20,6 +20,8 @@
     
     <!-- Fin del header -->
 
+    <%- include('../partials/erroresValidacion') %> 
+
     <main class = 'main-detalles'>
 
         <div class="max-width">
@@ -90,6 +92,7 @@
                         </li>
                         <li><input name="pagsLength" class="edit-input-style" value="<%= data.productoaEditar.cantidad_paginas %>" type="text" placeholder=" Cantidad de paginas"></li>
                         <li><input name="editorial" class="edit-input-style" value="<%= data.productoaEditar.editorial %>" type="text" placeholder=" Editorial"></li>
+                        <li><input name="stock" class="edit-input-style" value="<%= data.productoaEditar.stock %> " type="text" placeholder=" Stock"></li>
                         
                     </ul>
                     
