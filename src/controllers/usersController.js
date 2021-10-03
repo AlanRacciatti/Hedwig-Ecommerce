@@ -70,7 +70,7 @@ const controladorUsers = {
         console.log(resultadoValidacion)
 
 
-        if (resultadoValidacion.length <= 0) {
+        if (resultadoValidacion.errors.length <= 0) {
             
             let passwordHasheada = bcrypt.hashSync(req.body.password, 10);
     
