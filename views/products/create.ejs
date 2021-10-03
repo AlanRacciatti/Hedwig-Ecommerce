@@ -22,6 +22,8 @@
 
     <main class = 'main-detalles'>
 
+        <%- include('../partials/erroresValidacion') %> 
+
         <div class="max-width">
 
         <h2 class="admin-heading"> NUEVO PRODUCTO </h2>
@@ -51,7 +53,7 @@
                 <div class="edit-precio">
                     <input name="price" class="edit-input-style edit-info-product1" type="text" placeholder="Precio">
                     <br>
-                    <input name="offer" class="edit-input-style edit-info-product1" type="text" placeholder="Oferta (opcional)">
+                    <input name="offer" value="0" class="edit-input-style edit-info-product1" type="text" placeholder="Oferta (opcional)">
                 </div>
 
                 </section>

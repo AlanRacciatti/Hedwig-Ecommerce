@@ -14,6 +14,7 @@ const controladorUsers = {
         
         let resultadoValidacion = validationResult(req)
         
+        console.log(resultadoValidacion)
         if (resultadoValidacion.errors.length <= 0) {
 
             let emailRecibido = req.body.email;
@@ -53,6 +54,7 @@ const controladorUsers = {
             })
 
         } else {
+            
             res.render("./users/login", {data: {session: req.session, errores: resultadoValidacion.errors}})
         }
 
@@ -65,8 +67,10 @@ const controladorUsers = {
     createAccount: (req, res) => {
 
         let resultadoValidacion = validationResult(req)
+        console.log(resultadoValidacion)
 
-        if (resultadoValidacion.length < 0) {
+
+        if (resultadoValidacion.length <= 0) {
             
             let passwordHasheada = bcrypt.hashSync(req.body.password, 10);
     
@@ -93,6 +97,7 @@ const controladorUsers = {
             res.redirect('/users/login')
 
         } else {
+            
             res.render("./users/login", {data: {session: req.session, errores: resultadoValidacion.errors}})
         }
 

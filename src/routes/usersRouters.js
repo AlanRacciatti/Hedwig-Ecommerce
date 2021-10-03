@@ -10,10 +10,10 @@ const validacionesRegister = require('../middlewares/validations/validationsRegi
 const uploadFile = require('../middlewares/usersMulter')
 
 router.get("/register", controladorUsers.register);
-router.post("/register", validacionesRegister ,uploadFile.single("image") ,controladorUsers.createAccount);
+router.post("/register", uploadFile.single("image") ,validacionesRegister, controladorUsers.createAccount);
 
 router.get("/login", controladorUsers.login);
-router.post('/login', validacionesLogin ,controladorUsers.loginAccount)
+router.post('/login', validacionesLogin, controladorUsers.loginAccount)
 
 router.get("/panel", controladorUsers.panelUsuarios)
 router.put("/panel/:id", controladorUsers.usuariosAdmin)
