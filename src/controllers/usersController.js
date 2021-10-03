@@ -1,3 +1,5 @@
+console.clear()
+
 const bcrypt = require('bcryptjs');
 const db = require('../database/models');
 const { validationResult } = require('express-validator');
@@ -7,15 +9,16 @@ const controladorUsers = {
     login: (req, res) => {
         res.render("./users/login", {data: {session: req.session}});
     },
+
     loginAccount: (req,res) => {
-
+        
         let resultadoValidacion = validationResult(req)
+        
+        if (resultadoValidacion.errors.length <= 0) {
 
-        if (resultadoValidacion.errors.length < 0) {
-            
-            let emailRecibido = req.body.email 
-            let passwordRecibida = req.body.password
-            let recordarUsuario = req.body.recordarUsuario
+            let emailRecibido = req.body.email;
+            let passwordRecibida = req.body.password;
+            let recordarUsuario = req.body.recordarUsuario;
             
             let usuarioEncontrado 
             
@@ -53,10 +56,8 @@ const controladorUsers = {
             res.render("./users/login", {data: {session: req.session, errores: resultadoValidacion.errors}})
         }
 
-        
-
-
     },
+
     register: (req, res) => {
         res.render("./users/register", {data: {session: req.session}});
     },
