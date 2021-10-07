@@ -88,6 +88,7 @@
                     <ul>
                         <li>
                             <select name="gender" class="edit-input-style" type="text" placeholder=" Género">
+                                <option value=0> - - - Seleccioná un género - - - </option>
                                 <% for( let i = 0; i < data.generos.length; i++ ) { %>
                                     <option value="<%= data.generos[i].nombre %> "><%= data.generos[i].nombre %> </option>
                                 <% } %>
@@ -95,6 +96,7 @@
                         </li>
                         <li>
                             <select name="author" class="edit-input-style" type="text" placeholder=" Autor">
+                                <option value=0> - - - Seleccioná un autor - - - </option>
                                 <% for( let i = 0; i < data.autores.length; i++ ) { %>
                                     <option value="<%= data.autores[i].nombre %> "><%= data.autores[i].nombre %> </option>
                                 <% } %>
