@@ -23,8 +23,8 @@
 
     <main>
         <br>
-        <form action= "/users/login" method="POST">
-           <%- include('../partials/erroresValidacion') %>
+        <form action= "/users/login" method="POST" id="form-login">
+        <%- include('../partials/erroresValidacion') %>
         <div class="login-wrap">
             <div class="login-html">
                 <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Inicia Sesion</label>
@@ -44,8 +44,7 @@
                             <label for="check"><span class="icon"></span>Guardar inicio de sesion</label>
                         </div>
                         <div class="group">
-                            
-                        <button type="submit" class="button">Iniciar sesion</button>
+                            <button type="submit" class="button" id="submit-login">Iniciar sesion</button>
                         </div>
                         <div class="hr"></div>
                         <div class="foot-lnk">
@@ -98,6 +97,8 @@
 	<%- include("../partials/footer") %>
 
 	<!-- Fin del footer -->
+
+    <script src="/js/validationLogin.js"></script>
 
 </body>
 
