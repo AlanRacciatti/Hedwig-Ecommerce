@@ -27,10 +27,10 @@
         <%- include('../partials/erroresValidacion') %>
         <div class="login-wrap">
             <div class="login-html">
-                <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Inicia Sesion</label>
-                <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab d-none">Registrate</label>
+                <input id="tab-1" type="radio" name="tab" class="sign-in" ><label for="tab-1" class="tab d-none">Inicia Sesion</label>
+                <input id="tab-2" type="radio" name="tab" class="sign-up" checked><label for="tab-2" class="tab">Registrate</label>
                 <div class="login-form">
-                    <div class="sign-in-htm">
+                    <div class="sign-in-htm d-none">
                         <div class="group">
                             <label for="email" class="label"></label>
                             <input  class="input" type="email" name= "email" id= "email" autofocus= 1 placeholder="@ Correo electronico" aria-required="true" aria-describedat="form-email.error">
@@ -52,8 +52,8 @@
                         </div>
                     </div>
                 </form>
-                <form action="/users/register" method="POST" class="d-none" enctype="multipart/form-data">
-                    <div class="sign-up-htm d-none">
+                <form action="/users/register" method="POST" enctype="multipart/form-data">
+                    <div class="sign-up-htm">
                     <h5 class="foot-lnk" class="cookies">¡Es rapido y facil!</h5>
                     
                     <div class="group">

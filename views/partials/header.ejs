@@ -10,7 +10,8 @@
 
             <ul class="dropdown-menu">
                 <% if(!data.session.usuarioLogueado){ %> 
-                <li><a class="dropdown-item" href="/users/login" class ="btn-open-login">Iniciar sesión / Registrarse</a></li> 
+                <li><a class="dropdown-item" href="/users/login" class ="btn-open-login">Iniciar sesión</a></li> 
+                <li><a class="dropdown-item" href="/users/register" class ="btn-open-login">Registrarse</a></li> 
                 <hr class="dropdown-divider">
                 <% } %> 
                 <li><a class="dropdown-item" href="/productos/generos">Categorías</a></li>
@@ -75,7 +76,8 @@
  
             <% if(!data.session.usuarioLogueado) { %> 
             <div class="container-not-logged-in">
-                <a href="/users/login"><button class="btn button-width"> Iniciar sesión / Registrarse </button></a>
+                <a href="/users/login"><button class="btn button-width"> Iniciar sesión </button></a>
+                <a href="/users/register"><button class="btn button-width"> Registrarse </button></a>
             </div>
             <% } else { %> 
             <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user"></i></button>
