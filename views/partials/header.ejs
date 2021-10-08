@@ -9,6 +9,13 @@
             <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i id="hamburguer-menu" class="fas fa-bars"></i></button>
 
             <ul class="dropdown-menu">
+                <li class="dropdown-item">
+                    <form action="/search">
+                        <input type="text" placeholder="Buscar libros, autores, géneros" />
+                        <button type="submit"><i id="black-icon" class="fas fa-search"></i></button>
+                    </form>
+                </li>
+                <hr class="dropdown-divider">
                 <% if(!data.session.usuarioLogueado){ %> 
                 <li><a class="dropdown-item" href="/users/login" class ="btn-open-login">Iniciar sesión</a></li> 
                 <li><a class="dropdown-item" href="/users/register" class ="btn-open-login">Registrarse</a></li> 
