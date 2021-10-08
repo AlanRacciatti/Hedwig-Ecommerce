@@ -4,6 +4,10 @@
     .container-cart-mobile {
       display: none;
     }
+
+    body {
+      padding-top: 150px;
+    }
   
     .header-search-bar-tablet-mobile {
       display: block;
@@ -42,6 +46,10 @@
     .link-cart-tablet i {
       color: #5a8da9;
       margin: 2px;
+    }
+
+    .main-header {
+      padding-bottom: 175px;
     }
   
     .total {

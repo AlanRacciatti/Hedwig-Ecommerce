@@ -8,7 +8,7 @@
 }
 
 body {
-  padding-top: 150px;
+  padding-top: 75px;
 }
 
 .max-width {
@@ -24,7 +24,7 @@ body {
 .main-header {
   background-color: #222026;
   width: 100%;
-  height: 175px;
+  height: 100px;
   position: fixed;
   top: 0;
   left: 0;
