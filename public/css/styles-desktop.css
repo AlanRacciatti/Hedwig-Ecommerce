@@ -53,12 +53,6 @@
       color: #d48a38;
     }
   
-    .main-header {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-    }
-  
     .header-logo-section {
       justify-content: space-evenly;
       padding-top: 2%;
