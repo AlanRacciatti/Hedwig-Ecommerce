@@ -97,7 +97,7 @@ const controladorUsers = {
             res.redirect('/users/login')
 
         } else {
-            res.render("./users/login", {data: {session: req.session, errores: resultadoValidacion.errors}})
+            res.render("./users/register", {data: {session: req.session, errores: resultadoValidacion.errors}})
         }
 
 
