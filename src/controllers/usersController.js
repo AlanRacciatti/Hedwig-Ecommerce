@@ -31,6 +31,14 @@ const controladorUsers = {
                     }
                 })
 
+                if(usuarioEncontrado == undefined){
+                    let error = [{
+                        value: "",
+                        msg: "Email inválido",
+                    }]
+                    res.render("./users/login", {data: {session: req.session, errores: error}})
+                }
+
                 let passwordCorrecta = bcrypt.compareSync(passwordRecibida, usuarioEncontrado.contraseña);
 
                 if (!passwordCorrecta) {
