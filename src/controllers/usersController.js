@@ -34,7 +34,11 @@ const controladorUsers = {
                 let passwordCorrecta = bcrypt.compareSync(passwordRecibida, usuarioEncontrado.contraseña);
 
                 if (!passwordCorrecta) {
-                    res.send("Credenciales inválidas")
+                    let error = [{
+                        value: "",
+                        msg: "Contraseña incorrecta",
+                    }]
+                    res.render("./users/login", {data: {session: req.session, errores: error}})
                 } else {
         
                     if (Boolean(recordarUsuario)) {
