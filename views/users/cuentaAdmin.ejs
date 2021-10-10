@@ -20,31 +20,33 @@
     
     <!-- Fin del header -->
 
-    
-        <h1 class="mt-5 text-center"> Panel de usuarios </h1>
-        <div class="container">
+        <div class="container-panel">
+        <h2 class="title-panel"> PANEL DE USUARIOS </h2>
+       
         <ul class="list-group w-100">
             <% data.usuarios.forEach(usuario => { %>
-                <li class="list-group-item">
+                
                     <form method="POST" action="/users/panel/<%= usuario.id %>?_method=PUT ">
                     <ul class="d-flex">
+                        <li class= 'list-group-item imagen-panel'> <img src = /img/users/<%= usuario.imagen %> width = "25px" > </img></li>
                         <li class="list-group-item"><%= usuario.nombre %></li>
                         <li class="list-group-item">
-                            <% if (usuario.admin < 2) { %> 
-                            <select name="admin" id="admin">
+                             <% if (usuario.admin < 2) { %> 
+                             <select name="admin" id="admin">
                                 <% if (usuario.admin == 0) { %>
                                     <option value="0">Comprador</option>
                                     <option value="1">Administrador</option>
                                 <% } else if (usuario.admin == 1) { %>
                                     <option value="0">Comprador</option>
                                     <option selected value="1">Administrador</option>
-                                <% } %> 
+                                    <% } %> 
                             </select>
-                            <li><button class="btn btn-primary">Guardar</button></li>
+                         
+                         <li class= "list-group-item1"><button class="btn btn-primary ">Guardar</button></li>
                             <% } else { %>
-                                <p>Cuenta maestra</p>
+                                <p> Cuenta maestra </p>
                             <% } %>  
-                        </li>
+                       
                     </form>
                     </ul>
                 </li>
