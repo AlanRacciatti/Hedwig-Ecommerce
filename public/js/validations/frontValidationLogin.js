@@ -5,37 +5,29 @@ const emailValidation = document.getElementById("email-validation")
 const passwordValidation = document.getElementById("password-validation")
 
 window.addEventListener('load', function(){
-    form.addEventListener("submit", (e) => {
-
-        let formIsOk = true
-
-        if (email.value == "" || email.value == null) {
-
-            emailValidation.classList.remove("d-none")
-            email.classList.add("border")
-            email.classList.add("border-danger")
-
-            formIsOk = false
+    
+    email.addEventListener('blur', function(e){
+        if (email.value.includes("@")) {
+            emailValidation.classList.add("d-none");
+            email.classList.remove("border");
+            email.classList.remove("border-danger");
         } else {
-            emailValidation.classList.add("d-none")
-            
-            email.classList.remove("border")
-            email.classList.remove("border-danger")
+            emailValidation.classList.remove("d-none");
+            email.classList.add("border");
+            email.classList.add("border-danger");
         }
+    });
 
+    password.addEventListener('blur', function(e){
         if (password.value == "" || password.value == null) {
             passwordValidation.classList.remove("d-none");
-            password.classList.add("border")
-            password.classList.add("border-danger")
-            formIsOk = false
+            password.classList.add("border");
+            password.classList.add("border-danger");
         } else {
-            passwordValidation.classList.add("d-none")
-            password.classList.remove("border")
-            password.classList.remove("border-danger")
+            passwordValidation.classList.add("d-none");
+            password.classList.remove("border");
+            password.classList.remove("border-danger");
         }
-
-        if (!formIsOk) {
-            e.preventDefault()
-        }
-    })
-})   
+    });
+});
+ 
