@@ -667,10 +667,19 @@ padding-top: 10px;
   padding-bottom: 10px ;
 }
 
-
+.errorValidationWarning {
+  position: absolute;
+  left: 345px;
+  top: 5px;
+  padding: 8px
+}
 
 .card:hover {
-box-shadow: 3px 3px 6px 3px #5a8da9;
+box-shadow: 3px 3px 6px 3px #d48a38;
+}
+
+.card:hover b {
+  color: #000
 }
 
 .card-img-top {
