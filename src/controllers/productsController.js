@@ -14,14 +14,22 @@ const controladorProductos = {
     },
 
     agregarProducto: (req,res) => {
-        db.generos.findAll()
-        .then(generos => {
-            db.autores.findAll()
-            .then(autores => {
-                res.render("./products/create", {data: {generos: generos, autores: autores, session:req.session}})
+
+        if (req.session.admin >= 1) {
+            db.generos.findAll()
+            .then(generos => {
+                db.autores.findAll()
+                .then(autores => {
+                    res.render("./products/create", {data: {generos: generos, autores: autores, session:req.session}})
+                })
             })
-        })
-    },
+        }
+        else {
+            res.redirect("/")
+        }
+            
+        },
+
 
     store: (req,res) => {
 
