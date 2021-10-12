@@ -5,9 +5,7 @@
       display: none;
     }
 
-    body {
-      padding-top: 150px;
-    }
+    
   
     .header-search-bar-tablet-mobile {
       display: block;
@@ -48,9 +46,7 @@
       margin: 2px;
     }
 
-    .main-header {
-      padding-bottom: 175px;
-    }
+
   
     .total {
       color: #5a8da9;

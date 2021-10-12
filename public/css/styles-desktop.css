@@ -116,6 +116,13 @@
       list-style: none;
       padding: 0;
     }
+
+    body {
+      padding-top: 150px;
+    }
+    .main-header {
+      padding-bottom: 175px;
+    }
   
     .category-title {
       display: block;
