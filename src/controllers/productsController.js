@@ -1,11 +1,13 @@
 const fs = require("fs");
 const path = require("path");
 const db = require('../database/models');
+const {Op} = require("sequelize")
 let horaActual = new Date().toISOString().
 replace(/T/, ' ').      // replace T with a space
 replace(/\..+/, '')     // delete the dot and everything after
 
 let { validationResult } = require('express-validator');
+const { sequelize } = require("../database/models");
 
 const controladorProductos = {
 
@@ -184,7 +186,17 @@ const controladorProductos = {
 
 		res.redirect('/');
 
-	}
+
+	},
+
+    ofertas:(req,res) =>{
+        db.libros.findAll({
+            where:{ [Op.not]: [{oferta:[0]}]}
+        })
+        .then(libros => { 
+            res.render("./products/ofertas", {data: {products: libros, session: req.session}})
+        })
+    }
 }
 
 module.exports = controladorProductos;

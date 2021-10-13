@@ -1216,7 +1216,7 @@ label[for="edit-valoracion"] {
 
 }
 .list-group-item1{
-justify-content: flex-end;
+  float:right;
 }
 
 .d-flex{
