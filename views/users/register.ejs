@@ -52,33 +52,38 @@
                         </div>
                     </div>
                 </form>
-                <form action="/users/register" method="POST" enctype="multipart/form-data">
+                <form action="/users/register" method="POST" enctype="multipart/form-data" id= "form-register">
                     <div class="sign-up-htm">
                     <h5 class="foot-lnk" class="cookies">¡Es rapido y facil!</h5>
                     
                     <div class="group">
                         <label class="label" for="email"> </label>
-                        <input class="input" type="email" name= "email" id= "email" autofocus= 1 placeholder= "@ Correo electronico"  aria-required="true" aria-describedat="form-email.error" data-missing-error="El campo es requerido.">
+                        <input class="input" type="email" name= "email" id= "email-register" autofocus= 1 placeholder= "@ Correo electronico"  aria-required="true" aria-describedat="form-email.error" data-missing-error="El campo es requerido.">
+                        <small id="email-validation-register" class="text-danger d-block d-none mt-1">Debes ingresar un correo electrónico válido.</small>
                     </div>
                     
                     <div class="group">
                          <label class="label" for="name"></label>
-                         <input class="input"  type="text" name= "userName" id= "name" autofocus= 1 placeholder=" Nombre y Apellido"> 
+                         <input class="input"  type="text" name= "userName" id= "name-register" autofocus= 1 placeholder=" Nombre y Apellido"> 
+                         <small id="name-register-validation" class="text-danger d-block d-none mt-1">Debes ingresar un nombre válido.</small>
                      </div>
                      <div class="group">
-                         Foto de perfil:<input class="input" type="file" name="image" />
+                         Foto de perfil:<input class="input" type="file" name="image" id="image-register"/>
                     </div>
                      <div class="group" class="fechanacimiento">
                         <label for="start" class="fecha-nacimiento" class="input"  >Fecha de nacimiento:</label>
-                        <input class="input" type="date" id="start" name="fechaNacimiento" value="2021-07-06" min="1900-01-01" max="2023-12-31">
+                        <input class="input" type="date" id="fecha-nacimiento-register" name="fechaNacimiento" value="2021-07-06" min="1900-01-01" max="2023-12-31">
+                        <small id="fecha-nacimiento-register-validation" class="text-danger d-block d-none mt-1">Debes ingresar una fecha de Nacimiento entre 01/01/1920 y 01/01/2008.</small>
                     </div>
                     <div class="group">
                         <label for="password" class="label"></label>
-                        <input class="input" type="password" name= "password" id= "password" autofocus= 1 placeholder="Contraseña">
+                        <input class="input" type="password" name= "password" id= "password-register" autofocus= 1 placeholder="Contraseña">
+                        <small id="password-register-validation" class="text-danger d-block d-none mt-1">Tu contraseña debe tener al menos 8 caracteres.</small>
                     </div>
                     <div class="group">
                         <label for="password" class="label"></label>
-                        <input class="input"  type="password" name= "confirm-password" id= "password" autofocus= 1 placeholder="Repetir contraseña">
+                        <input class="input"  type="password" name= "confirm-password" id= "confirm-password-register" autofocus= 1 placeholder="Repetir contraseña">
+                        <small id="confirm-password-register-validation" class="text-danger d-block d-none mt-1">La contraseña debe ser la misma que la que insertaste en el campo anterior.</small>
                     </div>
                     <div class="group">
                         <button type="submit" class="button">Crear cuenta</button>
@@ -98,7 +103,7 @@
 
 	<!-- Fin del footer -->
 
-    <script src="/js/validationLogin.js"></script>
+    <script src="/js/validations/frontValidationRegister.js"></script>
 
 </body>
 
