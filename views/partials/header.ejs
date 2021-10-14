@@ -11,8 +11,10 @@
             <ul class="dropdown-menu">
                 <li class="dropdown-item">
                     <form action="/search">
-                        <input type="text" placeholder="Buscar libros, autores, géneros" />
+
+                        <input type="text" placeholder="Buscar libros, autores, géneros" name="search"/>
                         <button type="submit"><i id="black-icon" class="fas fa-search"></i></button>
+
                     </form>
                 </li>
                 <hr class="dropdown-divider">
@@ -24,7 +26,7 @@
                 <li><a class="dropdown-item" href="/productos/generos">Categorías</a></li>
                 <li><a class="dropdown-item" href="/productos/best-sellers">Best sellers</a></li>
                 <li><a class="dropdown-item" href="/productos/novedades">Novedades</a></li>
-                <li><a class="dropdown-item" href="/productos/ofertas">Ofertas</a></li>
+                <li><a class="dropdown-item" href="/products/ofertas">Ofertas</a></li>
                 <% if(data.session.usuarioLogueado){ %>
                 <li><a class="dropdown-item" href="#">Historial</a></li>
                 <li><a class="dropdown-item" href="#">Configuración</a></li>
@@ -112,16 +114,7 @@
 
     </section>
 
-    <section class="header-search-bar-tablet-mobile">
 
-        <form class="search-bar-tablet-mobile">
-
-            <input type="text" placeholder="Buscar libros, autores, géneros..." name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-
-        </form>
-
-    </section>
 
     <section class="header-navbar-desktop dropdown">
 
