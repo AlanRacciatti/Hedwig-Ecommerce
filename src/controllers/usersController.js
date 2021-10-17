@@ -10,6 +10,12 @@ const controladorUsers = {
         res.render("./users/login", {data: {session: req.session}});
     },
 
+    logOut: (req, res) => {
+        req.session.destroy()
+        console.log(req.session)
+        res.redirect('/')
+    },
+
     loginAccount: (req,res) => {
         
         let resultadoValidacion = validationResult(req)
@@ -57,6 +63,7 @@ const controladorUsers = {
 
                     db.usuarios.findByPk(usuarioEncontrado.id)
                     .then(usuario => {
+                        req.session.idUsuario = usuario.id
                         req.session.admin = usuario.admin
                         res.redirect('/')
                     })

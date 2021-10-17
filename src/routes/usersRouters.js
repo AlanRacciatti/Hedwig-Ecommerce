@@ -15,6 +15,8 @@ router.post("/register", uploadFile.single("image") ,validacionesRegister, contr
 router.get("/login", controladorUsers.login);
 router.post('/login', validacionesLogin, controladorUsers.loginAccount)
 
+router.get('/logout', controladorUsers.logOut)
+
 router.get("/panel", controladorUsers.panelUsuarios)
 router.put("/panel/:id", controladorUsers.usuariosAdmin)
 
