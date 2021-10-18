@@ -20,4 +20,8 @@ router.get('/logout', controladorUsers.logOut)
 router.get("/panel", controladorUsers.panelUsuarios)
 router.put("/panel/:id", controladorUsers.usuariosAdmin)
 
+// Api
+
+router.get('/api/v1/info', controladorUsers.infoUsuarios)
+
 module.exports = router;

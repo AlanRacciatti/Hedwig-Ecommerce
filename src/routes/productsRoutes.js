@@ -28,4 +28,6 @@ router.delete('/delete/:id', productsController.destroy)
 
 router.get('/ofertas', productsController.ofertas)
 
+// Api
+
 module.exports = router;

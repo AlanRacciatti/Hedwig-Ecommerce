@@ -149,6 +149,23 @@ const controladorUsers = {
             where: {id: id}
         })
         res.redirect('/users/panel')
+    },
+
+    infoUsuarios: (req, res) => {
+        db.usuarios.findAll()
+        .then(usuarios => {
+
+            let cantidadUsuarios = usuarios.length
+
+            let data = {
+                count: {
+                    cantidadUsuarios: cantidadUsuarios
+                },
+                users: usuarios
+            }
+
+            res.json(data)
+        })
     }
 
 }
