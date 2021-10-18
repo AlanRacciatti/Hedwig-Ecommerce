@@ -96,7 +96,7 @@ function librosData(sequelize, DataTypes){
             as: "genero",
             foreignKey: "genero_fk"
         });
-        
+
         libro.belongsToMany(modelos.usuarios, {
 
             as: "usuarios",

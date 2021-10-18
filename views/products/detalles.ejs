@@ -75,8 +75,9 @@
 
             <p><%= data.productoDetalle.descripcion %> </p>
 
-        <form> <a href="/products/carrito"><button class= 'boton-compra'> Agregar a carrito <i class="fas fa-shopping-cart"></i></button></a></form>
-        
+        <form method="POST" action="/products/carrito/<%= data.productoDetalle.id %>">
+            <button class= 'boton-compra'> Agregar a carrito <i class="fas fa-shopping-cart"></i></button>
+        </form>
 
         </section>
         

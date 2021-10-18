@@ -1,4 +1,16 @@
+
+<% 
+    
+    if (data.session.librosUsuario != undefined) {
+        var cantidadLibrosUsuario = data.session.librosUsuario.length
+        var montoFinal = data.session.librosUsuario.reduce((acc, libro) => acc + libro.monto, 0)
+        console.log(data.session)
+    }
+    
+%> 
+
 <header class="main-header">
+
 
     <div class="max-width">
 
@@ -51,24 +63,32 @@
 
         </div>
 
-        <div class="container-cart-mobile">
-
-            <div id="header-amount-products-mobile-desktop">3</div>
-            <a href="/products/carrito"><i class="fas fa-shopping-cart" id="cart-header"></i></a>
-
-        </div>
+        <% if (data.session.usuarioLogueado) { %>
+            
+            <div class="container-cart-mobile">
+    
+                <div id="header-amount-products-mobile-desktop"><%= cantidadLibrosUsuario %> </div>
+                <a href="/products/carrito"><i class="fas fa-shopping-cart" id="cart-header"></i></a>
+    
+            </div>
+    
+        <% } %>
         
-        <div class="container-cart-tablet">
 
-            <span class="total">$4000</span>
-            <a class="link-cart-tablet" href="/products/carrito">
-
-                <span>3</span>
-                <i class="fas fa-shopping-cart"></i>
-
-            </a>
-
-        </div>
+        <% if (data.session.usuarioLogueado) { %>
+         
+            <div class="container-cart-tablet">
+    
+                <span class="total">$<%= montoFinal %> </span>
+                <a class="link-cart-tablet" href="/products/carrito">
+    
+                    <span><%= cantidadLibrosUsuario %></span>
+                    <i class="fas fa-shopping-cart"></i>
+    
+                </a>
+    
+            </div>
+        <% } %>
 
         <div class="header-search-bar-desktop">
 
@@ -198,19 +218,23 @@
 
         </div>
 
-        <div class="container-header-cart">
-
-            <div class="total-cart">
-
-                <span>$4000</span>
-
-            </div>  
-
-            <div>
-
-                <a href="/products/carrito" class="anchor-cart-products"><span class="header-amount-products">3 <i class="fas fa-shopping-cart"></i></span></a>
-
-            </div>
+        <% if (data.session.usuarioLogueado) { %>
+            
+                    <div class="container-header-cart">
+            
+                        <div class="total-cart">
+            
+                            <span>$<%= montoFinal %> </span>
+            
+                        </div>  
+            
+                        <div>
+            
+                            <a href="/products/carrito" class="anchor-cart-products"><span class="header-amount-products"><%= cantidadLibrosUsuario %> <i class="fas fa-shopping-cart"></i></span></a>
+            
+                        </div>
+         
+        <% } %>
 
         </div>
 

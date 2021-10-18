@@ -7,12 +7,100 @@ replace(/T/, ' ').      // replace T with a space
 replace(/\..+/, '')     // delete the dot and everything after
 
 let { validationResult } = require('express-validator');
-const { sequelize } = require("../database/models");
 
 const controladorProductos = {
 
     carrito: (req, res) => {
-        res.render("./products/carrito", {data: {session:req.session}});
+
+        if (!req.session.usuarioLogueado) {
+            let error = [{
+                value: "",
+                msg: "Debes iniciar sesión para añadir productos a tu carrito",
+            }]
+            res.render("./users/login", {data: {session: req.session, errores: error}})
+        } else {
+            db.libros_usuario.findAll({where: {usuario_fk : req.session.idUsuario}})
+            .then(resultado => res.send(resultado))
+        }
+
+    },
+
+    añadirAlCarrito: (req, res) => {
+
+        if (!req.session.usuarioLogueado) {
+
+            let error = [{
+                value: "",
+                msg: "Debes iniciar sesión para añadir productos a tu carrito",
+            }]
+
+            res.render("./users/login", {data: {session: req.session, errores: error}})
+            
+        } else {
+
+            let idProducto = req.params.id
+            let idUsuario = req.session.idUsuario
+
+            db.libros_usuario.findAll({where: {usuario_fk: idUsuario}})
+            .then(librosUsuario => {
+
+                console.log(`Los libros del usuario son: ${!librosUsuario}`)
+
+                let contadorOrdenes = 0
+                
+                for (let orden of librosUsuario) {
+                    console.log(contadorOrdenes + "uwu")
+                    contadorOrdenes++
+                    console.log(`Estoy en la orden ${orden.id}`)
+
+                    if (orden.libro_fk == idProducto) {
+
+                        console.log("Opción A")
+
+                        let nuevaCantidadProductos = orden.cantidad_productos + 1
+                        let nuevoMonto = orden.monto/orden.cantidad_productos * nuevaCantidadProductos 
+
+                        db.libros_usuario.update({
+                            cantidad_productos : nuevaCantidadProductos,
+                            monto: nuevoMonto
+                        },
+                        { 
+                            where: {
+                                libro_fk: idProducto,
+                                usuario_fk: idUsuario
+                            } 
+                        })
+
+                        return res.redirect('/products/carrito')        
+
+                    } 
+                }
+    
+                if (contadorOrdenes >= librosUsuario.length) {
+                    
+                    console.log("Opción B")
+                        
+                    db.libros.findOne({where: {id: idProducto}})
+                    .then(libro => {
+
+                        let nuevaOrden = {
+                            created_at: horaActual,
+                            updated_at: horaActual,
+                            usuario_fk: idUsuario,
+                            libro_fk: idProducto,
+                            cantidad_productos: 1,
+                            precio_producto: libro.precio,
+                            monto: libro.precio
+                        }
+
+                        db.libros_usuario.create(nuevaOrden)
+                        
+                        return res.redirect('/products/carrito')
+                        
+                    })
+                }
+            })
+        }
     },
 
     agregarProducto: (req,res) => {

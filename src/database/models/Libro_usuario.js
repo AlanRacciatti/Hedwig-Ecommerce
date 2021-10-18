@@ -14,7 +14,7 @@ function libros_usuarioData(sequelize, DataTypes) {
             type: DataTypes.DATE,
             allowNull: false
         },
-        update_at: { type: DataTypes.DATE },
+        updated_at: { type: DataTypes.DATE },
         usuario_fk: {
             type: DataTypes.INTEGER,
             allowNull: false
@@ -22,14 +22,26 @@ function libros_usuarioData(sequelize, DataTypes) {
         libro_fk: {
             type: DataTypes.INTEGER,
             allowNull: false
-        },  
+        },
+        cantidad_productos: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        precio_producto: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        monto: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        }
     }
 
     let config = { timestamps: false }
 
-    const users = sequelize.define(alias,cols,config)
+    const libros_usuario = sequelize.define(alias,cols,config)
 
-    return users;
+    return libros_usuario;
 }
 
 module.exports = libros_usuarioData;

@@ -65,7 +65,12 @@ const controladorUsers = {
                     .then(usuario => {
                         req.session.idUsuario = usuario.id
                         req.session.admin = usuario.admin
-                        res.redirect('/')
+
+                        db.libros_usuario.findAll({where: {usuario_fk: req.session.idUsuario}})
+                        .then(librosUsuario => {
+                            req.session.librosUsuario = librosUsuario
+                            res.redirect('/')
+                        })
                     })
 
                 }

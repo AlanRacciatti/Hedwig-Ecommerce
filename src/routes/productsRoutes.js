@@ -14,6 +14,7 @@ const validationsCreate = require('../middlewares/validations/validationsCreate'
 router.get("/detalles", productsController.detalles);
 
 router.get("/carrito", productsController.carrito);
+router.post("/carrito/:id", productsController.añadirAlCarrito)
 
 router.get("/create", productsController.agregarProducto);
 router.post("/create", uploadFile.single("image"), validationsCreate, productsController.store)
