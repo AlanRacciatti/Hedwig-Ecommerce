@@ -1,3 +1,9 @@
+<% 
+    console.log(data.librosUsuario)
+    var montoFinal = data.session.librosUsuario.reduce((acc, libro) => acc + libro.monto, 0)
+
+%> 
+
 <!DOCTYPE html>
 
 <html lang="es">
@@ -22,6 +28,8 @@
 
     <main>
 
+        <% console.log(data.librosUsuario) %> 
+
         <div class="max-width">
 
         <div class = "titulo-entrada-carrito">
@@ -31,7 +39,7 @@
 
             <div class="container-entrada-carrito">
                 <i class="fas fa-shopping-cart"></i> 
-                <span>Tienes una cantidad de 3 articulos con un total de <b> $4000 </b> en tu carrito</span>
+                <span>Tienes una cantidad de <%= data.librosUsuario.length %>  articulos por un total de <b> $<%= montoFinal %>  </b> en tu carrito</span>
             </div>
 
             <hr class="dropdown-divider">
@@ -44,125 +52,41 @@
         </div>  
 
         <ul class="lista-articulos">
-            <li class = "elemento-carrito">
-
-                <div class = "container-info-1">
-
-                    <div>
-                    <img class = "libro-guion-carrito" src = "/img/Portada-libro.jpg">
+            <% for (let libroUsuario of data.librosUsuario) { %> 
+                <li class = "elemento-carrito">
+                    <div class = "container-info-1">
+                        <div> <img class = "libro-guion-carrito" src = "/img/products/<%= libroUsuario.imagen %>"> </div>
+                        <div class = "info-producto">  
+                                <h3 class = "carrito-titulo-libro"><%= libroUsuario.titulo %></h3>  
+                                <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                                <p class="precio-home">$<%= libroUsuario.precio %></p>
+                                <p><%= libroUsuario.genero.nombre %></p>
+                                <p><%= libroUsuario.autor.nombre %> </p>
+                        </div>
+                    </div>        
+                    <div class = "container-info-2">
+                        <div class = "carrito-cantidad-productos">
+                            <select class="form-select" aria-label="cantidad-productos">
+                                <option value="1" >1</option>
+                                <option selected value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                            </select>
+                        </div>
+                        <div>
+                            <span class="precio-home">$<%= libroUsuario.precio %> </span>
+                        </div>
+                        <div>
+                            <button class = "btn btn-danger" >Eliminar</button>
+                        </div>
+                        
                     </div>
-
-                    <div class = "info-producto">  
-                            <h3 class = "carrito-titulo-libro">Titulo</h3>  
-                            <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                            <p class="precio-home">$1000</p>
-                            <p>Categoria</p>
-                            <p>Autor</p>
-                    </div>
-
-                </div>        
-                <div class = "container-info-2">
-                    <div class = "carrito-cantidad-productos">
-                        <select class="form-select" aria-label="cantidad-productos">
-                            <option value="1" >1</option>
-                            <option selected value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                        </select>
-                    </div>
-                    <div>
-                        <span class="precio-home">$2000</span>
-                    </div>
-                    <div>
-                        <button class = "btn btn-danger" >Eliminar</button>
-                    </div>
-                    
-                </div>
-            </li>
-            <li class = "elemento-carrito">
-
-                <div class = "container-info-1">
-
-                    <div>
-                    <img class = "libro-guion-carrito" src = "/img/Portada-libro.jpg">
-                    </div>
-
-                    <div class = "info-producto">  
-                            <h3 class = "carrito-titulo-libro">Titulo</h3>  
-                            <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                            <p class="precio-home">$1000</p>
-                            <p>Categoria</p>
-                            <p>Autor</p>
-                    </div>
-
-                </div>        
-                <div class = "container-info-2">
-                    <div class = "carrito-cantidad-productos">
-                        <select class="form-select" aria-label="cantidad-productos">
-                            <option selected>1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                        </select>
-                    </div>
-                    <div>
-                        <span class="precio-home">$1000</span>
-                    </div>
-                    <div>
-                        <button class = "btn btn-danger" >Eliminar</button>
-                    </div>
-
-                </div>
-            </li>
-            <li class = "elemento-carrito">
-
-                <div class = "container-info-1">
-
-                    <div>
-                    <img class = "libro-guion-carrito" src = "/img/Portada-libro.jpg">
-                    </div>
-
-                    <div class = "info-producto">  
-                            <h3 class = "carrito-titulo-libro">Titulo</h3>  
-                            <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                            <p class="precio-home">$1000</p>
-                            <p>Categoria</p>
-                            <p>Autor</p>
-                    </div>
-
-                </div>        
-                <div class = "container-info-2">
-                    <div class = "carrito-cantidad-productos">
-                        <select class="form-select" aria-label="cantidad-productos">
-                            <option selected>1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                        </select>
-                    </div>
-                    <div>
-                        <span class="precio-home">$1000</span>
-                    </div>
-                    <div>
-                        <button class = "btn btn-danger" >Eliminar</button>
-                    </div>
-
-                    
-                </div>
-            </li>
-            
+                </li>
+            <% } %> 
         </ul>
 
         <div class = "carrito-compra">
