@@ -24,4 +24,5 @@ router.put("/panel/:id", controladorUsers.usuariosAdmin)
 
 router.get('/api/v1/info', controladorUsers.infoUsuarios)
 
+router.get("/api/v1/info/:id" , controladorUsers.infoUsuarioParticular)
 module.exports = router;

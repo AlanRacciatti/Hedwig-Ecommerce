@@ -166,6 +166,13 @@ const controladorUsers = {
 
             res.json(data)
         })
+    },
+    infoUsuarioParticular: (req, res) => {
+        let id = req.params.id
+        db.usuarios.findByPk(id)
+        .then(usuario =>{
+            res.json(usuario)    
+        })
     }
 
 }
