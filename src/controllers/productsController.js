@@ -429,6 +429,17 @@ const controladorProductos = {
             res.redirect('/products/carrito')
         }
     },
+
+    infoAutores: (req, res) => {
+        db.autores.findAll()
+        .then(autores => res.json(autores))
+    },
+
+    infoGeneros: (req, res) => {
+        db.generos.findAll()
+        .then(generos => res.json(generos))
+    }
+
     }
 
 module.exports = controladorProductos;

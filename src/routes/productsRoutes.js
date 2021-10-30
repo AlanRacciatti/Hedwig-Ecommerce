@@ -45,4 +45,8 @@ router.get("/api/v1/ultimoProducto", productsController.ultimoProducto)
 
 router.get("/api/v1/info", productsController.infoProductos);
 
+router.get("/api/v1/autores", productsController.infoAutores)
+
+router.get("/api/v1/generos", productsController.infoGeneros)
+
 module.exports = router;
