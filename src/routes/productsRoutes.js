@@ -27,7 +27,22 @@ router.get("/detalles/:id", productsController.detalles);
 router.delete('/delete/:id', productsController.destroy)
 
 router.get('/ofertas', productsController.ofertas)
+router.get('/novedades', productsController.novedades)
 
+router.delete('/carrito/:id', productsController.eliminarDelCarrito)
+
+router.put('/carrito/cantidadProductos/:id', productsController.cantidadProductos)
+
+router.get("/genero/:id", productsController.librosGenero)
 // Api
+
+router.get("/api/v1/cantidadGeneros", productsController.cantidadGeneros);
+
+router.get("/api/v1/productoParticular/:id", productsController.productoParticular);
+
+
+router.get("/api/v1/ultimoProducto", productsController.ultimoProducto)
+
+router.get("/api/v1/info", productsController.infoProductos);
 
 module.exports = router;

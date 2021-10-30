@@ -6,7 +6,7 @@
     <% if (product.eliminado != 1) { %>
      
         <a href="/products/detalles/<%= product.id %> " class="card">
-            <img src="/img/products/<%= product.imagen %> " class="card-img-top" alt="portada-libro"> 
+            <img src="<%= product.imagen %>" class="card-img-top" alt="portada-libro"> 
             <h5 class="card-title contenido-carta-articulo titulo-articulo-home"><%= product.titulo %> </h5>
             <div class= 'estrellitas'>
                 

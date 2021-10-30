@@ -34,7 +34,8 @@ function libros_usuarioData(sequelize, DataTypes) {
         monto: {
             type: DataTypes.INTEGER,
             allowNull: false
-        }
+        },
+        eliminado: { type: DataTypes.INTEGER }
     }
 
     let config = { timestamps: false }

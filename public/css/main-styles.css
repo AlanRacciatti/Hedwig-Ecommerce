@@ -667,6 +667,14 @@ padding-top: 10px;
   padding-bottom: 10px ;
 }
 
+.input-articulos {
+  width: 50px;
+}
+
+.precio-carrito {
+  width: 0px;
+}
+
 .errorValidationWarning {
   position: absolute;
   left: 345px;
@@ -682,8 +690,32 @@ box-shadow: 3px 3px 6px 3px #d48a38;
   color: #000
 }
 
+.carousel-indicators {
+  display: none;
+}
+
+
+.libro-usuario-carrito:hover {
+  color: #000;
+  box-shadow: 3px 3px 6px 6px #5a8da9;
+  transition: all .3s;
+}
+
+#carouselExampleIndicators {
+  padding: 0;
+  max-width: none;
+  width: 100%;
+  position: relative;
+  top: 24px;
+}
+
+.carousel-item {
+  padding: 0;
+}
+
 .card-img-top {
-  width: 190px;
+  width: 150px;
+  height: 250px;
   
 }
 
@@ -1138,6 +1170,66 @@ label[for="edit-valoracion"] {
  
 }
 
+.main-admin-container{
+  display: flex;
+  flex-flow: row wrap;
+  width: 90%;
+  text-align: center;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+.gest-usuarios-container{
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  background-color: white;
+  border: solid 1px #222026;
+  margin-bottom: 33px;
+}
+
+.form-admin{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding-bottom: 5px;
+}
+
+.form-admin ul{
+  padding: 0;
+}
+
+.admin-form-label{
+  color: #5a8da9;
+  font-weight: bolder;
+  font-style: italic;
+}
+
+.generos-autores-container{
+  display: flex;
+  flex-flow: column wrap;
+  background-color: white;
+  border: 1px solid #222026;
+  height: 325px;
+}
+
+.form-genero{
+  margin-bottom: 15px;
+}
+
+.form-autor{
+  margin-top: 15px;
+}
+
+.header-seccion-master{
+  color: #d48938;
+  border: 1px solid #222026;
+  width: 100%;
+  background-color: #222026;
+}
+
 
 
 
@@ -1204,8 +1296,6 @@ label[for="edit-valoracion"] {
   background-color: #ebebeb;
   display: flex;
   flex-flow: row wrap;
-  padding-left: 20%;
-  padding-right: 20%;
   justify-content: center;
 }
 
@@ -1217,10 +1307,14 @@ label[for="edit-valoracion"] {
   
 
 }
+
+.list-group{
+  padding: 5px;
+}
+
 .list-group-item{
   font-weight: bolder;
   border:none;
-  padding: 20px;
   list-style: none;
   justify-content: space-between;
   background: white;

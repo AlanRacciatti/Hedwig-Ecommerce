@@ -1,14 +1,3 @@
-
-<% 
-    
-    if (data.session.librosUsuario != undefined) {
-        var cantidadLibrosUsuario = data.session.librosUsuario.length
-        var montoFinal = data.session.librosUsuario.reduce((acc, libro) => acc + libro.monto, 0)
-        console.log(data.session)
-    }
-    
-%> 
-
 <header class="main-header">
 
 
@@ -36,9 +25,9 @@
                 <hr class="dropdown-divider">
                 <% } %> 
                 <li><a class="dropdown-item" href="/productos/generos">Categorías</a></li>
-                <li><a class="dropdown-item" href="/productos/best-sellers">Best sellers</a></li>
-                <li><a class="dropdown-item" href="/productos/novedades">Novedades</a></li>
-                <li><a class="dropdown-item" href="/products/ofertas">Ofertas</a></li>
+                <li><a class="dropdown-item" href="https://hedwig-dashboard.web.app">Dashboard <i class="fas fa-tachometer-alt"></i></a></li>
+                <li><a class="dropdown-item" href="/productos/novedades">Novedades <i class="fas fa-newspaper"></i></a></li>
+                <li><a class="dropdown-item" href="/products/ofertas">Ofertas <i class="fas fa-dollar-sign"></i></a></li>
                 <% if(data.session.usuarioLogueado){ %>
                 <li><a class="dropdown-item" href="#">Historial</a></li>
                 <li><a class="dropdown-item" href="#">Configuración</a></li>
@@ -67,7 +56,7 @@
             
             <div class="container-cart-mobile">
     
-                <div id="header-amount-products-mobile-desktop"><%= cantidadLibrosUsuario %> </div>
+                <div id="header-amount-products-mobile-desktop" class="cantidadArticulosM"></div>
                 <a href="/products/carrito"><i class="fas fa-shopping-cart" id="cart-header"></i></a>
     
             </div>
@@ -79,11 +68,10 @@
          
             <div class="container-cart-tablet">
     
-                <span class="total">$<%= montoFinal %> </span>
+                <span class="total montoFinal"></span>
                 <a class="link-cart-tablet" href="/products/carrito">
     
-                    <span><%= cantidadLibrosUsuario %></span>
-                    <i class="fas fa-shopping-cart"></i>
+                    <span style="display: flex" class="cantidadArticulos"></span>
     
                 </a>
     
@@ -153,11 +141,11 @@
                             <b class="category-title">Populares</b>
                             <hr class="dropdown-divider">
                             <ul>
-                                <li class="dropdown-item"><a href="/products/generos/accion"> Acción </a></li>
-                                <li class="dropdown-item"><a href="/products/generos/aventura"> Aventura </a></li>
-                                <li class="dropdown-item"><a href="/products/generos/ciencia-ficcion"> Ciencia ficción </a></li>
-                                <li class="dropdown-item"><a href="/products/generos/fantasia"> Fantasía </a></li>
-                                <li class="dropdown-item"><a href="/products/generos/terror"> Terror </a></li>
+                                <li class="dropdown-item"><a href="/products/genero/4/Acción"> Acción </a></li>
+                                <li class="dropdown-item"><a href="/products/genero/5/Aventura"> Aventura </a></li>
+                                <li class="dropdown-item"><a href="/products/genero/2/Ciencia-ficción"> Ciencia ficción </a></li>
+                                <li class="dropdown-item"><a href="/products/genero/3/Fantasía"> Fantasía </a></li>
+                                <li class="dropdown-item"><a href="/products/genero/1/Terror"> Terror </a></li>
                             </ul>
 
                         </li>
@@ -167,14 +155,13 @@
                             <b class="category-title">Más géneros</b>
                             <hr class="dropdown-divider">
                             <ul>
-                                <li class="dropdown-item"><a href="/products/generos/ciencia-geografia"> Ciencia y geografía </a></li>
-                                <li class="dropdown-item"><a href="/products/generos/desarrollo-personal"> Desarrollo personal </a></li>
-                                <li class="dropdown-item"><a href="/products/generos/negocios-finanzas"> Negocios y finanzas </a></li>
-                                <li class="dropdown-item"><a href="/products/generos/psicologia"> Psicología </a></li>
-                                <li class="dropdown-item"><a href="/products/generos/religion"> Religión </a></li>
-                                <li class="dropdown-item"><a href="/products/generos/salud"> Salud </a></li>
-                                <li class="dropdown-item"><a href="/products/generos/tecnologia"> Tecnología </a></li>
-                                <li class="dropdown-item"><a href="/products/generos"> Ver todos los géneros... </a></li>
+                                <li class="dropdown-item"><a href="/products/genero/6/Ciencia-y-Geografía"> Ciencia y geografía </a></li>
+                                <li class="dropdown-item"><a href="/products/genero/7/Desarrollo-personal"> Desarrollo personal </a></li>
+                                <li class="dropdown-item"><a href="/products/genero/8/Negocios-y-finanzas"> Negocios y finanzas </a></li>
+                                <li class="dropdown-item"><a href="/products/genero/9/Psicología"> Psicología </a></li>
+                                <li class="dropdown-item"><a href="/products/genero/10/Religión"> Religión </a></li>
+                                <li class="dropdown-item"><a href="/products/genero/11/Salud"> Salud </a></li>
+                                <li class="dropdown-item"><a href="/products/genero/12/Tecnología"> Tecnología </a></li>
                             </ul>
 
                         </li>
@@ -212,25 +199,24 @@
 
             </ul>
 
-            <a href="/products/best-sellers">Best sellers</a>
-            <a href="/products/novedades">Novedades</a>
-            <a href="/products/ofertas">Ofertas</a>
-
+            <a href="https://hedwig-dashboard.web.app">Dashboard <i class="fas fa-tachometer-alt"></i></a>
+            <a href="/products/novedades">Novedades <i class="fas fa-newspaper"></i></a>
+            <a href="/products/ofertas">Ofertas <i class="fas fa-dollar-sign"></i></a>
         </div>
 
         <% if (data.session.usuarioLogueado) { %>
             
                     <div class="container-header-cart">
             
-                        <div class="total-cart">
+                        <div class="total-cart ">
             
-                            <span>$<%= montoFinal %> </span>
+                            <span class="montoFinal"></span>
             
                         </div>  
             
                         <div>
             
-                            <a href="/products/carrito" class="anchor-cart-products"><span class="header-amount-products"><%= cantidadLibrosUsuario %> <i class="fas fa-shopping-cart"></i></span></a>
+                            <a href="/products/carrito" class="anchor-cart-products"><span class="header-amount-products cantidadArticulos"><i class="fas fa-shopping-cart"></i></span></a>
             
                         </div>
          
@@ -243,3 +229,17 @@
     </div>
 
 </header>
+
+<script>
+
+    window.addEventListener("load", () => {
+
+        let monto = localStorage.getItem("monto")
+        document.querySelectorAll(".montoFinal").forEach(element => element.innerText = `$${monto}`)
+        let cantidadArticulos = localStorage.getItem("cantidadArticulos")
+        document.querySelectorAll(".cantidadArticulos").forEach(element => element.innerHTML = `${cantidadArticulos} <i class="fas fa-shopping-cart" </i>`)
+        document.querySelectorAll(".cantidadArticulosM").forEach(element => element.innerHTML = `${cantidadArticulos}`)
+
+    })
+
+</script>

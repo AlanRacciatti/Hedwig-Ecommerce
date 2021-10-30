@@ -4,6 +4,10 @@ const bcrypt = require('bcryptjs');
 const db = require('../database/models');
 const { validationResult } = require('express-validator');
 
+let horaActual = new Date().toISOString().
+replace(/T/, ' ').      // replace T with a space
+replace(/\..+/, '')     // delete the dot and everything after
+
 const controladorUsers = {
 
     login: (req, res) => {
@@ -12,7 +16,6 @@ const controladorUsers = {
 
     logOut: (req, res) => {
         req.session.destroy()
-        console.log(req.session)
         res.redirect('/')
     },
 
@@ -20,7 +23,6 @@ const controladorUsers = {
         
         let resultadoValidacion = validationResult(req)
         
-        console.log(resultadoValidacion)
         if (resultadoValidacion.errors.length <= 0) {
 
             let emailRecibido = req.body.email;
@@ -66,10 +68,10 @@ const controladorUsers = {
                         req.session.idUsuario = usuario.id
                         req.session.admin = usuario.admin
 
-                        db.libros_usuario.findAll({where: {usuario_fk: req.session.idUsuario}})
+                        db.libros_usuario.findAll({where: {usuario_fk: req.session.idUsuario, eliminado: null}})
                         .then(librosUsuario => {
                             req.session.librosUsuario = librosUsuario
-                            res.redirect('/')
+                            res.redirect('/products/carrito')
                         })
                     })
 
@@ -91,14 +93,11 @@ const controladorUsers = {
     createAccount: (req, res) => {
 
         let resultadoValidacion = validationResult(req)
-        console.log(resultadoValidacion)
 
 
         if (resultadoValidacion.errors.length <= 0) {
             
             let passwordHasheada = bcrypt.hashSync(req.body.password, 10);
-    
-            let nombreImagen = req.file.filename
             
             // Hora para los timestamps
             let horaActual = new Date().toISOString().
@@ -110,7 +109,7 @@ const controladorUsers = {
                 updated_at: horaActual,
                 email: req.body.email,
                 nombre: req.body.userName,
-                imagen: nombreImagen,
+                imagen: req.file.path,
                 fecha_nacimiento: req.body.fechaNacimiento,
                 contraseña: passwordHasheada,
                 admin: 0
@@ -151,6 +150,24 @@ const controladorUsers = {
         res.redirect('/users/panel')
     },
 
+    agregarGenero: (req, res) => {
+        db.generos.create({
+            created_at: horaActual,
+            updated_at: horaActual,
+            nombre: req.body.genero
+        })
+        res.redirect('/users/panel');
+    },
+
+    agregarAutor: (req, res) => {
+        db.autores.create({
+        created_at: horaActual,
+        updated_at: horaActual,
+        nombre: req.body.autor
+    })
+    res.redirect('/users/panel');
+    },
+
     infoUsuarios: (req, res) => {
         db.usuarios.findAll()
         .then(usuarios => {
@@ -171,8 +188,17 @@ const controladorUsers = {
         let id = req.params.id
         db.usuarios.findByPk(id)
         .then(usuario =>{
-            res.json(usuario)    
+            delete usuario.dataValues.contraseña
+            res.json(usuario) 
         })
+    },
+
+    ultimoUsuario: (req, res) => {
+        db.usuarios.findAll({
+            order: [["created_at", "DESC"] ],
+            limit: 1
+        })
+        .then(usuario => res.json(usuario))
     }
 
 }

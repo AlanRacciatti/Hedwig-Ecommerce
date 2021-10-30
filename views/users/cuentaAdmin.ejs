@@ -21,37 +21,57 @@
     <!-- Fin del header -->
 
         <div class="container-panel">
-        <h2 class="title-panel"> PANEL DE USUARIOS </h2>
-       
-        <ul class="list-group w-100">
-            <% data.usuarios.forEach(usuario => { %>
-                
-                    <form method="POST" action="/users/panel/<%= usuario.id %>?_method=PUT ">
-                    <ul class="d-flex">
-                        <li class= 'list-group-item imagen-panel'> <img src = /img/users/<%= usuario.imagen %> width = "25px" > </img></li>
-                        <li class="list-group-item"><%= usuario.nombre %></li>
-                        <li class="list-group-item">
-                             <% if (usuario.admin < 2) { %> 
-                             <select name="admin" id="admin">
-                                <% if (usuario.admin == 0) { %>
-                                    <option value="0">Comprador</option>
-                                    <option value="1">Administrador</option>
-                                <% } else if (usuario.admin == 1) { %>
-                                    <option value="0">Comprador</option>
-                                    <option selected value="1">Administrador</option>
-                                    <% } %> 
-                            </select>
-                         
-                         <li class= "list-group-item1"><button class="btn btn-primary ">Guardar</button></li>
-                            <% } else { %>
-                                <p> Cuenta maestra </p>
-                            <% } %>  
-                       
-                    </form>
+            <h2 class="title-panel"> GESTIÓN DE PÁGINA </h2>
+            <div class="main-admin-container">
+                <div class="gest-usuarios-container">
+                    <h3 class="header-seccion-master">Gestión de permisos de usuarios</h3>
+                    <ul class="list-group w-100">
+                        <% data.usuarios.forEach(usuario => { %>
+                            
+                                <form method="POST" action="/users/panel/<%= usuario.id %>?_method=PUT" class="form-admin">
+                                <ul class="d-flex">
+                                    <li class= 'list-group-item imagen-panel'> <img src = <%= usuario.imagen %> width = "25px" > </img></li>
+                                    <li class="list-group-item"><%= usuario.nombre %></li><br>
+                                    <li class="list-group-item">
+                                         <% if (usuario.admin < 2) { %> 
+                                         <select name="admin" id="admin">
+                                            <% if (usuario.admin == 0) { %>
+                                                <option value="0">Comprador</option>
+                                                <option value="1">Administrador</option>
+                                            <% } else if (usuario.admin == 1) { %>
+                                                <option value="0">Comprador</option>
+                                                <option selected value="1">Administrador</option>
+                                                <% } %> 
+                                        </select>
+                                     
+                                     <li class= "list-group-item1"><button class="btn btn-primary ">Guardar</button></li>
+                                        <% } else { %>
+                                            <p> Cuenta maestra </p>
+                                        <% } %>  
+                                   
+                                </form>
+                                <br>
+                                </ul>
+                            </li>
+                        <% }) %>
                     </ul>
-                </li>
-            <% }) %>
-        </ul>
+                </div>
+                <div class="generos-autores-container">
+                    <h3 class="header-seccion-master">Gestión de géneros y autores</h3>
+                    <form method="POST" action="/users/panel/genero" class="form-genero">
+                        <label for="add-genero" class="admin-form-label">Insertá el género</label><br>
+                        <input type="text" class="input" name="genero" id="add-genero"><br>
+                        <button type="submit" class="btn btn-primary ">Agregar género</button>
+                    </form>
+                    <form method="POST" action="/users/panel/autor" class="form-autor">
+                        <label for="add-autor" class="admin-form-label">Insertá el autor</label><br>
+                        <input type="text" class="input" name="autor" id="add-autor"><br>
+                        <button type="submit" class="btn btn-primary ">Agregar autor</button>
+                    </form>
+                    
+                </div>
+                
+            </div>
         </div>
 
 

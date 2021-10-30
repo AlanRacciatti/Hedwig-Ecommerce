@@ -2,6 +2,8 @@ const fs = require("fs");
 const path = require("path");
 const db = require('../database/models');
 const {Op} = require("sequelize")
+const moment = require('moment')
+
 let horaActual = new Date().toISOString().
 replace(/T/, ' ').      // replace T with a space
 replace(/\..+/, '')     // delete the dot and everything after
@@ -19,9 +21,8 @@ const controladorProductos = {
             }]
             res.render("./users/login", {data: {session: req.session, errores: error}})
         } else {
-            db.libros_usuario.findAll({where: {usuario_fk : req.session.idUsuario}})
-            .then(librosUsuario => {
-
+            db.libros_usuario.findAll({where: {usuario_fk : req.session.idUsuario, eliminado: null}})
+            .then(ordenesUsuario => {
                 db.libros.findAll({include: [
                     {association: "autor"},
                     {association: "genero"}
@@ -29,15 +30,13 @@ const controladorProductos = {
                 .then(libros => {
                     let librosFiltrados = []
                     for (let libro of libros) {
-                        for (libroUsuario of librosUsuario) {
-                            console.log(`Comparando ${libro.id} con ${libroUsuario.libro_fk}`)
-                            if (libroUsuario.libro_fk == libro.id) {
-                                console.log("Encontré!")
+                        for (libroUsuario of ordenesUsuario) {
+                            if ((libroUsuario.libro_fk == libro.id) && (libroUsuario.eliminado != 1)) {
                                 librosFiltrados.push(libro)
                             }
                         }
                     }
-                    res.render("products/carrito", {data: {session: req.session, librosUsuario: librosFiltrados}})
+                    res.render("products/carrito", {data: {session: req.session, librosUsuario: librosFiltrados, ordenesUsuario: ordenesUsuario}})
                 })
 
                 // res.render("products/carrito", {data: {session: req.session, librosUsuario: librosUsuario}})
@@ -61,20 +60,21 @@ const controladorProductos = {
 
             let idProducto = req.params.id
             let idUsuario = req.session.idUsuario
+            let contadorOrdenes = 0
 
-            db.libros_usuario.findAll({where: {usuario_fk: idUsuario}})
+            db.libros_usuario.findAll({where: {usuario_fk: idUsuario, eliminado: null}})
             .then(librosUsuario => {
 
-
-                let contadorOrdenes = 0
-                
                 for (let orden of librosUsuario) {
                     contadorOrdenes++
-
+                    
                     if (orden.libro_fk == idProducto) {
-
+                        
+                        db.libros.findOne({where: {id: idProducto}})
+                        .then(libro => {
+                        
                         let nuevaCantidadProductos = orden.cantidad_productos + 1
-                        let nuevoMonto = orden.monto/orden.cantidad_productos * nuevaCantidadProductos 
+                        let nuevoMonto = (orden.monto/orden.cantidad_productos * nuevaCantidadProductos) * (1 - libro.precio / 100) 
 
                         db.libros_usuario.update({
                             cantidad_productos : nuevaCantidadProductos,
@@ -86,17 +86,28 @@ const controladorProductos = {
                                 usuario_fk: idUsuario
                             } 
                         })
+                        .then(a => {
+    
+                            db.libros_usuario.findAll({where: {usuario_fk: idUsuario, eliminado: null}})
+                            .then(librosActualizados => {
+                                console.log(librosActualizados)
+                                req.session.librosUsuario = librosActualizados
+                            })
 
-                        req.session.librosUsuario = librosUsuario
-
+                       })
+                       
+                    })
                         return res.redirect('/products/carrito')        
                     } 
                 }
-    
+                
+                
                 if (contadorOrdenes >= librosUsuario.length) {
                     
                     db.libros.findOne({where: {id: idProducto}})
                     .then(libro => {
+
+                        let precioLibro = libro.precio * (1 - libro.oferta/100)
 
                         let nuevaOrden = {
                             created_at: horaActual,
@@ -105,13 +116,17 @@ const controladorProductos = {
                             libro_fk: idProducto,
                             cantidad_productos: 1,
                             precio_producto: libro.precio,
-                            monto: libro.precio
+                            monto: precioLibro
                         }
 
                         db.libros_usuario.create(nuevaOrden)
 
-                        req.session.librosUsuario = librosUsuario
-
+                        db.libros_usuario.findAll({where: {usuario_fk: idUsuario, eliminado: null}})
+                            .then(librosActualizados => {
+                                console.log(librosActualizados)
+                                req.session.librosUsuario = librosActualizados
+                            })
+                            
                         return res.redirect('/products/carrito')
                         
                     })
@@ -141,14 +156,12 @@ const controladorProductos = {
     store: (req,res) => {
 
         let resultadoValidacion = validationResult(req);
-        console.log(resultadoValidacion)
 
         if (resultadoValidacion.errors.length <= 0) {
             
             db.autores.findOne({ where: {nombre: req.body.author} })
             .then(autores => {
                 
-                let nombreImagen = req.file.filename
                 let autor = autores.id
     
                 db.generos.findOne({ where: {nombre: req.body.gender} })
@@ -159,7 +172,7 @@ const controladorProductos = {
                     let productoNuevo = {
                         created_at: horaActual,
                         updated_at: horaActual,
-                        imagen: nombreImagen,
+                        imagen: req.file.path,
                         titulo: req.body.title,
                         valoracion: req.body.rating,
                         precio: req.body.price,
@@ -276,12 +289,6 @@ const controladorProductos = {
 
 		let id = req.params.id;
 
-        db.libros.findByPk(id)
-        .then(libro => {
-            fs.unlinkSync(path.join(__dirname, '../../public/img/products/', libro.imagen));
-        })
-
-
         db.libros.update({ 
             eliminado: 1
         },
@@ -301,7 +308,113 @@ const controladorProductos = {
         .then(libros => { 
             res.render("./products/ofertas", {data: {products: libros, session: req.session}})
         })
+    },
+
+    novedades: (req, res) => {
+        db.libros.findAll({
+            where: {
+                created_at: {
+                  [Op.gte]: moment().subtract(7, 'days').toDate()
+                }
+            }
+        })
+        .then(libros => {
+            res.render('./products/novedades', {data: {products: libros, session: req.session}})
+        })
+    },
+
+    cantidadGeneros: (req,res) => {
+        db.generos.findAll()
+        .then(generos => res.json(generos.length))
+    },
+
+    productoParticular: (req,res) => {
+        let id = req.params.id
+        db.libros.findByPk(id)
+        .then(libro => res.json(libro))
+    },
+
+    infoProductos: (req,res) => {
+        db.libros.findAll({include: [
+            {association: "genero"}
+        ]})
+        .then(libros => {
+            db.generos.findAll({attributes: ["id", "nombre"]})
+            .then(generos => {
+
+                let librosPorCategoria = []
+                generos.forEach(genero => {
+                    librosPorCategoria.push([genero.nombre, 0])
+                });
+
+                libros.forEach(libro => {
+                    generos.forEach(genero => {
+                        if (genero.id == libro.genero_fk) {
+                            librosPorCategoria[genero.id - 1][1] += 1
+                        }
+                    });
+                });
+
+                let info = {
+                    count: libros.length,
+                    countByCategory: librosPorCategoria,
+                    products: libros
+                }
+                
+                res.json(info)
+            })
+        })
+    },
+
+    eliminarDelCarrito: (req, res) => {
+        let { id } = req.params
+        db.libros_usuario.update({
+            eliminado: 1,
+        }, {where: {id : id}})
+        .then(a => res.redirect('/products/carrito'))
+    },
+
+    ultimoProducto: (req, res) => {
+        db.libros.findAll({
+            order: [["created_at", "DESC"] ],
+            limit: 1
+        })
+        .then(libro => {
+            res.json(libro)
+        })
+    },
+
+    librosGenero: (req, res) => {
+        let { id } = req.params;
+
+        db.libros.findAll({where: {genero_fk: id}})
+        .then(libros =>{
+            try {
+                res.render('./products/genero', {data: {products: libros, session: req.session, nombreVista: "test"}}) 
+            } catch (error) {
+                res.send(error)                
+            }
+        })
+
+    },
+
+    cantidadProductos: (req, res) => {
+        let { id } = req.params
+        let {cantidadProductos} = req.body
+        if (cantidadProductos > 0) {
+            
+            db.libros_usuario.update({
+                cantidad_productos: cantidadProductos
+            }, 
+            {
+                where: {id: id}
+            })
+            .then(a => res.redirect('/products/carrito'))
+
+        } else {
+            res.redirect('/products/carrito')
+        }
+    },
     }
-}
 
 module.exports = controladorProductos;

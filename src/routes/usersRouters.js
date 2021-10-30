@@ -18,11 +18,15 @@ router.post('/login', validacionesLogin, controladorUsers.loginAccount)
 router.get('/logout', controladorUsers.logOut)
 
 router.get("/panel", controladorUsers.panelUsuarios)
+router.post("/panel/genero", controladorUsers.agregarGenero) 
+router.post("/panel/autor", controladorUsers.agregarAutor)
 router.put("/panel/:id", controladorUsers.usuariosAdmin)
 
 // Api
 
 router.get('/api/v1/info', controladorUsers.infoUsuarios)
+
+router.get('/api/v1/ultimoUsuario', controladorUsers.ultimoUsuario)
 
 router.get("/api/v1/info/:id" , controladorUsers.infoUsuarioParticular)
 module.exports = router;

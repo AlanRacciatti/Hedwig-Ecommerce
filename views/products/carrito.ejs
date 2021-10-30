@@ -1,6 +1,23 @@
 <% 
-    console.log(data.librosUsuario)
-    var montoFinal = data.session.librosUsuario.reduce((acc, libro) => acc + libro.monto, 0)
+    var montoFinal = 0
+    var cantidadArticulos = data.ordenesUsuario.reduce((acc, libro) => acc + libro.dataValues.cantidad_productos, 0)
+    var idOrdenesUsuario = [[], []]
+    data.ordenesUsuario.forEach(orden => {
+        idOrdenesUsuario[0].push(orden.id)
+        idOrdenesUsuario[1].push(orden.cantidad_productos)
+    })
+    
+
+    data.librosUsuario.forEach((libroUsuario, i) => {
+        
+        montoFinal += ((libroUsuario.precio * (1 - libroUsuario.oferta / 100)) * idOrdenesUsuario[1][i])
+    });
+
+    // var montoFinal = data.librosUsuario.reduce((acc, libro) => {
+    //     acc + (libro.dataValues.precio)
+    // }, 0)
+
+
 
 %> 
 
@@ -16,6 +33,20 @@
     <%- include("../partials/head") %>
     <!-- Fin del head -->
 
+    
+    <script>
+        
+
+        localStorage.setItem("monto", <%= montoFinal %>)
+        localStorage.setItem("cantidadArticulos", <%= cantidadArticulos %>)
+        let monto = localStorage.getItem("monto")
+        let cantidadArticulos = localStorage.getItem("cantidadArticulos")
+        console.log(monto)
+        console.log(cantidadArticulos)
+
+
+    </script>
+
 </head>
 
 <body>
@@ -28,7 +59,6 @@
 
     <main>
 
-        <% console.log(data.librosUsuario) %> 
 
         <div class="max-width">
 
@@ -39,7 +69,7 @@
 
             <div class="container-entrada-carrito">
                 <i class="fas fa-shopping-cart"></i> 
-                <span>Tienes una cantidad de <%= data.librosUsuario.length %>  articulos por un total de <b> $<%= montoFinal %>  </b> en tu carrito</span>
+                <span>Tienes una cantidad de <%= cantidadArticulos %> articulos por un total de <b> $<%= montoFinal %>  </b> en tu carrito</span>
             </div>
 
             <hr class="dropdown-divider">
@@ -52,48 +82,45 @@
         </div>  
 
         <ul class="lista-articulos">
-            <% for (let libroUsuario of data.librosUsuario) { %> 
-                <li class = "elemento-carrito">
+
+            <% 
+                data.librosUsuario.forEach((libroUsuario, i) => {
+             %> 
+                <a href="/products/detalles/<%= libroUsuario.id %>" class="libro-usuario-carrito elemento-carrito">
                     <div class = "container-info-1">
-                        <div> <img class = "libro-guion-carrito" src = "/img/products/<%= libroUsuario.imagen %>"> </div>
+                        <div> <img class = "libro-guion-carrito" src = "<%= libroUsuario.imagen %>"> </div>
                         <div class = "info-producto">  
                                 <h3 class = "carrito-titulo-libro"><%= libroUsuario.titulo %></h3>  
-                                <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                                <p class="precio-home">$<%= libroUsuario.precio %></p>
-                                <p><%= libroUsuario.genero.nombre %></p>
-                                <p><%= libroUsuario.autor.nombre %> </p>
+                                <div class = "precio-tarjeta precio-carrito">
+                                <p class=" precio-original"><s>$<%= libroUsuario.precio %> </s> </p> 
+                                <p class= "offer-percent"> <%= libroUsuario.oferta %>%</p>
+                                </div>
+                                <h3><b>$<%= (libroUsuario.precio * (100 - libroUsuario.oferta)) / 100 %> </b></h3>
                         </div>
                     </div>        
                     <div class = "container-info-2">
-                        <div class = "carrito-cantidad-productos">
-                            <select class="form-select" aria-label="cantidad-productos">
-                                <option value="1" >1</option>
-                                <option selected value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                            </select>
+                        <form action="/products/carrito/cantidadProductos/<%= idOrdenesUsuario[0][i] %>?_method=PUT" method="POST" class="carrito-cantidad-productos">
+                            <input type="number" name="cantidadProductos" value="<%=idOrdenesUsuario[1][i]%>" class="input-articulos p-2">
+                            <button type="submit" class="btn btn-primary mx-2">Guardar</button>
+                        </form>
+                        <div>
+                            <span class="precio-home precio-original"><s>$<%= libroUsuario.precio * idOrdenesUsuario[1][i] %></s></span>
+                            <span class="precio-home">$<%= ((libroUsuario.precio * (100 - libroUsuario.oferta)) / 100)  * idOrdenesUsuario[1][i] %></span>
                         </div>
                         <div>
-                            <span class="precio-home">$<%= libroUsuario.precio %> </span>
-                        </div>
-                        <div>
-                            <button class = "btn btn-danger" >Eliminar</button>
+                            <form onsubmit="return confirm('Esta seguro que desea eliminarlo?');" method="POST" action="/products/carrito/<%= idOrdenesUsuario[0][i] %>?_method=DELETE"><button class = "btn btn-danger" >Eliminar</button></form>
                         </div>
                         
                     </div>
-                </li>
-            <% } %> 
+                </a>
+            <% }) %> 
         </ul>
 
         <div class = "carrito-compra">
             <img class = "logo-carrito" src = "/img/LOGO.png" >
             <div class= "info-carrito">
                 <p>Gastos de envio: Gratuito</p>
-                <p>Total: $4000</p>
+                <p>Total: $<%= montoFinal %></p>
                 <div> <a href="/"><button class= 'boton-para-comprar'> COMPRAR </button></a></div>
             </div>
         </div>
@@ -116,6 +143,7 @@
 
 	<!-- Fin del footer -->
 
+    
 </body>
 
 </html>
