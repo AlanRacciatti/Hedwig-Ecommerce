@@ -7,10 +7,18 @@
     <% if (product.eliminado != 1) { %>
         
         <a href="/products/detalles/<%= product.id %> " class="card">
-            <% if (product.oferta != 0) { %>
+            <% 
+                if (product.oferta != 0) { %>
                 <div class="oferta-card">
                     <span>Oferta</span>
                     <i class="fas fa-tag card-icon-plus"></i>
+                </div>
+            <% } %>
+            <% 
+                if (product.created_at >=moment().subtract(1, 'days').toDate()) { %>
+                <div class="novedad-card">
+                    <span>Novedad</span>
+                    <i class="fas fa-newspaper card-icon-plus"></i>
                 </div>
             <% } %>
             <img src="<%= product.imagen %>" class="card-img-top" alt="portada-libro"> 
@@ -45,12 +53,12 @@
                                 
                                 <p class= "offer-percent"> <%= product.oferta %>%</p>
                                 </div>
-                                <h3><b>$ <%= (product.precio * oferta) / 100 %> </b></h3>
+                                <h3 class="precio-producto-catalogo"><b>$ <%= (product.precio * oferta) / 100 %> </b></h3>
                                 
                                 <%  break }
                                 
                                 else { %>
-                                    <h3><b> $<%= product.precio %> </b></h3>
+                                    <h3 class="precio-producto-catalogo"><b> $<%= product.precio %> </b></h3>
                                     <% } break %>
                                     
                                     <% } %>

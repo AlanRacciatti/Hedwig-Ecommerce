@@ -641,6 +641,23 @@ padding-top: 10px;
   border-radius: 0 10px 10px 0;
 }
 
+.precio-producto-catalogo {
+  color: #001 !important; 
+}
+
+.novedad-card {
+  position: absolute;
+  width: 40%;
+  background-color: #d48938;
+  color: #fff;
+  right: 10.25rem;
+  top: 2.5rem;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  border-radius: 0 10px 10px 0;
+}
+
 .card-icon-plus {
   margin-left: 3px;
 }

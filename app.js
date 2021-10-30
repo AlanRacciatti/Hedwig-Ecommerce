@@ -8,6 +8,9 @@ const path = require('path');
 const session = require("express-session");
 const cors = require('cors')
 const cloudinary = require('cloudinary').v2;
+const moment = require('moment')
+
+app.locals.moment = moment
 
 
 const methodOverride =  require('method-override');
