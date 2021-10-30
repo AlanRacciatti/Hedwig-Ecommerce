@@ -629,6 +629,26 @@ align-items: center;
 padding-top: 10px;
 }
 
+.oferta-card {
+  position: absolute;
+  width: 30%;
+  background-color:#008000;
+  color: #fff;
+  right: 12rem;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  border-radius: 0 10px 10px 0;
+}
+
+.card-icon-plus {
+  margin-left: 3px;
+}
+
+.container-catalogo {
+  background-color: #5A8DA9;
+}
+
 .offer-percent{
   color: green;
   font-size: 1.3em;
@@ -749,16 +769,17 @@ font-weight: bold;
 }
 
 #contenedor-generos {
+  margin-top: 30px;
   display: flex;
 }
 
 #titulo-generos {
-  border: 2px solid #5a8da9;
+  border: 2px solid #d48a38;
   padding: 10px;
   border-radius: 15px;
   padding-left: 50px;
   padding-right: 50px;
-  background-color: #5a8da9;
+  background-color: #d48a38;
   margin-bottom: 2%;
   width: 120%;
 }
@@ -769,6 +790,8 @@ display: flex;
 flex-flow: row wrap;
 width: 100%;
 margin: auto;
+background-color: #5a8da9;
+border-radius: 30px;
 }
 
 .col {

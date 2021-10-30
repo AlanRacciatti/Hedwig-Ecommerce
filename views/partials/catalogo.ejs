@@ -2,10 +2,17 @@
     <div class="main-title-home">
         <h1><%= nombreVista%></h1>
     </div>
+    <div class="main-title-home container fila-generos">
     <% for (let product of data.products) { %> 
     <% if (product.eliminado != 1) { %>
-     
+        
         <a href="/products/detalles/<%= product.id %> " class="card">
+            <% if (product.oferta != 0) { %>
+                <div class="oferta-card">
+                    <span>Oferta</span>
+                    <i class="fas fa-tag card-icon-plus"></i>
+                </div>
+            <% } %>
             <img src="<%= product.imagen %>" class="card-img-top" alt="portada-libro"> 
             <h5 class="card-title contenido-carta-articulo titulo-articulo-home"><%= product.titulo %> </h5>
             <div class= 'estrellitas'>
@@ -55,4 +62,5 @@
                                     </a>
                                     <% } %>
                                     <% } %> 
+                                </div>
                                     </section>
