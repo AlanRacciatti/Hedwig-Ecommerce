@@ -235,6 +235,7 @@ label[for='check-user'] {
   margin-left: 10px;
   width: 130px;
   height: 160px;
+  border: 2px solid #5a8da9;
 }
 .elemento-carrito{
   list-style: none;
@@ -242,12 +243,16 @@ label[for='check-user'] {
   flex-direction: column;
   justify-content: space-between;
   margin: 0.2% 0;
-  background: white;
+  background-color: rgba(225, 225, 225, 0.8);
   padding: 10px;
+  border: 2px solid #5a8da9;
 }
 
 .titulo-entrada-carrito{
   padding: 30px 30px 0 30px;
+  background-color: rgba(225, 225, 225, 0.8);
+  width: 90%;
+  margin: auto;
 }
 
 .lista-articulos .fa-star {
@@ -280,6 +285,8 @@ label[for='check-user'] {
 
 .carrito-titulo-libro{
   font-size: 20px;
+  font-weight: bold;
+  color: #d48938;
 }
 
 .container-info-1{
@@ -306,10 +313,10 @@ label[for='check-user'] {
   flex-direction: column;
   justify-content: space-between;
   margin: 10px 0;
-  background: white;
+  background-color: rgba(225, 225, 225, 0.8);
   padding: 20px;
   align-items: center;
-  
+  border: 2px solid #5a8da9;
 }
 
 .logo-carrito{
@@ -357,6 +364,11 @@ label[for='check-user'] {
 }
 .carrito-cantidad-productos label{
   margin-right: 10px;
+}
+
+.contenedor-carrousel-carrito{
+  background-color: rgba(225, 225, 225, 0.8);
+  border: 2px solid #5a8da9;
 }
 
 .carousel-item {

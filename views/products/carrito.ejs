@@ -106,7 +106,7 @@
                             <button type="submit" class="btn btn-primary mx-2">Guardar</button>
                         </form>
                         <div>
-                            <span class="precio-home precio-original"><s>$<%= libroUsuario.precio * idOrdenesUsuario[1][i] %></s></span>
+                            <span class="precio-original"><s>$<%= libroUsuario.precio * idOrdenesUsuario[1][i] %></s></span>
                             <span class="precio-home">$<%= ((libroUsuario.precio * (100 - libroUsuario.oferta)) / 100)  * idOrdenesUsuario[1][i] %></span>
                         </div>
                         <div>
@@ -127,7 +127,7 @@
             </div>
         </div>
 
-        <section>
+        <section class="contenedor-carrousel-carrito">
             <h4 class= 'libros-interesados'>Libros que tal vez te interesen</h4>
             <!-- Carrusel -->
             <%- include("../partials/carrusel") %>
