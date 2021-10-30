@@ -314,7 +314,7 @@ const controladorProductos = {
         db.libros.findAll({
             where: {
                 created_at: {
-                  [Op.gte]: moment().subtract(7, 'days').toDate()
+                  [Op.gte]: moment().subtract(1, 'days').toDate()
                 }
             }
         })
