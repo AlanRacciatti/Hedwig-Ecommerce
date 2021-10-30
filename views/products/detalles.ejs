@@ -26,7 +26,6 @@
         <div class="header-details">
         <div class='ruta-de-producto'>
             <span>
-            <a href = "/"> Home > </a><a href = "/">  Sección > </a> <a href = "/">  <%= data.productoDetalle.genero.nombre %> </a>
             </span>
             <% if (data.session.admin >= 1) { %>
                 <div class="edit-delete">
@@ -97,7 +96,7 @@
 
 
         <section>
-            <h4 class= 'libros-interesados'>Libros que tal vez te interesen</h4>
+            <h4 class= 'titulo-generos libro-detalles bs-hedwig'>Libros que tal vez te interesen</h4>
             <!-- Carrusel -->
             <%- include("../partials/carrusel") %>
             <!-- Fin del Carrusel -->

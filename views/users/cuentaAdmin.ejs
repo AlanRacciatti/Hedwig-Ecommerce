@@ -20,8 +20,10 @@
     
     <!-- Fin del header -->
 
+    <main>
+
         <div class="container-panel">
-            <h2 class="title-panel"> GESTIÓN DE PÁGINA </h2>
+            <h2 class="admin-heading titulo-generos libro-detalles bs-hedwig"> Gestión de permisos </h2>
             <div class="main-admin-container">
                 <div class="gest-usuarios-container">
                     <h3 class="header-seccion-master">Gestión de permisos de usuarios</h3>
@@ -61,12 +63,12 @@
                     <form method="POST" action="/users/panel/genero" class="form-genero">
                         <label for="add-genero" class="admin-form-label">Insertá el género</label><br>
                         <input type="text" class="input" name="genero" id="add-genero"><br>
-                        <button type="submit" class="btn btn-primary ">Agregar género</button>
+                        <button type="submit" class="btn btn-primary mt-2 ">Agregar género</button>
                     </form>
                     <form method="POST" action="/users/panel/autor" class="form-autor">
                         <label for="add-autor" class="admin-form-label">Insertá el autor</label><br>
                         <input type="text" class="input" name="autor" id="add-autor"><br>
-                        <button type="submit" class="btn btn-primary ">Agregar autor</button>
+                        <button type="submit" class="btn btn-primary mt-2">Agregar autor</button>
                     </form>
                     
                 </div>
@@ -75,12 +77,14 @@
         </div>
 
 
+    </main>
 
     <!-- Footer -->
 
 	<%- include("../partials/footer") %>
 
 	<!-- Fin del footer -->
+
 
 </body>
 

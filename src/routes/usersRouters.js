@@ -28,5 +28,5 @@ router.get('/api/v1/info', controladorUsers.infoUsuarios)
 
 router.get('/api/v1/ultimoUsuario', controladorUsers.ultimoUsuario)
 
-router.get("/api/v1/info/:id" , controladorUsers.infoUsuarioParticular)
+router.get("/api/v1/ultimoUsuario/:id" , controladorUsers.infoUsuarioParticular)
 module.exports = router;
