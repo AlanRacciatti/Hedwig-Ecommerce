@@ -401,6 +401,53 @@ const controladorProductos = {
         })
     },
 
+    topLibros: (req, res) => {
+        db.libros.findAll({
+            order: [["compras", "DESC"]],
+            limit: 4
+        })
+        .then(libros => res.json(libros))
+    },
+
+    topAutores: (req, res) => {
+        db.libros.findAll({
+            order: ["autor_fk"]
+        })
+        .then(libros => {
+            let listaAutores = []
+            let listaCompras = []
+            libros.forEach(libro => {
+                if (listaAutores.indexOf(libro.autor_fk) === -1) {
+                    listaAutores.push(libro.autor_fk)
+                    listaCompras.push(libro.compras)
+                } else {
+                    listaCompras[listaAutores.indexOf(libro.autor_fk)] += libro.compras
+                }
+            })
+
+            db.autores.findAll()
+            .then(autores => {
+                let response = []
+                autores.forEach(autor => {
+                    response.push([autor.nombre, listaCompras[autor.id]])
+                })
+
+                let mejoresAutores = [["asd", 0], ["asd", 0], ["asd", 0], ["asd", 0]]
+
+                response.forEach(array => {
+                    if (array[1] >= mejoresAutores[3][1]) {
+                        mejoresAutores.pop()
+                        mejoresAutores.unshift(array)
+                    }
+                })
+
+                res.json(mejoresAutores.reverse())
+            })
+
+            
+        })
+    },
+
     librosGenero: (req, res) => {
         let { id, categoria } = req.query;
 
@@ -428,6 +475,8 @@ const controladorProductos = {
         })
 
     },
+
+   
 
     cantidadProductos: (req, res) => {
         let { id } = req.params

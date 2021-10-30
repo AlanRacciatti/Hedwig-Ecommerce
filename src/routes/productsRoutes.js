@@ -49,6 +49,9 @@ router.get("/api/v1/info", productsController.infoProductos);
 
 router.get("/api/v1/autores", productsController.infoAutores)
 
+router.get("/api/v1/topLibros", productsController.topLibros)
+router.get("/api/v1/topAutores", productsController.topAutores)
+
 router.get("/api/v1/generos", productsController.infoGeneros)
 
 module.exports = router;
