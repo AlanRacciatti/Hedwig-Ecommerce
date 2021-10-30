@@ -796,6 +796,7 @@ font-weight: bold;
 
 #contenedor-generos {
   margin-top: 30px;
+  padding-bottom: 0;
   display: flex;
 }
 
@@ -816,6 +817,7 @@ display: flex;
 flex-flow: row wrap;
 width: 100%;
 margin: auto;
+margin-top: 15px;
 background-color: #5a8da9;
 border-radius: 30px;
 }
