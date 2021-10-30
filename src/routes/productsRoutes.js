@@ -33,7 +33,8 @@ router.delete('/carrito/:id', productsController.eliminarDelCarrito)
 
 router.put('/carrito/cantidadProductos/:id', productsController.cantidadProductos)
 
-router.get("/genero/:id", productsController.librosGenero)
+router.get("/genero", productsController.librosGenero)
+router.get("/autor", productsController.librosAutor)
 // Api
 
 router.get("/api/v1/cantidadGeneros", productsController.cantidadGeneros);

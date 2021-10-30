@@ -385,12 +385,26 @@ const controladorProductos = {
     },
 
     librosGenero: (req, res) => {
-        let { id } = req.params;
+        let { id, categoria } = req.query;
 
         db.libros.findAll({where: {genero_fk: id}})
         .then(libros =>{
             try {
-                res.render('./products/genero', {data: {products: libros, session: req.session, nombreVista: "test"}}) 
+                res.render('./products/genero', {data: {products: libros, session: req.session, nombreVista: categoria}}) 
+            } catch (error) {
+                res.send(error)                
+            }
+        })
+
+    },
+    
+    librosAutor: (req, res) => {
+        let { id, autor } = req.query;
+
+        db.libros.findAll({where: {autor_fk: id}})
+        .then(libros =>{
+            try {
+                res.render('./products/genero', {data: {products: libros, session: req.session, nombreVista: autor}}) 
             } catch (error) {
                 res.send(error)                
             }
@@ -399,7 +413,7 @@ const controladorProductos = {
     },
 
     cantidadProductos: (req, res) => {
-        let { id } = req.params
+        let { id } = req.query
         let {cantidadProductos} = req.body
         if (cantidadProductos > 0) {
             

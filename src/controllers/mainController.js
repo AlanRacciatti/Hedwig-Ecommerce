@@ -27,9 +27,9 @@ const controladorMain = {
                 }
                 
             })
-            .then(resultado => res.render("./products/index", {data: {products: resultado, session: req.session}}))
+            .then(libros => res.render('./products/genero', {data: {products: libros, session: req.session, nombreVista: search}}))
 
+        }
     }
-}
 
 module.exports = controladorMain;
