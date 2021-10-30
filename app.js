@@ -9,6 +9,7 @@ const session = require("express-session");
 const cors = require('cors')
 const cloudinary = require('cloudinary').v2;
 const moment = require('moment')
+const morgan = require('morgan')
 
 app.locals.moment = moment
 
@@ -19,6 +20,8 @@ cloudinary.config({
   api_key: "732854215469181",
   api_secret: "JlIIsSuC9ituSWTvDw7Jc5aQHNk",
 });
+
+app.use(morgan('tiny'))
 app.use(express.json());
 app.use(express.urlencoded({ extended:false }));
 app.use(methodOverride("_method"));

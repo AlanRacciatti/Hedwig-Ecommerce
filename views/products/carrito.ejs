@@ -6,6 +6,8 @@
         idOrdenesUsuario[0].push(orden.id)
         idOrdenesUsuario[1].push(orden.cantidad_productos)
     })
+
+    console.log(idOrdenesUsuario)
     
 
     data.librosUsuario.forEach((libroUsuario, i) => {
@@ -108,7 +110,7 @@
                             <span class="precio-home">$<%= ((libroUsuario.precio * (100 - libroUsuario.oferta)) / 100)  * idOrdenesUsuario[1][i] %></span>
                         </div>
                         <div>
-                            <form onsubmit="return confirm('Esta seguro que desea eliminarlo?');" method="POST" action="/products/carrito/<%= idOrdenesUsuario[0][i] %>?_method=DELETE"><button class = "btn btn-danger" >Eliminar</button></form>
+                            <form onsubmit="return confirm('Esta seguro que desea eliminarlo?');" method="POST" action="/products/carrito/delete/<%= idOrdenesUsuario[0][i] %>?_method=DELETE"><button class = "btn btn-danger" >Eliminar</button></form>
                         </div>
                         
                     </div>

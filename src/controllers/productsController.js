@@ -74,7 +74,7 @@ const controladorProductos = {
                         .then(libro => {
                         
                         let nuevaCantidadProductos = orden.cantidad_productos + 1
-                        let nuevoMonto = (orden.monto/orden.cantidad_productos * nuevaCantidadProductos) * (1 - libro.precio / 100) 
+                        let nuevoMonto = (orden.monto/orden.cantidad_productos * nuevaCantidadProductos)
 
                         db.libros_usuario.update({
                             cantidad_productos : nuevaCantidadProductos,
@@ -87,6 +87,14 @@ const controladorProductos = {
                             } 
                         })
                         .then(a => {
+
+                            comprasProducto = libro.compras + 1
+
+                            db.libros.update({
+                                compras: comprasProducto
+                            }, {
+                                where: {id: idProducto}
+                            })
     
                             db.libros_usuario.findAll({where: {usuario_fk: idUsuario, eliminado: null}})
                             .then(librosActualizados => {
@@ -118,6 +126,14 @@ const controladorProductos = {
                             precio_producto: libro.precio,
                             monto: precioLibro
                         }
+
+                        let comprasProducto = libro.compras + 1
+
+                        db.libros.update({
+                            compras: comprasProducto
+                        }, {
+                            where: {id: idProducto}
+                        })
 
                         db.libros_usuario.create(nuevaOrden)
 
@@ -182,6 +198,7 @@ const controladorProductos = {
                         editorial:req.body.editorial,
                         stock: req.body.stock,
                         eliminado: 0,
+                        compras: 0,
                         genero_fk: genero,
                         autor_fk: autor,
                     }
@@ -413,10 +430,10 @@ const controladorProductos = {
     },
 
     cantidadProductos: (req, res) => {
-        let { id } = req.query
+        let { id } = req.params
         let {cantidadProductos} = req.body
         if (cantidadProductos > 0) {
-            
+
             db.libros_usuario.update({
                 cantidad_productos: cantidadProductos
             }, 

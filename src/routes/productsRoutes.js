@@ -13,6 +13,8 @@ const validationsCreate = require('../middlewares/validations/validationsCreate'
 
 router.get("/detalles", productsController.detalles);
 
+router.put("/carrito/cantidadProductos/:id", productsController.cantidadProductos)
+
 router.get("/carrito", productsController.carrito);
 router.post("/carrito/:id", productsController.añadirAlCarrito)
 
@@ -29,9 +31,9 @@ router.delete('/delete/:id', productsController.destroy)
 router.get('/ofertas', productsController.ofertas)
 router.get('/novedades', productsController.novedades)
 
-router.delete('/carrito/:id', productsController.eliminarDelCarrito)
+router.delete('/carrito/delete/:id', productsController.eliminarDelCarrito)
 
-router.put('/carrito/cantidadProductos/:id', productsController.cantidadProductos)
+router.post('/test', productsController.cantidadProductos)
 
 router.get("/genero", productsController.librosGenero)
 router.get("/autor", productsController.librosAutor)

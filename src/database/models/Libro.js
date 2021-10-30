@@ -68,6 +68,11 @@ function librosData(sequelize, DataTypes){
           type: DataTypes.INTEGER,
           allowNull: false  
         },
+
+        compras: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
         
         autor_fk: {
             type: DataTypes.INTEGER,
