@@ -344,7 +344,7 @@ const controladorProductos = {
 
                 let librosPorCategoria = []
                 generos.forEach(genero => {
-                    librosPorCategoria.push([genero.nombre, 0])
+                    librosPorCategoria.push([genero.nombre, 0, genero.id])
                 });
 
                 libros.forEach(libro => {
