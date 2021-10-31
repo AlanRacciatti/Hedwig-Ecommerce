@@ -364,7 +364,9 @@ const controladorProductos = {
                     librosPorCategoria.push([genero.nombre, 0, genero.id])
                 });
 
+                let cantidadLibros = 0
                 libros.forEach(libro => {
+                    cantidadLibros += libro.stock
                     generos.forEach(genero => {
                         if (genero.id == libro.genero_fk) {
                             librosPorCategoria[genero.id - 1][1] += 1
@@ -373,7 +375,7 @@ const controladorProductos = {
                 });
 
                 let info = {
-                    count: libros.length,
+                    count: cantidadLibros,
                     countByCategory: librosPorCategoria,
                     products: libros
                 }
