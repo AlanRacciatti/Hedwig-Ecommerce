@@ -24,14 +24,11 @@
                 <li><a class="dropdown-item" href="/users/register" class ="btn-open-login">Registrarse</a></li> 
                 <hr class="dropdown-divider">
                 <% } %> 
-                <li><a class="dropdown-item" href="/productos/generos">Categorías</a></li>
                 <li><a class="dropdown-item" href="https://hedwig-dashboard.web.app">Dashboard <i class="fas fa-tachometer-alt"></i></a></li>
-                <li><a class="dropdown-item" href="/productos/novedades">Novedades <i class="fas fa-newspaper"></i></a></li>
+                <li><a class="dropdown-item" href="/products/novedades">Novedades <i class="fas fa-newspaper"></i></a></li>
                 <li><a class="dropdown-item" href="/products/ofertas">Ofertas <i class="fas fa-dollar-sign"></i></a></li>
                 <% if(data.session.usuarioLogueado){ %>
-                <li><a class="dropdown-item" href="#">Historial</a></li>
-                <li><a class="dropdown-item" href="#">Configuración</a></li>
-                <hr class="dropdown-divider">
+                <hr class="dropdow-divider">
                 <% if (data.session.admin >= 1) { %>
                     <li><a class="dropdown-item" href="/products/create">Nuevo producto</a></li>
                 <% if (data.session.admin == 2) { %>
@@ -102,8 +99,6 @@
 
             <ul class="dropdown-menu">
 
-                <li><a class="dropdown-item" href="/users/historial">Historial</a></li>
-                <li><a class="dropdown-item" href="/users/configuracion">Configuración</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <% if (data.session.admin >= 1) { %>
                     <li><a class="dropdown-item" href="/products/create">Nuevo producto</a></li>

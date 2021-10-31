@@ -870,6 +870,7 @@ background-color: #d48a38;
 }
 
 .libro-detalles {
+  width: 95%;
   max-width: 1200px;
   margin: auto;
   text-align: center;
