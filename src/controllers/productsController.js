@@ -396,7 +396,8 @@ const controladorProductos = {
     ultimoProducto: (req, res) => {
         db.libros.findAll({
             order: [["created_at", "DESC"] ],
-            limit: 1
+            limit: 1,
+            where: {eliminado: 0}
         })
         .then(libro => {
             res.json(libro)
