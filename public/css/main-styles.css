@@ -877,6 +877,13 @@ background-color: #d48a38;
   color: #fff;
 }
 
+.validation-error {
+  color: white !important;
+  background-color: red;
+  border: 1px solid #000;
+  border-radius: 30px;
+}
+
 *,:after,:before{box-sizing:border-box}
 .clearfix:after,.clearfix:before{content:'';display:table}
 .clearfix:after{clear:both;display:block}

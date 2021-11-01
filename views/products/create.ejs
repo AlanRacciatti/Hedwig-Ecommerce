@@ -36,22 +36,21 @@
 
                 <div class="container-edit-image">
                     <label for="image-edit-placeholder" class="edit-input-foto"> Agregue la imagen del producto <i class="fas fa-camera edit-camera-icon edit-input-foto"></i></label>
-                    
                     <input class="upload-bottom" name="image" type="file" > 
                 </div>
                 <div class="edit-precio">
                     <input name="price" class="edit-input-style edit-info-product1" id="precioNuevoProd" type="text" placeholder="Precio">
-                    <small id="precioValidation" class="text-danger d-block d-none mt-1">Asignale un precio válido al producto. Solo el monto, sin signo de moneda (Ej: $, €, etc.).</small>
+                    <small id="precioValidation" class="text-danger d-block d-none mt-1 validation-error">Asignale un precio válido al producto. Solo el monto, sin signo de moneda (Ej: $, €, etc.).</small>
                     <br>
                     <input name="offer" class="edit-input-style edit-info-product1" id="ofertaNuevoProd" type="text" placeholder="Oferta">
-                    <small id="ofertaValidation" class="text-danger d-block d-none mt-1">Asigná un % válido de oferta. Procurá que sea entre 0 (si no querés ponerle oferta al producto) y 100.</small>
+                    <small id="ofertaValidation" class="text-danger d-block d-none mt-1 validation-error">Asigná un % válido de oferta. Procurá que sea entre 0 (si no querés ponerle oferta al producto) y 100.</small>
                 </div>
 
                 </section>
                 
                 <section class= 'fragmento-libro edit-description-section'> 
                 <input name= "title" class=" edit-titulo-libro edit-info-product1" id="tituloNuevoProd" type="text" placeholder="Título" />
-                <small id="tituloValidation" class="text-danger d-block d-none mt-1">Insertá un título.</small>
+                <small id="tituloValidation" class="text-danger d-block d-none mt-1 validation-error">Insertá un título.</small>
                 <div class="edit-valoracion">
                     <label for="edit-valoracion">Valoración:</label>
                     <select class="edit-input-style" name="rating" class="edit-valoracion-estrellitas" id="edit-valoracion">
@@ -68,7 +67,7 @@
                 </div>
 
                 <textarea name="description" class="edit-input-textarea" id="descripcionNuevoProd" cols="90" rows="10" placeholder="Descripcion del producto"></textarea>
-                <small id="descripcionValidation" class="text-danger d-block d-none mt-1">Agregá una descripción del producto. #HedwigTip: Solo 3 de cada 10 potenciales compradores lee toda la descripción. Te recomendamos captar su atención en las primeras 3 oraciones.</small>
+                <small id="descripcionValidation" class="text-danger d-block d-none mt-1 validation-error">Agregá una descripción del producto. #HedwigTip: Solo 3 de cada 10 potenciales compradores lee toda la descripción. Te recomendamos captar su atención en las primeras 3 oraciones.</small>
 
                 </section>
 
@@ -86,7 +85,7 @@
                                     <option value="<%= data.generos[i].nombre %> "><%= data.generos[i].nombre %> </option>
                                 <% } %>
                             </select>
-                            <small id="generoValidation" class="text-danger d-block d-none mt-1">Seleccioná un género válido.</small>
+                            <small id="generoValidation" class="text-danger d-block d-none mt-1 validation-error">Seleccioná un género válido.</small>
                         </li>
                         <li>
                             <select name="author" class="edit-input-style" id="autor" type="text" placeholder=" Autor">
@@ -95,19 +94,19 @@
                                     <option value="<%= data.autores[i].nombre %> "><%= data.autores[i].nombre %> </option>
                                 <% } %>
                             </select>
-                            <small id="autorValidation" class="text-danger d-block d-none mt-1">Seleccioná un autor válido.</small>
+                            <small id="autorValidation" class="text-danger d-block d-none mt-1 validation-error">Seleccioná un autor válido.</small>
                         </li>
                         <li>
                             <input name="pagsLength" class="edit-input-style" id="cantPagsNuevoProd" type="text" placeholder=" Cantidad de paginas">
-                            <small id="pagsValidation" class="text-danger d-block d-none mt-1">Asigná una cantidad de páginas.</small>
+                            <small id="pagsValidation" class="text-danger d-block d-none mt-1 validation-error">Asigná una cantidad de páginas.</small>
                         </li>
                         <li>
                             <input name="editorial" class="edit-input-style" id="editorialNuevoProd" type="text" placeholder=" Editorial">
-                            <small id="editorialValidation" class="text-danger d-block d-none mt-1">Asigná la editorial del producto.</small>
+                            <small id="editorialValidation" class="text-danger d-block d-none mt-1 validation-error">Asigná la editorial del producto.</small>
                         </li>
                         <li>
                             <input name="stock" class="edit-input-style" id="stockNuevoProd" type="text" placeholder=" Stock">
-                            <small id="stockValidation" class="text-danger d-block d-none mt-1">Asigná el stock del producto.</small>
+                            <small id="stockValidation" class="text-danger d-block d-none mt-1 validation-error">Asigná el stock del producto.</small>
                         </li>
                         
                     </ul>
