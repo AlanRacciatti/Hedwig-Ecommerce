@@ -438,7 +438,7 @@ const controladorProductos = {
                 let mejoresAutores = [["asd", 0], ["asd", 0], ["asd", 0], ["asd", 0]]
 
                 response.forEach(array => {
-                    if (array[1] >= mejoresAutores[3][1]) {
+                    if (array[1] > mejoresAutores[3][1]) {
                         mejoresAutores.pop()
                         mejoresAutores.unshift(array)
                     }
