@@ -610,11 +610,9 @@ main {
 }
 
 .bs-hedwig {
-  box-shadow: #5a8da9 0px 0px 13px 9px;
+  box-shadow: #5a8da9 0px 0px 8px 4.5px;
 }
-.bs-hedwig-sec {
-  box-shadow: #d48938 0px 0px 20px .5px;
-}
+
 
 .container {
 display: flex;
